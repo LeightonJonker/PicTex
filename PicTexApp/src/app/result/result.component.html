@@ -1,0 +1,34 @@
+<body>
+
+<section class = "main">
+  <h1 onload="changeoptionsizes()"> Customise your PicTex! </h1>
+
+
+  <div class = "content">
+
+  </div>
+
+
+</section>
+<div class="wrapper">
+  <div class="left">
+    <button id = "option1" (click)="option1to0()" routerLink="/result" class="button button3"></button>
+   <button id = "option2"  (click)="option2to0()" routerLink="/result" class="button button4"></button>
+  </div>
+  <textarea  id = "option0" placeholder="Edit your text!"> {{localtext}} </textarea>
+  <div class="right">
+   <button id = "option3" (click)="option3to0()" routerLink="/result"  class="button button2"></button>
+    <button id = "option4" (click)="option4to0()" routerLink="/result" class="button button5"></button>
+  </div>
+    <br>
+
+</div>
+<button routerLink="/result" (click)="bfunction()" class="button">Reload</button>
+<!--<button type="button" (click)="changeoptionsizes()">Try it</button>-->
+
+<br>
+<br>
+
+
+</body>
+
