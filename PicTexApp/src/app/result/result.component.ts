@@ -12,25 +12,7 @@ export class ResultComponent implements OnInit {
   imgsrc: string = "https://farm";
   imgfarmid: string = ".staticflickr.com/";
 
-  // public storeurls() { // used to get the url components from storage, make the final url and store it.
-  //   for (var i = 0; i < 4; i++) {
-  //     var Sid: string = localStorage.getItem("id" + i);
-  //     var Sowner: string = localStorage.getItem("owner" + i);
-  //     var Ssecret: string = localStorage.getItem("secret" + i);
-  //     var Sserver: string = localStorage.getItem("server" + i);
-  //     var Sfarm: string = localStorage.getItem("farm" + i);
-  //     var Stitle: string = localStorage.getItem("title" + i);
-  //     var Sispublic: string = localStorage.getItem("ispublic" + i);
-  //     var Sisfriend: string = localStorage.getItem("isfriend" + i);
-  //     var Sisfamily: string = localStorage.getItem("isfamily" + i);
-  //
-  //     // gets url img for src
-  //     var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_z.jpg";
-  //     localStorage.setItem("final" + i, final); // store final url in local storage.
-  //   }
-  // }
-
-  public changeoptionsizes(){
+  public loadimages(){
   console.log("heh")
      for (var i = 0; i <= 4; i++) {
        var Sid: string = localStorage.getItem("id" + i);
@@ -45,29 +27,34 @@ export class ResultComponent implements OnInit {
 
        // gets url img for src
        var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_m.jpg";
-       var finalmed: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_n.jpg";
+       var finalm: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_n.jpg";
 
        // document.getElementById("option"+i).style.backgroundImage='url('+ final + ')';
        localStorage.setItem("final" + i, final); // store final url in local storage.
-       localStorage.setItem("finalmed" + i, finalmed);
+       localStorage.setItem("finalm" + i, finalm);
+       localStorage.setItem("opt" + i, final);
+       localStorage.setItem("optm" + i, finalm);
      }
+    this.update();
+  }
 
-/////////////////////////////////////////////////////////////// option 0
+  public update() {
+    /////////////////////////////////////////////////////////////// option 0
 
-       var final = localStorage.getItem("finalmed0");
-       var img = new Image();
-       img.src = final;
-       var height = img.height;
-       var width = img.width;
-       img.onload = function () {
-         document.getElementById("option0").style.height = height + "px"; // change height of textarea (do before page loads)
-         document.getElementById("option0").style.width = width + "px"; // change width of textarea (do before page loads)
-       };
+    var final = localStorage.getItem("optm0");
+    var img = new Image();
+    img.src = final;
+    var height = img.height;
+    var width = img.width;
+    img.onload = function () {
+      document.getElementById("option0").style.height = height + "px"; // change height of textarea (do before page loads)
+      document.getElementById("option0").style.width = width + "px"; // change width of textarea (do before page loads)
+    };
     document.getElementById("option0").style.backgroundImage='url('+ final + ')';
 
 /////////////////////////////////////////////////////////////// option 1
 
-    var final1 = localStorage.getItem("final1");
+    var final1 = localStorage.getItem("opt1");
     var img1 = new Image();
     img1.src = final1;
     var height1 = img1.height;
@@ -80,7 +67,7 @@ export class ResultComponent implements OnInit {
 
 /////////////////////////////////////////////////////////////// option 2
 
-    var final2 = localStorage.getItem("final2");
+    var final2 = localStorage.getItem("opt2");
     var img2 = new Image();
     img2.src = final2;
     var height2 = img2.height;
@@ -93,7 +80,7 @@ export class ResultComponent implements OnInit {
 
 ///////////////////////////////////////////////////////////////
 
-    var final3 = localStorage.getItem("final3");
+    var final3 = localStorage.getItem("opt3");
     var img3 = new Image();
     img3.src = final3;
     var height3 = img3.height;
@@ -106,7 +93,7 @@ export class ResultComponent implements OnInit {
 
     /////////////////////////////////////////////////////////////
 
-    var final4 = localStorage.getItem("final4");
+    var final4 = localStorage.getItem("opt4");
     var img4 = new Image();
     img4.src = final4;
     var height4 = img4.height;
@@ -116,46 +103,45 @@ export class ResultComponent implements OnInit {
       document.getElementById("option4").style.width = width4 + "px"; // change width of textarea (do before page loads)
     };
     document.getElementById("option4").style.backgroundImage='url('+ final4 + ')';
+
+  }
+
+  public swap(x,y){
+    var xsmall = localStorage.getItem("opt"+x);
+    var xmed = localStorage.getItem("optm"+x);
+
+    var ysmall = localStorage.getItem("opt"+y);
+    var ymed = localStorage.getItem("optm"+y);
+
+    localStorage.setItem("opt"+y, xsmall);
+    localStorage.setItem("optm"+y,xmed);
+
+    localStorage.setItem("opt"+x, ysmall);
+    localStorage.setItem("optm"+x, ymed)
   }
 
   public option1to0(){// selected photo 1, swapping with photo 0
     console.log("ye clicked me!")
-    // get medium size photo for option 1
-    var medopt1 = localStorage.getItem("finalmed1")
-
-    // get small size photo for option 0
-    var smalopt0 = localStorage.getItem("final0")
-
+    this.swap(1,0);
+    this.update();
   }
 
 
   public option2to0(){ // selected photo 2, swapping with photo 0
-    // get medium size photo for option 2
-    var medopt2 = localStorage.getItem("finalmed2")
-
-    // get small size photo for option
-    var smalopt0 = localStorage.getItem("final0")
-
+    this.swap(2,0);
+    this.update();
   }
 
 
   public option3to0(){// selected photo 3, swapping with photo 0
-    // get medium size photo for option 3
-    var medopt3 = localStorage.getItem("finalmed3")
-
-    // get small size photo for option 0
-    var smalopt0 = localStorage.getItem("final0")
-
+    this.swap(3,0);
+    this.update();
   }
 
 
   public option4to0(){ // selected photo 4, swapping with photo 0
-    // get medium size photo for option 4
-    var medopt4 = localStorage.getItem("finalmed4")
-
-    // get small size photo for option 0
-    var smalopt0 = localStorage.getItem("final0")
-
+    this.swap(4,0);
+    this.update();
   }
 
   private bfunction() {
@@ -172,10 +158,13 @@ export class ResultComponent implements OnInit {
 
   ngOnInit() {
     console.log("running page")
+    this.loadimages();
+    console.log("messages loaded")
     for (var i = 0; i< 5; i++) {
-      this.changeoptionsizes();
+      this.update()
+      console.log("updates")
     }
-    this.changeoptionsizes();
+    //this.changeoptionsizes();
   }
 
 }
