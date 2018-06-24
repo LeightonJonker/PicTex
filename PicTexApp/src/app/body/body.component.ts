@@ -15,22 +15,20 @@ flag = 1;
 
 public storeurls() { // used to get the url components from storage, make the final url and store it.
   for (var i = 0; i <= 4; i++) {
-    // window.onbeforeunload = function (eee){
-    //   alert("i have no idea")
-    // }
-    var Sid: string = localStorage.getItem("id" + i);
-    var Sowner: string = localStorage.getItem("owner" + i);
-    var Ssecret: string = localStorage.getItem("secret" + i);
-    var Sserver: string = localStorage.getItem("server" + i);
-    var Sfarm: string = localStorage.getItem("farm" + i);
-    var Stitle: string = localStorage.getItem("title" + i);
-    var Sispublic: string = localStorage.getItem("ispublic" + i);
-    var Sisfriend: string = localStorage.getItem("isfriend" + i);
-    var Sisfamily: string = localStorage.getItem("isfamily" + i);
+
+    var Sid: string = sessionStorage.getItem("id" + i);
+    var Sowner: string = sessionStorage.getItem("owner" + i);
+    var Ssecret: string = sessionStorage.getItem("secret" + i);
+    var Sserver: string = sessionStorage.getItem("server" + i);
+    var Sfarm: string = sessionStorage.getItem("farm" + i);
+    var Stitle: string = sessionStorage.getItem("title" + i);
+    var Sispublic: string = sessionStorage.getItem("ispublic" + i);
+    var Sisfriend: string = sessionStorage.getItem("isfriend" + i);
+    var Sisfamily: string = sessionStorage.getItem("isfamily" + i);
 
     // gets url img for src
     var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_z.jpg";
-    localStorage.setItem("final" + i, final); // store final url in local storage.
+    sessionStorage.setItem("final" + i, final); // store final url in local storage.
   }
 }
 
@@ -45,7 +43,7 @@ public storeurls() { // used to get the url components from storage, make the fi
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
 
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value;
-    localStorage.setItem('inputtext',this.role );
+    sessionStorage.setItem('inputtext',this.role );
 
     var results;
     var xhr = new XMLHttpRequest();
@@ -71,16 +69,15 @@ public storeurls() { // used to get the url components from storage, make the fi
           var isfriend = x[i].getAttribute("isfriend");
           var isfamily = x[i].getAttribute("isfamily");
           // can successfully access saved xml file and get correct tags for image.
-          localStorage.setItem("id" + i, id);
-          localStorage.setItem("owner" + i, owner);
-          localStorage.setItem("secret" + i, secret);
-          localStorage.setItem("server" + i, server);
-          localStorage.setItem("farm" + i, farm);
-          localStorage.setItem("title" + i, title);
-          localStorage.setItem("ispublic" + i, ispublic);
-          localStorage.setItem("isfriend" + i, isfriend);
-          localStorage.setItem("isfamily" + i, isfamily);
-         // console.log(title)
+          sessionStorage.setItem("id" + i, id);
+          sessionStorage.setItem("owner" + i, owner);
+          sessionStorage.setItem("secret" + i, secret);
+          sessionStorage.setItem("server" + i, server);
+          sessionStorage.setItem("farm" + i, farm);
+          sessionStorage.setItem("title" + i, title);
+          sessionStorage.setItem("ispublic" + i, ispublic);
+          sessionStorage.setItem("isfriend" + i, isfriend);
+          sessionStorage.setItem("isfamily" + i, isfamily);
         }
         window.location.replace("/result")
       }
