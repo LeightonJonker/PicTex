@@ -49,7 +49,7 @@ export class ResultComponent implements OnInit {
        localStorage.setItem("optwidm"+i, optwidm);
        localStorage.setItem("optheim"+i, optheim)
   }
-    this.update();
+    //this.update();
   }
 
   public update() {
@@ -202,24 +202,32 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    var ysmallwid = localStorage.getItem("optwid0");
-    var ysmallhei = localStorage.getItem("opthei0");
-    console.log(ysmallhei)
-    console.log(ysmallwid)
-    //if ((Number(ysmallwid) && (Number(ysmallhei))) == 0){
-    //  window.location.reload();
-    //}
-
-
-    console.log("running page")
     this.loadimages();
-    console.log("messages loaded")
-    // for (var i = 0; i< 5; i++) {
-    //   this.update();
-    //   console.log("updated " + i)
-    // }
-    //this.changeoptionsizes();
+
+    this.update();
+  console.log("PAGE START")
+
+
+  var ysmallwid = localStorage.getItem("optwid0");
+  var ysmallhei = localStorage.getItem("opthei0");
+  console.log(ysmallhei)
+  console.log(ysmallwid)
+
+
+    // document.getElementById("option1").style.height = Number(ysmallhei) + "px"; // change height of textarea (do before page loads)
+    // document.getElementById("option1").style.width = Number(ysmallwid) + "px"; // change
+  var ysmallwidm = localStorage.getItem("optwidm0");
+  var ysmallheim = localStorage.getItem("optheim0");
+  console.log(ysmallheim)
+  console.log(ysmallwidm)
+
+  if ((Number(ysmallwid) && (Number(ysmallhei))) == 0) {
+    //  window.location.reload(true);
   }
+
+  console.log("PAGE END")
+}
+
+
 
 }
