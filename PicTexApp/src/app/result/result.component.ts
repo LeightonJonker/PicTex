@@ -13,7 +13,6 @@ export class ResultComponent implements OnInit {
   imgfarmid: string = ".staticflickr.com/";
 
   public loadimages(){
-  console.log("heh")
     var img = new Image();
     var imgm = new Image();
      for (var i = 0; i <= 4; i++) {
@@ -37,8 +36,6 @@ export class ResultComponent implements OnInit {
        var opthei = img.height.toString();
        var optwidm = imgm.width.toString();
        var optheim = imgm.height.toString();
-       console.log(optwidm + i)
-       console.log(optheim + i)
 
        // document.getElementById("option"+i).style.backgroundImage='url('+ final + ')';
        localStorage.setItem("final" + i, final); // store final url in local storage.
@@ -50,19 +47,21 @@ export class ResultComponent implements OnInit {
 
        localStorage.setItem("optm" + i, finalm);
        localStorage.setItem("optwidm"+i, optwidm);
-       localStorage.setItem("optheim"+i,optheim)
-
+       localStorage.setItem("optheim"+i, optheim)
   }
     this.update();
   }
 
   public update() {
     /////////////////////////////////////////////////////////////// option 0
-
+    var finalsmall = localStorage.getItem("opt0")
+    console.log("small " + finalsmall)
     var final = localStorage.getItem("optm0");
+    console.log("med " + final)
     var height = localStorage.getItem("optheim0");
     var width = localStorage.getItem("optwidm0");
-    console.log("final : " + final + "   Height: "+ height + "    Width: "+ width)
+    console.log("Option0: height = " + height + " Option0: Width = " + width)
+    // console.log("final : " + final + "   Height: "+ height + "    Width: "+ width)
       document.getElementById("option0").style.height = Number(height) + "px"; // change height of textarea (do before page loads)
       document.getElementById("option0").style.width = Number(width) + "px"; // change width of textarea (do before page loads)
     document.getElementById("option0").style.backgroundImage='url('+ final + ')';
@@ -71,8 +70,12 @@ export class ResultComponent implements OnInit {
 
     var final1 = localStorage.getItem("opt1");
     var height1 = localStorage.getItem("opthei1");
+    console.log("height 1: " + height1)
     var width1 = localStorage.getItem("optwid1");
-    console.log("final : " + final1 + "   Height: "+ height1 + "    Width: "+ width1)
+    console.log("width 1: "+ width1)
+    console.log("Option1: height = " + height1 + " Option1: Width = " + width1)
+
+    //   console.log("final : " + final1 + "   Height: "+ height1 + "    Width: "+ width1)
 
 
     document.getElementById("option1").style.height = Number(height1) + "px"; // change height of textarea (do before page loads)
@@ -84,7 +87,9 @@ export class ResultComponent implements OnInit {
     var final2 = localStorage.getItem("opt2");
     var height2 = localStorage.getItem("opthei2");
     var width2 = localStorage.getItem("optwid2");
-    console.log("final : " + final2 + "   Height: "+ height2 + "    Width: "+ width2)
+    console.log("Option2: height = " + height2 + " Option2: Width = " + width2)
+
+    // console.log("final : " + final2 + "   Height: "+ height2 + "    Width: "+ width2)
 
 
     document.getElementById("option2").style.height = Number(height2) + "px"; // change height of textarea (do before page loads)
@@ -97,7 +102,9 @@ export class ResultComponent implements OnInit {
     var final3 = localStorage.getItem("opt3");
     var height3 = localStorage.getItem("opthei3");
     var width3 = localStorage.getItem("optwid3");
-    console.log("final : " + final3 + "   Height: "+ height3 + "    Width: "+ width3)
+    console.log("Option3: height = " + height3 + " Option3: Width = " + width3)
+
+    // console.log("final : " + final3 + "   Height: "+ height3 + "    Width: "+ width3)
 
     document.getElementById("option3").style.height = Number(height3) + "px"; // change height of textarea (do before page loads)
       document.getElementById("option3").style.width = Number(width3) + "px"; // change width of textarea (do before page loads)
@@ -109,7 +116,9 @@ export class ResultComponent implements OnInit {
     var final4 = localStorage.getItem("opt4");
     var height4 = localStorage.getItem("opthei4");
     var width4 = localStorage.getItem("optwid4");
-    console.log("final : " + final4 + "   Height: "+ height4 + "    Width: "+ width4)
+    console.log("Option4: height = " + height4 + " Option4: Width = " + width4)
+
+    // console.log("final : " + final4 + "   Height: "+ height4 + "    Width: "+ width4)
 
     document.getElementById("option4").style.height = Number(height4) + "px"; // change height of textarea (do before page loads)
       document.getElementById("option4").style.width = Number(width4) + "px"; // change width of textarea (do before page loads)
@@ -128,7 +137,10 @@ export class ResultComponent implements OnInit {
 
     var ysmall = localStorage.getItem("opt"+y);
     var ysmallwid = localStorage.getItem("optwid"+y);
+    console.log("y small width = " + ysmallwid)
     var ysmallhei = localStorage.getItem("opthei"+y);
+    console.log("y small height = " + ysmallhei)
+
 
     var ymed = localStorage.getItem("optm"+y);
     var ymedwid = localStorage.getItem("optwidm"+y);
@@ -152,26 +164,30 @@ export class ResultComponent implements OnInit {
   }
 
   public option1to0(){// selected photo 1, swapping with photo 0
-    console.log("ye clicked me!")
     this.swap(1,0);
+    console.log("1 to 0")
     this.update();
   }
 
 
   public option2to0(){ // selected photo 2, swapping with photo 0
     this.swap(2,0);
+    console.log("2 to 0")
+
     this.update();
   }
 
 
   public option3to0(){// selected photo 3, swapping with photo 0
     this.swap(3,0);
+    console.log("3 to 0")
     this.update();
   }
 
 
   public option4to0(){ // selected photo 4, swapping with photo 0
     this.swap(4,0);
+    console.log("4 to 0")
     this.update();
   }
 
@@ -179,8 +195,6 @@ export class ResultComponent implements OnInit {
     this.role = (<HTMLInputElement>document.getElementById("option0")).value;
     localStorage.setItem('inputtext',this.role );
     console.log(this.role)
-   // document.getElementById("thetextarea").style.width = "500px";
-   // document.getElementById("thetextarea").style.height = "500px";
   }
 
   constructor() {
@@ -188,13 +202,23 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    var ysmallwid = localStorage.getItem("optwid0");
+    var ysmallhei = localStorage.getItem("opthei0");
+    console.log(ysmallhei)
+    console.log(ysmallwid)
+    //if ((Number(ysmallwid) && (Number(ysmallhei))) == 0){
+    //  window.location.reload();
+    //}
+
+
     console.log("running page")
     this.loadimages();
     console.log("messages loaded")
-    for (var i = 0; i< 5; i++) {
-      this.update()
-      console.log("updates")
-    }
+    // for (var i = 0; i< 5; i++) {
+    //   this.update();
+    //   console.log("updated " + i)
+    // }
     //this.changeoptionsizes();
   }
 

@@ -10,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class BodyComponent implements OnInit {
   imgsrc: string = "https://farm";
   imgfarmid: string = ".staticflickr.com/";
+flag = 1;
+
 
 public storeurls() { // used to get the url components from storage, make the final url and store it.
   for (var i = 0; i <= 4; i++) {
+    // window.onbeforeunload = function (eee){
+    //   alert("i have no idea")
+    // }
     var Sid: string = localStorage.getItem("id" + i);
     var Sowner: string = localStorage.getItem("owner" + i);
     var Ssecret: string = localStorage.getItem("secret" + i);
@@ -33,24 +38,27 @@ public storeurls() { // used to get the url components from storage, make the fi
   private  baseurl: string = "https://api.flickr.com/services/rest/";
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
-  searchterm: string = "dog";
+  searchterm: string = "puppy";
   searchextension: string = "?method=flickr.photos.search&api_key="
   private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm;
 
-  private flickrsearch(){
-    //var window;
+  private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
+
+    this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value;
+    localStorage.setItem('inputtext',this.role );
+
     var results;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function processRequest(){
       if (this.readyState == 4 && this.status == 200){
         document.getElementById("demo").innerHTML = this.responseText;
         results = this.responseText;
-        console.log(results)
+        console.log("aaaaaaaaaaaaaaaaa")
 
           var parser = new DOMParser();
           var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
-
+        console.log("bbbbbbbbbbb")
 
         for (var i = 0; i <= 4 ; i++) {
           var id = x[i].getAttribute("id");
@@ -72,39 +80,25 @@ public storeurls() { // used to get the url components from storage, make the fi
           localStorage.setItem("ispublic" + i, ispublic);
           localStorage.setItem("isfriend" + i, isfriend);
           localStorage.setItem("isfamily" + i, isfamily);
-          console.log(title)
+         // console.log(title)
         }
+        window.location.replace("/result")
       }
     };
+    this.flag++;
     xhr.open('GET', this.imagesearchurl, true);
     xhr.send();
+
     this.storeurls();
   }
 
-private flickrurl() {
-  for (var i = 0; i < 3; i++) {
-    var final = localStorage.getItem("final" + i);
-    console.log(final)
-  }
-document.getElementById("thetextarea").style.backgroundImage='url('+ final + ')';
-
-  var img = new Image();
-  img.src = final
-  var height1 = img.height;
-  var width1 = img.width;
-    img.onload = function(){
-    document.getElementById("thetextarea").style.height=height1+"px"; // change height of textarea (do before page loads)
-    document.getElementById("thetextarea").style.width=width1+"px"; // change width of textarea (do before page loads)
-    console.log(height1)
-    };
-
-}
-
-  private afunction(){
-    this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value;
-    localStorage.setItem('inputtext',this.role );
-    console.log(this.role)
+  private async afunction() {
+    this.flickrsearch();
        }
+
+  public sleep() {
+
+  }
 
   constructor() {}
 
