@@ -11,156 +11,150 @@ export class ResultComponent implements OnInit {
   private localtext: string =  this.role = sessionStorage.getItem('inputtext');
   imgsrc: string = "https://farm";
   imgfarmid: string = ".staticflickr.com/";
-
-  public loadimages(){
-    var img = new Image();
-    var imgm = new Image();
-     for (var i = 0; i <= 4; i++) {
-       var Sid: string = sessionStorage.getItem("id" + i);
-       var Sowner: string = sessionStorage.getItem("owner" + i);
-       var Ssecret: string = sessionStorage.getItem("secret" + i);
-       var Sserver: string = sessionStorage.getItem("server" + i);
-       var Sfarm: string = sessionStorage.getItem("farm" + i);
-       var Stitle: string = sessionStorage.getItem("title" + i);
-       var Sispublic: string = sessionStorage.getItem("ispublic" + i);
-       var Sisfriend: string = sessionStorage.getItem("isfriend" + i);
-       var Sisfamily: string = sessionStorage.getItem("isfamily" + i);
-
-       // gets url img for src
-       var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_m.jpg";
-       var finalm: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_n.jpg";
-
-       img.src = final;
-       imgm.src = finalm;
-       var optwid = img.width.toString();
-       var opthei = img.height.toString();
-       var optwidm = imgm.width.toString();
-       var optheim = imgm.height.toString();
-
-       // document.getElementById("option"+i).style.backgroundImage='url('+ final + ')';
-       sessionStorage.setItem("final" + i, final); // store final url in local storage.
-       sessionStorage.setItem("finalm" + i, finalm);
-
-       sessionStorage.setItem("opt" + i, final); // each option has a small and medium url link and sizes.
-       sessionStorage.setItem("optwid"+i, optwid);
-       sessionStorage.setItem("opthei"+i,opthei)
-
-       sessionStorage.setItem("optm" + i, finalm);
-       sessionStorage.setItem("optwidm"+i, optwidm);
-       sessionStorage.setItem("optheim"+i, optheim)
-  }
-    //this.update();
-  }
+  //
+  // public loadimages(){
+  //   var img = new Image();
+  //   var imgm = new Image();
+  //    for (var i = 0; i <= 4; i++) {
+  //      var Sid: string = sessionStorage.getItem("id" + i);
+  //      var Sowner: string = sessionStorage.getItem("owner" + i);
+  //      var Ssecret: string = sessionStorage.getItem("secret" + i);
+  //      var Sserver: string = sessionStorage.getItem("server" + i);
+  //      var Sfarm: string = sessionStorage.getItem("farm" + i);
+  //      var Stitle: string = sessionStorage.getItem("title" + i);
+  //      var Sispublic: string = sessionStorage.getItem("ispublic" + i);
+  //      var Sisfriend: string = sessionStorage.getItem("isfriend" + i);
+  //      var Sisfamily: string = sessionStorage.getItem("isfamily" + i);
+  //
+  //      // gets url img for src
+  //      var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_m.jpg";
+  //      var finalm: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_n.jpg";
+  //
+  //      img.src = final;
+  //      imgm.src = finalm;
+  //      console.log("test")
+  //      console.log(img.width)
+  //      var optwid = img.width.toString();
+  //      var opthei = img.height.toString();
+  //      var optwidm = imgm.width.toString();
+  //      var optheim = imgm.height.toString();
+  //
+  //      // document.getElementById("option"+i).style.backgroundImage='url('+ final + ')';
+  //      sessionStorage.setItem("final" + i, final); // store final url in local storage.
+  //      sessionStorage.setItem("finalm" + i, finalm);
+  //
+  //      sessionStorage.setItem("opt" + i, final); // each option has a small and medium url link and sizes.
+  //      sessionStorage.setItem("optwid"+i, optwid);
+  //      sessionStorage.setItem("opthei"+i,opthei)
+  //
+  //      sessionStorage.setItem("optm" + i, finalm);
+  //      sessionStorage.setItem("optwidm"+i, optwidm);
+  //      sessionStorage.setItem("optheim"+i, optheim)
+  // }
+  //   //this.update();
+  // }
 
   public update() {
     /////////////////////////////////////////////////////////////// option 0
-    var finalsmall = sessionStorage.getItem("opt0")
-    console.log("small " + finalsmall)
-    var final = sessionStorage.getItem("optm0");
+    var final = sessionStorage.getItem("0 source 1");
     console.log("med " + final)
-    var height = sessionStorage.getItem("optheim0");
-    var width = sessionStorage.getItem("optwidm0");
+    var height = sessionStorage.getItem("0 height 1");
+    var width = sessionStorage.getItem("0 width 1");
     console.log("Option0: height = " + height + " Option0: Width = " + width)
     // console.log("final : " + final + "   Height: "+ height + "    Width: "+ width)
-      document.getElementById("option0").style.height = Number(height) + "px"; // change height of textarea (do before page loads)
-      document.getElementById("option0").style.width = Number(width) + "px"; // change width of textarea (do before page loads)
+      document.getElementById("option0").style.height = height + "px"; // change height of textarea (do before page loads)
+      document.getElementById("option0").style.width = width + "px"; // change width of textarea (do before page loads)
     document.getElementById("option0").style.backgroundImage='url('+ final + ')';
 
 /////////////////////////////////////////////////////////////// option 1
 
-    var final1 = sessionStorage.getItem("opt1");
-    var height1 = sessionStorage.getItem("opthei1");
+    var final1 = sessionStorage.getItem("1 source 0");
+    var height1 = sessionStorage.getItem("1 height 0");
     console.log("height 1: " + height1)
-    var width1 = sessionStorage.getItem("optwid1");
+    var width1 = sessionStorage.getItem("1 width 0");
     console.log("width 1: "+ width1)
     console.log("Option1: height = " + height1 + " Option1: Width = " + width1)
 
-    //   console.log("final : " + final1 + "   Height: "+ height1 + "    Width: "+ width1)
-
-
-    document.getElementById("option1").style.height = Number(height1) + "px"; // change height of textarea (do before page loads)
-      document.getElementById("option1").style.width = Number(width1) + "px"; // change width of textarea (do before page loads)
+    document.getElementById("option1").style.height = height1 + "px"; // change height of textarea (do before page loads)
+      document.getElementById("option1").style.width = width1 + "px"; // change width of textarea (do before page loads)
     document.getElementById("option1").style.backgroundImage='url('+ final1 + ')';
 
 /////////////////////////////////////////////////////////////// option 2
 
-    var final2 = sessionStorage.getItem("opt2");
-    var height2 = sessionStorage.getItem("opthei2");
-    var width2 = sessionStorage.getItem("optwid2");
+    var final2 = sessionStorage.getItem("2 source 0");
+    var height2 = sessionStorage.getItem("2 height 0");
+    var width2 = sessionStorage.getItem("2 width 0");
     console.log("Option2: height = " + height2 + " Option2: Width = " + width2)
 
     // console.log("final : " + final2 + "   Height: "+ height2 + "    Width: "+ width2)
 
 
-    document.getElementById("option2").style.height = Number(height2) + "px"; // change height of textarea (do before page loads)
-      document.getElementById("option2").style.width = Number(width2) + "px"; // change width of textarea (do before page loads)
+    document.getElementById("option2").style.height = height2 + "px"; // change height of textarea (do before page loads)
+      document.getElementById("option2").style.width = width2 + "px"; // change width of textarea (do before page loads)
 
     document.getElementById("option2").style.backgroundImage='url('+ final2 + ')';
 
 ///////////////////////////////////////////////////////////////
 
-    var final3 = sessionStorage.getItem("opt3");
-    var height3 = sessionStorage.getItem("opthei3");
-    var width3 = sessionStorage.getItem("optwid3");
+    var final3 = sessionStorage.getItem("3 source 0");
+    var height3 = sessionStorage.getItem("3 height 0");
+    var width3 = sessionStorage.getItem("3 width 0");
     console.log("Option3: height = " + height3 + " Option3: Width = " + width3)
 
     // console.log("final : " + final3 + "   Height: "+ height3 + "    Width: "+ width3)
 
-    document.getElementById("option3").style.height = Number(height3) + "px"; // change height of textarea (do before page loads)
-      document.getElementById("option3").style.width = Number(width3) + "px"; // change width of textarea (do before page loads)
+    document.getElementById("option3").style.height = height3 + "px"; // change height of textarea (do before page loads)
+      document.getElementById("option3").style.width = width3 + "px"; // change width of textarea (do before page loads)
 
     document.getElementById("option3").style.backgroundImage='url('+ final3 + ')';
 
     /////////////////////////////////////////////////////////////
 
-    var final4 = sessionStorage.getItem("opt4");
-    var height4 = sessionStorage.getItem("opthei4");
-    var width4 = sessionStorage.getItem("optwid4");
+    var final4 = sessionStorage.getItem("4 source 0");
+    var height4 = sessionStorage.getItem("4 height 0");
+    var width4 = sessionStorage.getItem("4 width 0");
     console.log("Option4: height = " + height4 + " Option4: Width = " + width4)
 
     // console.log("final : " + final4 + "   Height: "+ height4 + "    Width: "+ width4)
 
-    document.getElementById("option4").style.height = Number(height4) + "px"; // change height of textarea (do before page loads)
-      document.getElementById("option4").style.width = Number(width4) + "px"; // change width of textarea (do before page loads)
+    document.getElementById("option4").style.height = height4 + "px"; // change height of textarea (do before page loads)
+      document.getElementById("option4").style.width = width4 + "px"; // change width of textarea (do before page loads)
     document.getElementById("option4").style.backgroundImage='url('+ final4 + ')';
 
   }
 
   public swap(x,y){
-    var xsmall = sessionStorage.getItem("opt"+x);
-    var xsmallwid = sessionStorage.getItem("optwid"+x);
-    var xsmallhei = sessionStorage.getItem("opthei"+x);
+    var xsmall = sessionStorage.getItem(x + " source 0" );
+    var xsmallwid = sessionStorage.getItem(x + " width 0" );
+    var xsmallhei = sessionStorage.getItem(x + " height 0" );
 
-    var xmed = sessionStorage.getItem("optm"+x);
-    var xmedwid = sessionStorage.getItem("optwidm"+x);
-    var xmedhei = sessionStorage.getItem("optheim"+x);
+    var xmed = sessionStorage.getItem(x + " source 1" );
+    var xmedwid = sessionStorage.getItem(x + " width 1" );
+    var xmedhei = sessionStorage.getItem(x + " height 1" );
 
-    var ysmall = sessionStorage.getItem("opt"+y);
-    var ysmallwid = sessionStorage.getItem("optwid"+y);
-    console.log("y small width = " + ysmallwid)
-    var ysmallhei = sessionStorage.getItem("opthei"+y);
-    console.log("y small height = " + ysmallhei)
+    var ysmall = sessionStorage.getItem(y + " source 0" );
+    var ysmallwid = sessionStorage.getItem(y + " width 0" );
+    var ysmallhei = sessionStorage.getItem(y + " height 0" );
 
+    var ymed = sessionStorage.getItem(y + " source 1" );
+    var ymedwid = sessionStorage.getItem(y + " width 1" );
+    var ymedhei = sessionStorage.getItem(y + " height 1" );
 
-    var ymed = sessionStorage.getItem("optm"+y);
-    var ymedwid = sessionStorage.getItem("optwidm"+y);
-    var ymedhei = sessionStorage.getItem("optheim"+y);
+    sessionStorage.setItem(y + " source 0" , xsmall);
+    sessionStorage.setItem(y + " width 0" ,xsmallwid);
+    sessionStorage.setItem(y + " height 0" ,xsmallhei);
 
-    sessionStorage.setItem("opt"+y, xsmall);
-    sessionStorage.setItem("optwid"+y,xsmallwid);
-    sessionStorage.setItem("opthei"+y,xsmallhei);
+    sessionStorage.setItem(y + " source 1" ,xmed);
+    sessionStorage.setItem(y + " width 1" ,xmedwid);
+    sessionStorage.setItem(y + " height 1" ,xmedhei)
 
-    sessionStorage.setItem("optm"+y,xmed);
-    sessionStorage.setItem("optwidm"+y,xmedwid);
-    sessionStorage.setItem("optheim"+y,xmedhei)
+    sessionStorage.setItem(x + " source 0" , ysmall);
+    sessionStorage.setItem(x + " width 0" ,ysmallwid);
+    sessionStorage.setItem(x + " height 0" ,ysmallhei);
 
-    sessionStorage.setItem("opt"+x, ysmall);
-    sessionStorage.setItem("optwid"+x,ysmallwid);
-    sessionStorage.setItem("opthei"+x,ysmallhei);
-
-    sessionStorage.setItem("optm"+x, ymed)
-    sessionStorage.setItem("optwidm"+x,ymedwid);
-    sessionStorage.setItem("optheim"+x,ymedhei)
+    sessionStorage.setItem(x + " source 1" , ymed)
+    sessionStorage.setItem(x + " width 1" ,ymedwid);
+    sessionStorage.setItem(x + " height 1" ,ymedhei)
   }
 
   public option1to0(){// selected photo 1, swapping with photo 0
@@ -198,7 +192,7 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadimages();
+    //this.loadimages();
 
     this.update();
   console.log("PAGE START")
@@ -210,8 +204,8 @@ export class ResultComponent implements OnInit {
 
     // document.getElementById("option1").style.height = Number(ysmallhei) + "px"; // change height of textarea (do before page loads)
     // document.getElementById("option1").style.width = Number(ysmallwid) + "px"; // change
-  var ysmallwidm = sessionStorage.getItem("optwidm0");
-  var ysmallheim = sessionStorage.getItem("optheim0");
+  var ysmallwidm = sessionStorage.getItem("0 width 2");
+  var ysmallheim = sessionStorage.getItem("0 height 2");
   console.log(ysmallheim)
   console.log(ysmallwidm)
 

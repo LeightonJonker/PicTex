@@ -8,44 +8,23 @@ import { Component, OnInit } from '@angular/core';
   providers: []
 })
 export class BodyComponent implements OnInit {
-  imgsrc: string = "https://farm";
-  imgfarmid: string = ".staticflickr.com/";
-flag = 1;
-
-
-public storeurls() { // used to get the url components from storage, make the final url and store it.
-  for (var i = 0; i <= 4; i++) {
-
-    var Sid: string = sessionStorage.getItem("id" + i);
-    var Sowner: string = sessionStorage.getItem("owner" + i);
-    var Ssecret: string = sessionStorage.getItem("secret" + i);
-    var Sserver: string = sessionStorage.getItem("server" + i);
-    var Sfarm: string = sessionStorage.getItem("farm" + i);
-    var Stitle: string = sessionStorage.getItem("title" + i);
-    var Sispublic: string = sessionStorage.getItem("ispublic" + i);
-    var Sisfriend: string = sessionStorage.getItem("isfriend" + i);
-    var Sisfamily: string = sessionStorage.getItem("isfamily" + i);
-
-    // gets url img for src
-    var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_z.jpg";
-    sessionStorage.setItem("final" + i, final); // store final url in local storage.
-  }
-}
-
+  flag = 1;
   private role: string;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
-  searchterm: string = "puppy";
-  searchextension: string = "?method=flickr.photos.search&api_key="
+  searchterm: string = "grass";
+  searchextension: string = "?method=flickr.photos.search&api_key=";
+  sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
   private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm;
+  private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
 
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value;
     sessionStorage.setItem('inputtext',this.role );
-
     var results;
+
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function processRequest(){
       if (this.readyState == 4 && this.status == 200){
@@ -79,14 +58,67 @@ public storeurls() { // used to get the url components from storage, make the fi
           sessionStorage.setItem("isfriend" + i, isfriend);
           sessionStorage.setItem("isfamily" + i, isfamily);
         }
-        window.location.replace("/result")
+        //window.location.replace("/result")
       }
     };
     this.flag++;
     xhr.open('GET', this.imagesearchurl, true);
     xhr.send();
+   // this.flickrsizes();
+   // this.buffer();
 
-    this.storeurls();
+  }
+
+  private buffer(){
+    this.flickrsearch();
+    this.flickrsizes();
+  }
+
+  private flickrsizes(){ // get photo ID; get sizes, save small and small 320 in sessionstorage.
+    var finalsizeurl = this.imagesizeurl
+    var results;
+    var xhr = new Array();
+
+    for (var i=0; i<= 4; i++) {
+      (function(i){
+      var id = sessionStorage.getItem("id"+i);
+      var finalsizeurl2 = finalsizeurl + "&photo_id="+ id;
+      console.log(finalsizeurl2)
+
+        xhr[i] = new XMLHttpRequest();
+        xhr[i].open('GET', finalsizeurl2, true);
+        xhr[i].onreadystatechange = function processRequest() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+            results = this.responseText;
+            console.log("aaaaaaaaaaaaaaaaa")
+
+            var parser = new DOMParser();
+            var xmlDoc= parser.parseFromString(results,  "text/xml");
+            var x = xmlDoc.documentElement.getElementsByTagName("size");
+
+            for (var j=0; j<=2; j++ ) {
+              var label = x[j+3].getAttribute("label");
+              var width = x[j+3].getAttribute("width");
+              var height = x[j+3].getAttribute("height");
+              var source = x[j+3].getAttribute("source");
+
+              sessionStorage.setItem(i+ " label "+j, label);
+              sessionStorage.setItem(i+ " width "+j, width);
+              sessionStorage.setItem(i+ " height "+j, height);
+              sessionStorage.setItem(i+ " source "+j, source);
+
+            }
+
+            console.log("got here at least. "+i)
+           // window.location.replace("/result")
+          }
+        };
+
+      xhr[i].send();
+      })(i);
+    }
+
   }
 
   private async afunction() {
