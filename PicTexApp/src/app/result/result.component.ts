@@ -188,6 +188,28 @@ export class ResultComponent implements OnInit {
     console.log(this.role)
   }
 
+  private increasefont(){
+    var box = document.getElementById("option0");
+    var size = window.getComputedStyle(box, null).getPropertyValue('font-size');
+    var fontsize = parseFloat(size);
+    if (fontsize < 36) {
+      box.style.fontSize = (fontsize + 1) + 'px';
+      document.getElementById("option0").style.fontSize
+    }
+
+  }
+
+  private decreasefont() {
+    var box = document.getElementById("option0");
+    var size = window.getComputedStyle(box, null).getPropertyValue('font-size');
+    var fontsize = parseFloat(size);
+    if (fontsize > 9) {
+      box.style.fontSize = (fontsize - 1) + 'px';
+      document.getElementById("option0").style.fontSize
+    }
+  }
+
+
   constructor() {
   }
 
