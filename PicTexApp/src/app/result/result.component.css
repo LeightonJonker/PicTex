@@ -109,8 +109,10 @@ div{
   /*height:200px;*/
   /*margin-top: 50px;*/
   margin-left: 1%;
+}
 
-
+.button6{
+  border-radius: 12px;
 }
 
 .button:hover{
@@ -155,6 +157,60 @@ textarea{
   float: right;
   margin-left: 120px;
   margin-right: 140px;
-
-
 }
+
+.slider{
+  -webkit-appearance: none;
+  width: 20%;
+  height: 20px;
+  background: red;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider1{
+  -webkit-appearance: none;
+  width: 20%;
+  height: 20px;
+  background: green;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider2{
+  -webkit-appearance: none;
+  width: 20%;
+  height: 20px;
+  background: blue;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+
+.slider:hover{
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: black;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb{
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+

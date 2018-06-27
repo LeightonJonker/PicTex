@@ -209,32 +209,39 @@ export class ResultComponent implements OnInit {
     }
   }
 
-
   constructor() {
   }
 
   ngOnInit() {
-    //this.loadimages();
+    var red = (<HTMLInputElement>document.getElementById("sliderRed"));
+    var green = (<HTMLInputElement>document.getElementById("sliderGreen"));
+    var blue = (<HTMLInputElement>document.getElementById("sliderBlue"));
+    red.addEventListener('input', function(){
+      document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
+    });
+
+    green.addEventListener('input', function(){
+      document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
+    });
+
+    blue.addEventListener('input', function(){
+      document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
+    });
 
     this.update();
   console.log("PAGE START")
 
   var ysmallwid = sessionStorage.getItem("optwid0");
   var ysmallhei = sessionStorage.getItem("opthei0");
-  console.log(ysmallhei)
-  console.log(ysmallwid)
 
     // document.getElementById("option1").style.height = Number(ysmallhei) + "px"; // change height of textarea (do before page loads)
     // document.getElementById("option1").style.width = Number(ysmallwid) + "px"; // change
   var ysmallwidm = sessionStorage.getItem("0 width 2");
   var ysmallheim = sessionStorage.getItem("0 height 2");
-  console.log(ysmallheim)
-  console.log(ysmallwidm)
 
-  if ((Number(ysmallwid) && (Number(ysmallhei))) == 0) {
-    //  window.location.reload(true);
-  }
+
   console.log("PAGE END")
+
 }
 
 }

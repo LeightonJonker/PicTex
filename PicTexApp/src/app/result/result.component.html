@@ -25,9 +25,12 @@
 </div>
 <button routerLink="/result" (click)="bfunction()" class="button">Reload</button>
 <br>
-<button (click)="increasefont()" > Bigger </button>
-<button (click)="decreasefont()" > Smaller </button>
-<!--<button type="button" (click)="changeoptionsizes()">Try it</button>-->
+<button (click)="increasefont()"  class="button button6"> Bigger </button>
+<button (click)="decreasefont()"  class="button button6" > Smaller </button>
+
+<input type = "range" min="0" max = "255" value = "255" class ="slider" id="sliderRed">
+<input type = "range" min="0" max = "255" value = "255" class ="slider slider1" id="sliderGreen">
+<input type = "range" min="0" max = "255" value = "255" class ="slider slider2" id="sliderBlue">
 
 <br>
 <br>
