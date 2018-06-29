@@ -6,3 +6,15 @@ h1{
  p{
 color: firebrick;
  }
+
+.carousel-inner {
+  margin: 0 auto;
+}
+
+
+.carocontainer{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

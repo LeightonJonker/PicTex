@@ -11,11 +11,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="result.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="result.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/result/result.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="209" column="3" selection-start-line="209" selection-start-column="3" selection-end-line="209" selection-end-column="3" />
+            <state relative-caret-position="-404">
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/about/about.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="48" column="83" selection-start-line="48" selection-start-column="83" selection-end-line="48" selection-end-column="124" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/about/about.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/about/about.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -23,17 +50,8 @@
       <file leaf-file-name="result.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/result/result.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="32" column="96" lean-forward="true" selection-start-line="32" selection-start-column="96" selection-end-line="32" selection-end-column="96" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result.component.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/result/result.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="178" column="15" lean-forward="true" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
+            <state relative-caret-position="612">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -63,6 +81,12 @@
       <find>200</find>
       <find>demo</find>
       <find>inner</find>
+      <find>line-</find>
+      <find>line</find>
+      <find>id=&quot;carouselExampleIndicators&quot;</find>
+      <find>curs</find>
+      <find>loca</find>
+      <find>src</find>
     </findStrings>
     <replaceStrings>
       <replace>sessionStorage</replace>
@@ -70,16 +94,24 @@
       <replace>1 width 1</replace>
       <replace>3 source 1</replace>
       <replace>y + &quot; height 1&quot;</replace>
+      <replace>id=&quot;myCarousel&quot;</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/body/body.component.ts" />
-        <option value="$PROJECT_DIR$/app/body/body.component.html" />
         <option value="$PROJECT_DIR$/app/result/result.component.ts" />
         <option value="$PROJECT_DIR$/app/result/result.component.html" />
+        <option value="$PROJECT_DIR$/app/body/body.component.ts" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/result/result.component.css" />
+        <option value="$PROJECT_DIR$/app/body/body.component.css" />
+        <option value="$PROJECT_DIR$/app/body/body.component.html" />
+        <option value="$PROJECT_DIR$/app/nav/nav.component.css" />
+        <option value="$PROJECT_DIR$/app/nav/nav.component.html" />
+        <option value="$PROJECT_DIR$/app/about/about.component.css" />
+        <option value="$PROJECT_DIR$/app/about/about.component.html" />
+        <option value="$PROJECT_DIR$/app/about/about.component.ts" />
       </list>
     </option>
   </component>
@@ -122,7 +154,19 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="body" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="nav" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -211,12 +255,12 @@
       <updated>1529642584207</updated>
       <workItem from="1529642585945" duration="807000" />
       <workItem from="1529656034550" duration="24167000" />
-      <workItem from="1529894919798" duration="11290000" />
+      <workItem from="1529894919798" duration="32700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36264000" />
+    <option name="totallyTimeSpent" value="57674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="18" width="1346" height="690" extended-state="0" />
@@ -236,7 +280,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962406" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962406" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Learn" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -305,38 +349,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/body/body.component.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="82" lean-forward="true" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
+        <state relative-caret-position="340">
+          <caret line="20" column="201" selection-start-line="20" selection-start-column="201" selection-end-line="20" selection-end-column="201" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/body/body.component.ts">
+    <entry file="file://$PROJECT_DIR$/app/body/body.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="23" />
+        <state relative-caret-position="306">
+          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/result/result.component.ts">
+    <entry file="file://$PROJECT_DIR$/app/nav/nav.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="209" column="3" selection-start-line="209" selection-start-column="3" selection-end-line="209" selection-end-column="3" />
+        <state relative-caret-position="51">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/result/result.component.html">
+    <entry file="file://$PROJECT_DIR$/app/nav/nav.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="32" column="96" lean-forward="true" selection-start-line="32" selection-start-column="96" selection-end-line="32" selection-end-column="96" />
+        <state relative-caret-position="323">
+          <caret line="19" column="68" lean-forward="true" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/result/result.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="178" column="15" lean-forward="true" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
+        <state relative-caret-position="166">
+          <caret line="45" column="6" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/body/body.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="128" column="3" selection-start-line="128" selection-start-column="3" selection-end-line="128" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/body/body.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="82" lean-forward="true" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/about/about.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/result/result.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/about/about.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="48" column="83" selection-start-line="48" selection-start-column="83" selection-end-line="48" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/about/about.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/result/result.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-404">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="33" />
         </state>
       </provider>
     </entry>

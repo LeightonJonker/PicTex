@@ -9,6 +9,17 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
+  private change(){
+
+    var image1 = document.getElementById("test1") as HTMLImageElement;
+    var image2 = document.getElementById("thumbtest1") as HTMLImageElement;
+    image1.src = "https://i.imgur.com/YdUCVSU.jpg";
+    image2.src = "http://placehold.it/100x80?text=Thumb+02";
+
+    // var test = (<HTMLImageElement>document.querySelector("test1")).src
+    console.log("ha")
+  }
+
   ngOnInit() {
   }
 

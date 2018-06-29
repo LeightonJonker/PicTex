@@ -8,7 +8,7 @@ h1 {
   font-style: italic;
   text-align: center;
   font-size: 30px;
-  line-height: 1px;
+  /*line-height: 1px;*/
   color: crimson;
 }
 
@@ -25,7 +25,7 @@ div{
   display: inline;
   font-family: Roboto;
   font-size: 20px;
-  line-height: 1px;
+  /*line-height: 1px;*/
   color: black;
 }
 
@@ -111,8 +111,24 @@ div{
   margin-left: 1%;
 }
 
-.button6{
-  border-radius: 12px;
+.fontbut{
+  cursor: pointer;
+  font-size: 8px;
+  color: white;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  border-radius: 8px;
+  background-color: blue;
+  text-align: center;
+  width: 75px;
+  height: 30px;
+  padding: auto;
+  display: inline;
+
+  font-size: 14px;
+
 }
 
 .button:hover{
@@ -159,10 +175,19 @@ textarea{
   margin-right: 140px;
 }
 
+.gridder{
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  grid-gap: 25px;
+}
+
+
+
 .slider{
+  display: block;
   -webkit-appearance: none;
-  width: 20%;
-  height: 20px;
+  width: 50px;
+  height: 10px;
   background: red;
   outline: none;
   opacity: 0.9;
@@ -172,8 +197,9 @@ textarea{
 
 .slider1{
   -webkit-appearance: none;
-  width: 20%;
-  height: 20px;
+  display: block;
+  width: 50px;
+  height: 10px;
   background: green;
   outline: none;
   opacity: 0.9;
@@ -182,9 +208,11 @@ textarea{
 }
 
 .slider2{
+  display: block;
+
   -webkit-appearance: none;
-  width: 20%;
-  height: 20px;
+  width:  50px;
+  height: 10px;
   background: blue;
   outline: none;
   opacity: 0.9;
@@ -201,8 +229,8 @@ textarea{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background: black;
   cursor: pointer;
 }
