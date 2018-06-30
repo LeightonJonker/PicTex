@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script language="javascript">
+
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    }
+    $(function () {
+      $('cp1').colorpicker();
+    });
+  </script>
+</head>
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -6,7 +20,8 @@
   </div>
   <div class="row">
     <div class="col-sm">
-      Font customisation goes in here
+      colour picker V
+      <input id="cp1" type="text" class="colorpicker" />
     </div>
   </div>
   <div class="row">
@@ -52,7 +67,7 @@
       </div>
 
 
-      Carousel in here
+      <p id="test">Carousel in here</p>
 
     </div>
   </div>
@@ -89,7 +104,10 @@
 <br>
 <br>
 <br>
-
+<form>
+<p id="demo">A Paragraph</p>
+<button type="button" onclick="myFunction()">Try it</button>
+</form>
 <!--<section class = "main">-->
   <!--<h1> About Us </h1>-->
 
@@ -104,6 +122,6 @@
 
 
 <!--</section>-->
-
+</html>
 
 
