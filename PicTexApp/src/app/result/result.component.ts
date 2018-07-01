@@ -56,6 +56,7 @@ export class ResultComponent implements OnInit {
 
   public update() {
     /////////////////////////////////////////////////////////////// option 0
+
     var final = sessionStorage.getItem("0 source 1");
     console.log("med " + final)
     var height = sessionStorage.getItem("0 height 1");

@@ -116,15 +116,9 @@ export class BodyComponent implements OnInit {
 
             }
           };
-
           xhr[i].send();
-
-
-
         })(i);
       }
-
-
     },1000);
     setTimeout(() => {window.location.replace("/result")},2500);
   }

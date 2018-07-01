@@ -1,26 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script language="javascript">
+<!--<head>-->
+  <!--<script language="javascript">-->
 
-    function myFunction() {
-      document.getElementById("demo").innerHTML = "Hello JavaScript!";
-    }
-    $(function () {
-      $('cp1').colorpicker();
-    });
-  </script>
-</head>
+    <!--function myFunction() {-->
+      <!--document.getElementById("demo").innerHTML = "Hello JavaScript!";-->
+    <!--}-->
+    <!--$(function () {-->
+      <!--$('cp1').colorpicker();-->
+    <!--});-->
+  <!--</script>-->
+<!--</head>-->
 
 <div class="container">
   <div class="row">
     <div class="col">
-      Picture tags go in this space
+      <br>
+      <a  class="badge badge-primary mx-1 text-white" id="badge1">Primary </a>
+      <a  class="badge badge-primary mx-1 text-white" id="badge2">Primary </a>
+      <a  class="badge badge-primary mx-1 text-white" id="badge3">Primary </a>
+      <a  class="badge badge-primary mx-1 text-white" id="badge4">Primary </a>
+      <a  class="badge badge-primary mx-1 text-white" id="badge5">Primary </a>
+      <a  class="badge badge-primary mx-1 text-white" id="badge6">Primary </a>
+      <a  class="badge badge-primary mx-1 text-white" id="badge7">Primary </a>
+      <a  class="badge badge-primary mx-1 text-white" id="badge8">Primary </a>
+      <a  class="badge badge-primary mx-1 text-white" id="badge9">Primary </a>
     </div>
   </div>
+
+
   <div class="row">
     <div class="col-sm">
-      colour picker V
+      <br>
       <input id="cp1" type="text" class="colorpicker" />
     </div>
   </div>
@@ -60,9 +69,9 @@
 
       <div id="carousethumbs" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <div data-target="#carouselExampleIndicators" role="button" data-slide-to="0" class="active"> <img src="http://placehold.it/100x80?text=Thumb+01"></div>
-        <div data-target="#carouselExampleIndicators" data-slide-to="1"> <img src="http://placehold.it/100x80?text=Thumb+02"></div>
-        <div data-target="#carouselExampleIndicators"  data-slide-to="2"> <img id = "thumbtest1" src="http://placehold.it/100x80?text=Thumb+03"></div>
+        <div data-target="#carouselExampleIndicators" role="button" data-slide-to="0" class="active mx-1"> <img src="http://placehold.it/100x80?text=Thumb+01"></div>
+        <div data-target="#carouselExampleIndicators" data-slide-to="1" class = "mx-1"> <img src="http://placehold.it/100x80?text=Thumb+02"></div>
+        <div data-target="#carouselExampleIndicators"  data-slide-to="2" class = "mx-1"> <img id = "thumbtest1" src="http://placehold.it/100x80?text=Thumb+03"></div>
       </ol>
       </div>
 
@@ -82,8 +91,8 @@
   <div class="row">
     <div class="col-sm">
 
-      Thumbnails in here
       <button (click)="change()"  class="button"> change </button>
+
     </div>
   </div>
 
@@ -106,7 +115,7 @@
 <br>
 <form>
 <p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction()">Try it</button>
+<button type="button" (click)="myFunction()">Try it</button>
 </form>
 <!--<section class = "main">-->
   <!--<h1> About Us </h1>-->
@@ -122,6 +131,5 @@
 
 
 <!--</section>-->
-</html>
 
 

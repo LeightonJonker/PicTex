@@ -20,9 +20,14 @@ export class AboutComponent implements OnInit {
     console.log("ha")
   }
 
+  private myFunction(){ // use this to edit tag elements
+    console.log("hi")
+    document.getElementById("badge1").innerText="hi";
+  }
+
   ngOnInit() {
 
-      ('#mycp').colorpicker();
+      // ('#mycp').colorpicker();
 
   }
 
