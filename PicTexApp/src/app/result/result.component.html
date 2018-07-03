@@ -2,31 +2,38 @@
   <div class="row">
     <div class="col">
       <br>
-      <a  class="badge badge-primary mx-1 text-white" id="badge1">Primary </a>
-      <a  class="badge badge-primary mx-1 text-white" id="badge2">Primary </a>
-      <a  class="badge badge-primary mx-1 text-white" id="badge3">Primary </a>
-      <a  class="badge badge-primary mx-1 text-white" id="badge4">Primary </a>
-      <a  class="badge badge-primary mx-1 text-white" id="badge5">Primary </a>
-      <a  class="badge badge-primary mx-1 text-white" id="badge6">Primary </a>
-      <a  class="badge badge-primary mx-1 text-white" id="badge7">Primary </a>
-      <a  class="badge badge-primary mx-1 text-white" id="badge8">Primary </a>
-      <a  class="badge badge-primary mx-1 text-white" id="badge9">Primary </a>
+      <a  (click)="Remove1()" class="badge badge-primary mx-1 text-white" id="badge1"></a>
+      <a  (click)="Remove2()" class="badge badge-primary mx-1 text-white" id="badge2"> </a>
+      <a  (click)="Remove3()" class="badge badge-primary mx-1 text-white" id="badge3"> </a>
+      <a  (click)="Remove4()" class="badge badge-primary mx-1 text-white" id="badge4"> </a>
+      <a  (click)="Remove5()" class="badge badge-primary mx-1 text-white" id="badge5"> </a>
+      <a  (click)="Remove6()" class="badge badge-primary mx-1 text-white" id="badge6"> </a>
+      <a  (click)="Remove7()" class="badge badge-primary mx-1 text-white" id="badge7"> </a>
+      <a  (click)="Remove8()" class="badge badge-primary mx-1 text-white" id="badge8"> </a>
+      <a  (click)="Remove9()" class="badge badge-primary mx-1 text-white" id="badge9"> </a>
+      <br>
+      <br>
+      <input type="text" class="col-xs-1" placeholder="Add Tags" id="tag">
+      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-primary mx-1 btn-sm"  > Add Tag </button>
+
+
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-3">
       <br>
       <input type = "range" min="0" max = "255" value = "0" class ="slider mx-2" id="sliderRed">
       <input type = "range" min="0" max = "255" value = "0" class ="slider slider1 mx-2" id="sliderGreen">
       <input type = "range" min="0" max = "255" value = "0" class ="slider slider2 mx-2" id="sliderBlue">
-
+    </div>
+      <div class="col-sm-3">
       <div class = "gridder">
         <br>
       <button (click)="increasefont()"  class="btn btn-primary mx-1"> Bigger </button>
       <button (click)="decreasefont()"  class="btn btn-primary mx-1" > Smaller </button>
       </div>
-      <!--<input id="cp1" type="text" class="colorpicker" />-->
+        <!--<input id="cp1" type="text" class="colorpicker" />-->
     </div>
   </div>
 
@@ -98,6 +105,16 @@
     <div class="col-sm">
 
       <button routerLink="/result" (click)="bfunction()" class="btn btn-primary float-none">Reload</button>
+
+      <!--Draggable DIV:-->
+      <div id="mydiv">
+        <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
+        <div id="mydivheader" ></div>
+        <p id="option0" contenteditable="true">see through background</p>
+
+      </div>
+
+
 
     </div>
   </div>

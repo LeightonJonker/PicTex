@@ -13,10 +13,12 @@ export class BodyComponent implements OnInit {
   private  baseurl: string = "https://api.flickr.com/services/rest/";
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
-  searchterm: string = "dog";
+
+
+  searchterm: string = "red,+panda";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
-  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm;
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
@@ -120,13 +122,19 @@ export class BodyComponent implements OnInit {
     //     })(i);
     //   }
     // },1000);
-    setTimeout(() => {window.location.replace("/result")},1000);
+    setTimeout(() => {window.location.replace("/result")},1500);
   }
 
   public printsomething(){
     console.log("hi after 5")
   }
 
+  public test(){
+    var elements = ['Fire', 'Wind', 'Rain'];
+    var string = elements.join(',');
+    console.log(string)
+
+  }
   private flickrsizes(){ // get photo ID; get sizes, save small and small 320 in sessionstorage.
     var finalsizeurl = this.imagesizeurl
     var results;
@@ -172,21 +180,14 @@ export class BodyComponent implements OnInit {
         };
 
       xhr[i].send();
-
-
-
       })(i);
     }
-
   }
 
   private async afunction() {
     this.flickrsearch();
        }
 
-  public sleep() {
-
-  }
 
   constructor() {}
 
