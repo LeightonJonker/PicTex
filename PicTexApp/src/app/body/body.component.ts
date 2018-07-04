@@ -27,7 +27,7 @@ export class BodyComponent implements OnInit {
 
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
     sessionStorage.clear();
-    this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value; //inputted text from textarea
+    this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value; //inputt  ed text from textarea
     sessionStorage.setItem('inputtext',this.role );
 
     var results;

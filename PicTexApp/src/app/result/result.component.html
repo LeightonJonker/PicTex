@@ -11,10 +11,24 @@
       <a  (click)="Remove7()" class="badge badge-primary mx-1 text-white" id="badge7"> </a>
       <a  (click)="Remove8()" class="badge badge-primary mx-1 text-white" id="badge8"> </a>
       <a  (click)="Remove9()" class="badge badge-primary mx-1 text-white" id="badge9"> </a>
+      <input type="text" class="col-xs-1 float-none" placeholder="Add Tags" id="tag">
+      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-primary mx-1 btn-sm float-none"  > Add Tag </button>
+      <br>
+      <button routerLink="/result" id="Save" class="btn btn-primary float-right mx-2">Save</button>
+      <button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-primary float-right mx-2">Reload Page</button>
+      <!--Draggable DIV:-->
+      <div id="mydiv">
+        <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
+        <div id="mydivheader" ></div>
+        <p id="option0" contenteditable="true">see through background</p>
+
+      </div>
+
+
       <br>
       <br>
-      <input type="text" class="col-xs-1" placeholder="Add Tags" id="tag">
-      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-primary mx-1 btn-sm"  > Add Tag </button>
+      <!--<input type="text" class="col-xs-1" placeholder="Add Tags" id="tag">-->
+      <!--<button (click)="addtag()" placeholer="Add Tags" class="btn btn-primary mx-1 btn-sm"  > Add Tag </button>-->
 
 
     </div>
@@ -104,15 +118,15 @@
   <div class="row">
     <div class="col-sm">
 
-      <button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-primary float-none">Reload</button>
+      <!--<button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-primary float-none">Reload</button>-->
 
-      <!--Draggable DIV:-->
-      <div id="mydiv">
-        <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
-        <div id="mydivheader" ></div>
-        <p id="option0" contenteditable="true">see through background</p>
+      <!--&lt;!&ndash;Draggable DIV:&ndash;&gt;-->
+      <!--<div id="mydiv">-->
+        <!--&lt;!&ndash;Include a header DIV with the same name as the draggable DIV, followed by "header":&ndash;&gt;-->
+        <!--<div id="mydivheader" ></div>-->
+        <!--<p id="option0" contenteditable="true">see through background</p>-->
 
-      </div>
+      <!--</div>-->
 
 
 
