@@ -1,5 +1,5 @@
 # PicTex
-A web application that gets the key ideas from a short text (for example, a social media status update) and searches for images related to those ideas. It then allows the user to put that text onto the image and customise it with a variety of font sizes, colours and styles.
+> A web application that gets the key ideas from a short text (for example, a social media status update) and searches for images related to those ideas. It then allows the user to put that text onto the image and customise it with a variety of font sizes, colours and styles.
 
 + Last updated: 04/07/18
 + Languages: 
@@ -7,6 +7,17 @@ A web application that gets the key ideas from a short text (for example, a soci
     + TypeScript
     + HTML
     + CSS
+
+#### Table of Contents
+1. [Authors](#Authors)
+2. [Dependencies](#Dependencies)
+3. [Running the application](#Running-the-application)
+    + [Maven (Backend)](#Maven-backend)
+        + [Maven API](#Maven-api)
+    + [Angular (Frontend)](#Angular-frontend)
+4. [Future Work](#Future-work)
+5. [Special Thanks](#Special-thanks)
+
 
 ## Authors
 + Leighton Jonker: <ljon139@aucklanduni.ac.nz>
@@ -32,7 +43,7 @@ mvn spring-boot:run
 ```
 You only need to do `mvn clean install` once to download and install the dependencies. The API is hosted at `localhost:8080`.
 
-#### *API*
+#### *Maven API*
 + `/api/processText?text` - returns keywords of the text in plain text.
 
 ### Angular (Frontend)
