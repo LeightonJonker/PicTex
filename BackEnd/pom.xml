@@ -38,10 +38,15 @@
 
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
-            <artifactId>nlp</artifactId>
+            <artifactId>stanford-corenlp</artifactId>
             <version>3.9.1</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/../stanford-corenlp-full-2018-02-27/stanford-corenlp-3.9.1.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>3.9.1</version>
+            <classifier>models</classifier>
         </dependency>
     </dependencies>
 
@@ -50,27 +55,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.3.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<artifactId>maven-resources-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>copy-resources</id>-->
-                        <!--<phase>validate</phase>-->
-                        <!--<goals><goal>copy-resources</goal></goals>-->
-                        <!--<configuration>-->
-                            <!--<outputDirectory>${basedir}/src/main/resources/static</outputDirectory >-->
-                            <!--<resources>-->
-                                <!--<resource>-->
-                                    <!--<directory>${basedir}/../PicTex/PicTexApp/dist/PicTexApp</directory >-->
-                                <!--</resource>-->
-                            <!--</resources>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
         </plugins>
     </build>
-
-
 </project>
