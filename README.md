@@ -9,14 +9,16 @@
     + CSS
 
 #### Table of Contents
-1. [Authors](#authors)
-2. [Dependencies](#dependencies)
-3. [Running the application](#running-the-application)
-    + [Maven (Backend)](#maven-backend)
-        + [Maven API](#maven-api)
-    + [Angular (Frontend)](#angular-frontend)
-4. [Future Work](#future-work)
-5. [Special Thanks](#special-thanks)
+- [PicTex](#pictex)
+            - [Table of Contents](#table-of-contents)
+    - [Authors](#authors)
+    - [Dependencies](#dependencies)
+    - [Running the application](#running-the-application)
+        - [Maven (Backend)](#maven-backend)
+            - [*Maven API*](#maven-api)
+        - [Angular (Frontend)](#angular-frontend)
+    - [Future Work](#future-work)
+    - [Special Thanks](#special-thanks)
 
 
 ## Authors
@@ -31,6 +33,7 @@
     + Install Angular via NodeJS using the command:
     ```
     npm install -g @angular/cli
+    npm install @angular-devkit/build-angular
     ```
 
 ## Running the application
