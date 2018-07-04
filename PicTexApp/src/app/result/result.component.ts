@@ -8,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultComponent implements OnInit {
   private role: string;
-  private localtext: string =  this.role = sessionStorage.getItem('inputtext');
+  // private localtext: string =  this.role = sessionStorage.getItem('inputtext');
   imgsrc: string = "https://farm";
   imgfarmid: string = ".staticflickr.com/";
   private elements = ['Fire', 'Wind', 'Rain', 'Earth', 'Lightning', 'Lava', 'Blood'];
+
+  flag = 1;
+  private  baseurl: string = "https://api.flickr.com/services/rest/";
+  private APIkey: string = "0109b289e8e411efba6806edf42383e3";
+  private secret: string = "e418eb25616d04f4";
+  searchterm: string = "red,+panda";
+  searchextension: string = "?method=flickr.photos.search&api_key=";
+  sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
+  private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
 
   //
@@ -41,6 +51,7 @@ export class ResultComponent implements OnInit {
   }
 
   private loadtags(){
+
     // var elements = ['Fire', 'Wind', 'Rain', 'Earth', 'Lightning', 'Lava', 'Blood'];
   console.log(this.elements)
   // this.elements.splice(2,1);
@@ -109,13 +120,6 @@ export class ResultComponent implements OnInit {
     this.loadtags();
   }
 
-
-  private bfunction() {
-    this.role = (<HTMLInputElement>document.getElementById("option0")).value;
-    sessionStorage.setItem('inputtext',this.role );
-    console.log(this.role)
-  }
-
   private increasefont(){
     var box = document.getElementById("option0");
     var size = window.getComputedStyle(box, null).getPropertyValue('font-size');
@@ -124,7 +128,6 @@ export class ResultComponent implements OnInit {
       box.style.fontSize = (fontsize + 1) + 'px';
       document.getElementById("option0").style.fontSize
     }
-
   }
 
   private decreasefont() {
@@ -140,7 +143,7 @@ export class ResultComponent implements OnInit {
   constructor() {
   }
 
-
+///////////////////////////////
   private dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.getElementById(elmnt.id + "header")) {
@@ -181,6 +184,63 @@ export class ResultComponent implements OnInit {
       document.onmousemove = null;
     }
   }
+///////////////////////////
+
+
+  private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
+    // sessionStorage.clear();
+    var savedd = (<HTMLInputElement>document.getElementById("option0")).textContent; //inputted text from textarea
+    sessionStorage.setItem('inputtext',savedd );
+
+    var results;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function processRequest(){
+      if (this.readyState == 4 && this.status == 200){
+        document.getElementById("demo").innerHTML = this.responseText;
+        results = this.responseText;
+
+        var parser = new DOMParser();
+        var xmlDoc= parser.parseFromString(results,  "text/xml");
+        var x = xmlDoc.documentElement.getElementsByTagName("photo");
+
+        for (var i = 0; i <= 4 ; i++) {
+          var id = x[i].getAttribute("id");
+          var owner = x[i].getAttribute("owner");
+          var secret = x[i].getAttribute("secret");
+          var server = x[i].getAttribute("server");
+          var farm = x[i].getAttribute("farm");
+          var title = x[i].getAttribute("title");
+          var ispublic = x[i].getAttribute("ispublic");
+          var isfriend = x[i].getAttribute("isfriend");
+          var isfamily = x[i].getAttribute("isfamily");
+          // can successfully access saved xml file and get correct tags for image.
+          sessionStorage.setItem("id" + i, id);
+          sessionStorage.setItem("owner" + i, owner);
+          sessionStorage.setItem("secret" + i, secret);
+          sessionStorage.setItem("server" + i, server);
+          sessionStorage.setItem("farm" + i, farm);
+          sessionStorage.setItem("title" + i, title);
+          sessionStorage.setItem("ispublic" + i, ispublic);
+          sessionStorage.setItem("isfriend" + i, isfriend);
+          sessionStorage.setItem("isfamily" + i, isfamily);
+        }
+        //window.location.replace("/result")
+      }
+    };
+    this.flag++;
+    xhr.open('GET', this.imagesearchurl, true);
+    xhr.send();
+  }
+
+
+  private ReloadSearch(){
+    document.getElementById("reloadB").innerHTML = "Loading..."
+    this.flickrsearch(); // use search term to search for images
+    setTimeout(() => {location.reload()},1500);
+  }
+
+
+////////////////////////////
 
   ngOnInit() {
 

@@ -14,7 +14,6 @@ export class BodyComponent implements OnInit {
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
 
-
   searchterm: string = "red,+panda";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
@@ -22,7 +21,7 @@ export class BodyComponent implements OnInit {
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
-
+    sessionStorage.clear();
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value; //inputted text from textarea
     sessionStorage.setItem('inputtext',this.role );
     var results;
@@ -187,6 +186,7 @@ export class BodyComponent implements OnInit {
   private async afunction() {
     this.flickrsearch();
        }
+
 
 
   constructor() {}
