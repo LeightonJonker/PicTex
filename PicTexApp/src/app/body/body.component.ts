@@ -10,20 +10,26 @@ import { Component, OnInit } from '@angular/core';
 export class BodyComponent implements OnInit {
   flag = 1;
   private role: string;
-  private  baseurl: string = "https://api.flickr.com/services/rest/";
+  private baseurl: string = "https://api.flickr.com/services/rest/";
+  private processurl: string = "http://localhost:4200/api/processText?text="
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
 
-  searchterm: string = "red,+panda";
+  private searchterm: string = "red,+panda";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
   private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
+  private updateImgSearchURL() {
+    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
+  }
+
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
     sessionStorage.clear();
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value; //inputted text from textarea
     sessionStorage.setItem('inputtext',this.role );
+
     var results;
 
     var xhr = new XMLHttpRequest();
@@ -70,8 +76,22 @@ export class BodyComponent implements OnInit {
 
   }
 
+  private processText() {
+    let uri: string = encodeURI((<HTMLInputElement>document.getElementById("thetextarea")).value);
+    let url: string = this.processurl+uri;
+    let xhr: XMLHttpRequest = new XMLHttpRequest();
+    xhr.open("POST",url,false);
+    xhr.send();
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      this.searchterm = xhr.responseText;
+    }
+    console.log("Search terms = " + this.searchterm);
+    this.updateImgSearchURL();
+  }
+
   private flickrandmove(){
     document.getElementById("submitbutton").innerHTML = "Loading..."
+    this.processText();
     this.flickrsearch(); // use search term to search for images
     // setTimeout(() => { // use flickr size finding api to find photos sizes and store them
     //
