@@ -9,14 +9,14 @@
     + CSS
 
 #### Table of Contents
-1. [Authors](#Authors)
-2. [Dependencies](#Dependencies)
-3. [Running the application](#Running-the-application)
-    + [Maven (Backend)](#Maven-backend)
-        + [Maven API](#Maven-api)
-    + [Angular (Frontend)](#Angular-frontend)
-4. [Future Work](#Future-work)
-5. [Special Thanks](#Special-thanks)
+1. [Authors](#authors)
+2. [Dependencies](#dependencies)
+3. [Running the application](#running-the-application)
+    + [Maven (Backend)](#maven-backend)
+        + [Maven API](#maven-api)
+    + [Angular (Frontend)](#angular-frontend)
+4. [Future Work](#future-work)
+5. [Special Thanks](#special-thanks)
 
 
 ## Authors
