@@ -150,6 +150,26 @@ export class ResultComponent implements OnInit {
     }
   }
 
+  private normalfont(){
+    var box = document.getElementById("option0");
+    box.style.fontStyle = "normal";
+    box.style.fontWeight = "normal";
+
+
+  }
+  private boldfont(){
+    var box = document.getElementById("option0");
+    box.style.fontWeight = "bold";
+
+  }
+  private italicfont(){
+    var box = document.getElementById("option0");
+    box.style.fontStyle = "italic";
+
+  }
+
+
+
   constructor() {
   }
 

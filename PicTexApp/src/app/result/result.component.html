@@ -33,22 +33,42 @@
 
     </div>
   </div>
+<br>
+  <div class="d-flex flex-row">
+    <div class="col-1">
 
-  <div class="row">
-    <div class="col-sm-3">
-      <br>
-      <input type = "range" min="0" max = "255" value = "0" class ="slider mx-2" id="sliderRed">
-      <input type = "range" min="0" max = "255" value = "0" class ="slider slider1 mx-2" id="sliderGreen">
-      <input type = "range" min="0" max = "255" value = "0" class ="slider slider2 mx-2" id="sliderBlue">
+      <input type = "range" min="0" max = "255" value = "0" class ="slider mx-1" id="sliderRed">
+      <input type = "range" min="0" max = "255" value = "0" class ="slider slider1 mx-1" id="sliderGreen">
+      <input type = "range" min="0" max = "255" value = "0" class ="slider slider2 mx-1" id="sliderBlue">
     </div>
-      <div class="col-sm-3">
+      <div class="d-flex flex-row">
       <div class = "gridder">
-        <br>
-      <button (click)="increasefont()"  class="btn btn-primary mx-1"> Bigger </button>
-      <button (click)="decreasefont()"  class="btn btn-primary mx-1" > Smaller </button>
+          <!--<br>-->
+         <button (click)="increasefont()"  class="btn btn-primary mx-1"> Bigger </button>
+         <button (click)="decreasefont()"  class="btn btn-primary mx-1" > Smaller </button>
       </div>
         <!--<input id="cp1" type="text" class="colorpicker" />-->
     </div>
+
+    <div class ="d-flex flex-row">
+      <div class="dropdown show">
+        <!--<br>-->
+        <a class="btn btn-primary dropdown-toggle text-white" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Font Styles
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item btn btn-primary" (click)="normalfont()">Normal</a>
+          <a class="dropdown-item btn btn-primary" (click)="boldfont()">Bold</a>
+          <a class="dropdown-item btn btn-primary" (click)="italicfont()">Italics</a>
+        </div>
+      </div>
+    </div>
+
+    <div class ="col"></div>
+    <div class ="col"></div>
+
+
+
   </div>
 
   <div class="row">
