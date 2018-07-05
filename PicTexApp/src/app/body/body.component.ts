@@ -29,7 +29,6 @@ export class BodyComponent implements OnInit {
     sessionStorage.clear();
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value; //inputt  ed text from textarea
     sessionStorage.setItem('inputtext',this.role );
-
     var results;
 
     var xhr = new XMLHttpRequest();

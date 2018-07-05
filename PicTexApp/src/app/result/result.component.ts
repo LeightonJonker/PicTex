@@ -11,7 +11,9 @@ export class ResultComponent implements OnInit {
   // private localtext: string =  this.role = sessionStorage.getItem('inputtext');
   imgsrc: string = "https://farm";
   imgfarmid: string = ".staticflickr.com/";
-  private elements = ['Fire', 'Wind', 'Rain', 'Earth', 'Lightning', 'Lava', 'Blood'];
+  tagsURL: string = "http://localhost:4200/api/getTags";
+  elements: [string];
+  //private elements = ['Fire', 'Wind', 'Rain', 'Earth', 'Lightning', 'Lava', 'Blood'];
 
   flag = 1;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
@@ -50,14 +52,22 @@ export class ResultComponent implements OnInit {
    }
   }
 
+  private getTags() {
+
+    let xhr: XMLHttpRequest = new XMLHttpRequest();
+    xhr.open("GET",this.tagsURL, false);
+    xhr.send();
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      console.log(xhr.responseText);
+      this.elements = eval(xhr.responseText);
+    }
+
+  }
+
   private loadtags(){
 
-    // var elements = ['Fire', 'Wind', 'Rain', 'Earth', 'Lightning', 'Lava', 'Blood'];
-  console.log(this.elements)
-  // this.elements.splice(2,1);
-    var test = 'hee';
-  // console.log(this.elements)
-    for(var j = 1; j < 10 ; j++ ){
+    console.log(this.elements);
+    for(var j = 1; j < 10 ; j++ ) {
       document.getElementById("badge"+j).innerText="";
     }
     for(var i = 0; i <this.elements.length; i++ ){
@@ -266,6 +276,7 @@ export class ResultComponent implements OnInit {
     });
 
     // this.update();
+    this.getTags();
     this.loadtags();
   this.loadimages();
   }

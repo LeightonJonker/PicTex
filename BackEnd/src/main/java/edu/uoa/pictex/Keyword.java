@@ -32,6 +32,9 @@ public class Keyword {
     public String getString() {
         return formString;
     }
+    public List<String> getList() {
+        return keywords;
+    }
     public int size() {
         return sz;
     }
