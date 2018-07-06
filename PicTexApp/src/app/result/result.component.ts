@@ -68,10 +68,10 @@ export class ResultComponent implements OnInit {
 
     console.log(this.elements);
     for(var j = 1; j < 10 ; j++ ) {
-      document.getElementById("badge"+j).innerText="";
+      document.getElementById("badge"+j).innerHTML="";
     }
     for(var i = 0; i <this.elements.length; i++ ){
-      document.getElementById("badge"+(i+1)).innerText=this.elements[i];
+      document.getElementById("badge"+(i+1)).innerHTML=this.elements[i] + '  <i (click)= "test()" class="fa fa-times" ></i>';
     }
   }
 
@@ -84,48 +84,8 @@ export class ResultComponent implements OnInit {
   }
 
 
-  private Remove1(){
-    this.elements.splice(0,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove2(){
-    this.elements.splice(1,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove3(){
-    this.elements.splice(2,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove4(){
-    this.elements.splice(3,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove5(){
-    this.elements.splice(4,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove6(){
-    this.elements.splice(5,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove7(){
-    this.elements.splice(6,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove8(){
-    this.elements.splice(7,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove9(){
-    this.elements.splice(8,1)
+  private Remove(int){
+    this.elements.splice(int,1)
     console.log(this.elements)
     this.loadtags();
   }
