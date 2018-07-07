@@ -44,25 +44,58 @@
       <div class="d-flex flex-row">
       <div class = "gridder">
           <!--<br>-->
-         <button (click)="increasefont()"  class="btn btn-primary mx-1"> Bigger </button>
-         <button (click)="decreasefont()"  class="btn btn-primary mx-1" > Smaller </button>
+         <button (click)="increasefont()"  class="btn btn-primary mx-1"><i class="fa fa-plus"></i></button>
+         <button (click)="decreasefont()"  class="btn btn-primary mx-1" > <i class="fa fa-minus"></i>
+
+         </button>
       </div>
         <!--<input id="cp1" type="text" class="colorpicker" />-->
     </div>
 
     <div class ="d-flex flex-row">
+    <div class="dropdown show">
+      <!--<br>-->
+      <a class="btn btn-primary dropdown-toggle text-white mx-1" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Font Styles
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item btn btn-primary" (click)="normalfont()">Normal</a>
+        <a class="dropdown-item btn btn-primary" (click)="boldfont()">Bold</a>
+        <a class="dropdown-item btn btn-primary" (click)="italicfont()">Italics</a>
+      </div>
+    </div>
+  </div>
+
+    <div class ="d-flex flex-row">
       <div class="dropdown show">
         <!--<br>-->
-        <a class="btn btn-primary dropdown-toggle text-white" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Font Styles
+        <a class="btn btn-primary dropdown-toggle text-white mx-1 " role="menu" id="fontfamilydropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Font Families
         </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item btn btn-primary" (click)="normalfont()">Normal</a>
-          <a class="dropdown-item btn btn-primary" (click)="boldfont()">Bold</a>
-          <a class="dropdown-item btn btn-primary" (click)="italicfont()">Italics</a>
+        <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuLink">
+          <a class ="dropdown-item btn btn-primary def" (click)="changefont('Normal')">Normal</a>
+          <a class ="dropdown-item btn btn-primary abrilfatface" (click)="changefont('Abril Fatface')">Abril Fatface</a>
+          <a class ="dropdown-item btn btn-primary amaticsc" (click)="changefont('Amatic SC')">Amatic SC</a>
+          <a class ="dropdown-item btn btn-primary chelaone" (click)="changefont('Chela One')">Chela One</a>
+          <a class ="dropdown-item btn btn-primary dancingscript" (click)="changefont('Dancing Script')">Dancing Script</a>
+          <a class ="dropdown-item btn btn-primary gaegu" (click)="changefont('Gaegu')">Gaegu</a>
+          <a class ="dropdown-item btn btn-primary galada" (click)="changefont('Galada')">Galada</a>
+          <a class ="dropdown-item btn btn-primary gloriahallelujah" (click)="changefont('Gloria Hallelujah')">Gloria Hallelujah</a>
+          <a class ="dropdown-item btn btn-primary indieflower" (click)="changefont('Indie Flower')">Indie Flower</a>
+          <a class ="dropdown-item btn btn-primary lato" (click)="changefont('Lato')">Lato</a>
+          <a class ="dropdown-item btn btn-primary lobster" (click)="changefont('Lobster')">Lobster</a>
+          <a class ="dropdown-item btn btn-primary markazitext" (click)="changefont('Markazi Text')">Markazi Text</a>
+          <a class ="dropdown-item btn btn-primary montserrat" (click)="changefont('Montserrat')">Montserrat</a>
+          <a class ="dropdown-item btn btn-primary opensans" (click)="changefont('Open Sans')">Open Sans</a>
+          <a class ="dropdown-item btn btn-primary oswald" (click)="changefont('Oswald')">Oswald</a>
+          <a class ="dropdown-item btn btn-primary pacifico" (click)="changefont('Pacifico')">Pacifico</a>
+          <a class ="dropdown-item btn btn-primary roboto" (click)="changefont('Roboto')">Roboto</a>
+          <a class ="dropdown-item btn btn-primary sourcesanspro" (click)="changefont('Source Sans Pro')">Source Sans Pro</a>
+
         </div>
       </div>
     </div>
+
 
     <div class ="col"></div>
     <div class ="col"></div>

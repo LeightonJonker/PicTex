@@ -128,6 +128,11 @@ export class ResultComponent implements OnInit {
 
   }
 
+  private changefont(string){
+    var box = document.getElementById("option0");
+    box.style.fontFamily = string;
+  }
+
 
 
   constructor() {
