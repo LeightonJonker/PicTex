@@ -58,13 +58,13 @@ Open the terminal and navigate to the root of the PicTexApp folder `"/PicTexApp/
 ## Issues
 ### Frontend
 1. Color Picker (Highest priority)
-2. Tags need cross button
+2. Tags need cross button - Done
 3. Text appearing on the photo (with default select)
-4. +- on font size
-5. don't need to list all fonts, use dropdown
+4. +- on font size - Done
+5. don't need to list all fonts, use dropdown - Done
 6. placement of all font functionality together
 7. picture selection
-8. main photo larger
+8. main photo larger  - now using medium (500 on longest side)
 9. weighting of keywords represented in selection of photos
 10. hide top line
 11. automatically reload - remove reload

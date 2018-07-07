@@ -43,7 +43,7 @@ export class ResultComponent implements OnInit {
 
        // gets url img for src (t for thumbnail and n for "small")
        var thumbfinal: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_t.jpg";
-       var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_n.jpg";
+       var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + ".jpg";
 
       image1 = document.getElementById("choice"+i) as HTMLImageElement;
       image2 = document.getElementById("thumb"+i) as HTMLImageElement;
