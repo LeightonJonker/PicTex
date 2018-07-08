@@ -22,7 +22,7 @@ export class ResultComponent implements OnInit {
   searchterm: string = "red,+panda";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
-  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance";
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
 
@@ -30,13 +30,14 @@ export class ResultComponent implements OnInit {
   public loadimages(){
     var image1;
     var image2;
-     for (var i = 0; i <= 4; i++) {
+     for (var i = 0; i <= 7; i++) {
        var Sid: string = sessionStorage.getItem("id" + i);
        var Sowner: string = sessionStorage.getItem("owner" + i);
        var Ssecret: string = sessionStorage.getItem("secret" + i);
        var Sserver: string = sessionStorage.getItem("server" + i);
        var Sfarm: string = sessionStorage.getItem("farm" + i);
        var Stitle: string = sessionStorage.getItem("title" + i);
+       console.log(Stitle)
        var Sispublic: string = sessionStorage.getItem("ispublic" + i);
        var Sisfriend: string = sessionStorage.getItem("isfriend" + i);
        var Sisfamily: string = sessionStorage.getItem("isfamily" + i);
@@ -198,7 +199,7 @@ export class ResultComponent implements OnInit {
         var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
 
-        for (var i = 0; i <= 4 ; i++) {
+        for (var i = 0; i <= 7 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");

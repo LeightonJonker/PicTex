@@ -63,7 +63,7 @@ Open the terminal and navigate to the root of the PicTexApp folder `"/PicTexApp/
 4. +- on font size - Done
 5. don't need to list all fonts, use dropdown - Done
 6. placement of all font functionality together
-7. picture selection
+7. picture selection - Added 3 extra choices + Improved photo relevance slightly.
 8. main photo larger  - now using medium (500 on longest side)
 9. weighting of keywords represented in selection of photos
 10. hide top line
