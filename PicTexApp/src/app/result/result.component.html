@@ -2,106 +2,35 @@
   <div class="row">
     <div class="col">
       <br>
-      <a  (click)="Remove(0)" class="badge badge-primary mx-1 text-white " id="badge1"></a>
-      <a  (click)="Remove(1)" class="badge badge-primary mx-1 text-white" id="badge2"> </a>
-      <a  (click)="Remove(2)" class="badge badge-primary mx-1 text-white" id="badge3"> </a>
-      <a  (click)="Remove(3)" class="badge badge-primary mx-1 text-white" id="badge4"> </a>
-      <a  (click)="Remove(4)" class="badge badge-primary mx-1 text-white" id="badge5"> </a>
-      <a  (click)="Remove(5)" class="badge badge-primary mx-1 text-white" id="badge6"> </a>
-      <a  (click)="Remove(6)" class="badge badge-primary mx-1 text-white" id="badge7"> </a>
-      <a  (click)="Remove(7)" class="badge badge-primary mx-1 text-white" id="badge8"> </a>
-      <a  (click)="Remove(8)" class="badge badge-primary mx-1 text-white" id="badge9"> </a>
+      <a  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></a>
+      <a  (click)="Remove(1)" class="badge badge-dark mx-1 text-white" id="badge2"> </a>
+      <a  (click)="Remove(2)" class="badge badge-dark mx-1 text-white" id="badge3"> </a>
+      <a  (click)="Remove(3)" class="badge badge-dark mx-1 text-white" id="badge4"> </a>
+      <a  (click)="Remove(4)" class="badge badge-dark mx-1 text-white" id="badge5"> </a>
+      <a  (click)="Remove(5)" class="badge badge-dark mx-1 text-white" id="badge6"> </a>
+      <a  (click)="Remove(6)" class="badge badge-dark mx-1 text-white" id="badge7"> </a>
+      <a  (click)="Remove(7)" class="badge badge-dark mx-1 text-white" id="badge8"> </a>
+      <a  (click)="Remove(8)" class="badge badge-dark mx-1 text-white" id="badge9"> </a>
       <input type="text" class="col-xs-1 float-none" placeholder="Add Tags" id="tag">
-      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-primary mx-1 btn-sm float-none"  > Add Tag </button>
-      <br>
-      <button routerLink="/result" id="Save" class="btn btn-primary float-right mx-2">Save</button>
-      <button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-primary float-right mx-2">Reload Page</button>
+      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-dark mx-1 btn-sm float-none"  > Add Tag </button>
+
+      <button routerLink="/result" id="Save" class="btn btn-dark float-right mx-2">Save</button>
+      <button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-right mx-2">Reload Page</button>
       <!--Draggable DIV:-->
+      <br>
       <div id="mydiv">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
         <div id="mydivheader" ></div>
+
         <p id="option0" contenteditable="true">see through background</p>
 
       </div>
 
-
-      <br>
-      <br>
       <!--<input type="text" class="col-xs-1" placeholder="Add Tags" id="tag">-->
-      <!--<button (click)="addtag()" placeholer="Add Tags" class="btn btn-primary mx-1 btn-sm"  > Add Tag </button>-->
+      <!--<button (click)="addtag()" placeholer="Add Tags" class="btn btn-dark mx-1 btn-sm"  > Add Tag </button>-->
 
 
     </div>
-  </div>
-<br>
-  <div class="d-flex flex-row">
-    <div class="col-1">
-
-      <input type = "range" min="0" max = "255" value = "0" class ="slider mx-1" id="sliderRed">
-      <input type = "range" min="0" max = "255" value = "0" class ="slider slider1 mx-1" id="sliderGreen">
-      <input type = "range" min="0" max = "255" value = "0" class ="slider slider2 mx-1" id="sliderBlue">
-    </div>
-      <div class="d-flex flex-row">
-      <div class = "gridder">
-          <!--<br>-->
-         <button (click)="increasefont()"  class="btn btn-primary mx-1"><i class="fa fa-plus"></i></button>
-         <button (click)="decreasefont()"  class="btn btn-primary mx-1" > <i class="fa fa-minus"></i>
-
-         </button>
-      </div>
-        <!--<input id="cp1" type="text" class="colorpicker" />-->
-    </div>
-
-    <div class ="d-flex flex-row">
-    <div class="dropdown show">
-      <!--<br>-->
-      <a class="btn btn-primary dropdown-toggle text-white mx-1" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Font Styles
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item btn btn-primary" (click)="normalfont()">Normal</a>
-        <a class="dropdown-item btn btn-primary" (click)="boldfont()">Bold</a>
-        <a class="dropdown-item btn btn-primary" (click)="italicfont()">Italics</a>
-      </div>
-    </div>
-  </div>
-
-    <div class ="d-flex flex-row">
-      <div class="dropdown show">
-        <!--<br>-->
-        <a class="btn btn-primary dropdown-toggle text-white mx-1 " role="menu" id="fontfamilydropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Font Families
-        </a>
-        <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuLink">
-          <a class ="dropdown-item btn btn-primary def" (click)="changefont('Normal')">Normal</a>
-          <a class ="dropdown-item btn btn-primary abrilfatface" (click)="changefont('Abril Fatface')">Abril Fatface</a>
-          <a class ="dropdown-item btn btn-primary amaticsc" (click)="changefont('Amatic SC')">Amatic SC</a>
-          <a class ="dropdown-item btn btn-primary chelaone" (click)="changefont('Chela One')">Chela One</a>
-          <a class ="dropdown-item btn btn-primary dancingscript" (click)="changefont('Dancing Script')">Dancing Script</a>
-          <a class ="dropdown-item btn btn-primary gaegu" (click)="changefont('Gaegu')">Gaegu</a>
-          <a class ="dropdown-item btn btn-primary galada" (click)="changefont('Galada')">Galada</a>
-          <a class ="dropdown-item btn btn-primary gloriahallelujah" (click)="changefont('Gloria Hallelujah')">Gloria Hallelujah</a>
-          <a class ="dropdown-item btn btn-primary indieflower" (click)="changefont('Indie Flower')">Indie Flower</a>
-          <a class ="dropdown-item btn btn-primary lato" (click)="changefont('Lato')">Lato</a>
-          <a class ="dropdown-item btn btn-primary lobster" (click)="changefont('Lobster')">Lobster</a>
-          <a class ="dropdown-item btn btn-primary markazitext" (click)="changefont('Markazi Text')">Markazi Text</a>
-          <a class ="dropdown-item btn btn-primary montserrat" (click)="changefont('Montserrat')">Montserrat</a>
-          <a class ="dropdown-item btn btn-primary opensans" (click)="changefont('Open Sans')">Open Sans</a>
-          <a class ="dropdown-item btn btn-primary oswald" (click)="changefont('Oswald')">Oswald</a>
-          <a class ="dropdown-item btn btn-primary pacifico" (click)="changefont('Pacifico')">Pacifico</a>
-          <a class ="dropdown-item btn btn-primary roboto" (click)="changefont('Roboto')">Roboto</a>
-          <a class ="dropdown-item btn btn-primary sourcesanspro" (click)="changefont('Source Sans Pro')">Source Sans Pro</a>
-
-        </div>
-      </div>
-    </div>
-
-
-    <div class ="col"></div>
-    <div class ="col"></div>
-
-
-
   </div>
 
   <div class="row">
@@ -165,6 +94,76 @@
       <br>
       <br>
     </div>
+
+    <!--<div class="col-sm">-->
+      <div class="col-1">
+        <br>
+        <br>
+        <br>
+
+        <input type = "range" min="0" max = "255" value = "0" class ="slider mx-1" id="sliderRed">
+        <input type = "range" min="0" max = "255" value = "0" class ="slider slider1 mx-1" id="sliderGreen">
+        <input type = "range" min="0" max = "255" value = "0" class ="slider slider2 mx-1" id="sliderBlue">
+
+        <div class="row">
+          <div class = "gridder">
+            <br>
+            <button (click)="increasefont()"  class="btn btn-dark ml-2"><i class="fa fa-plus"></i></button>
+            <button (click)="decreasefont()"  class="btn btn-dark ml-1" > <i class="fa fa-minus"></i></button>
+          </div>
+        </div>
+
+
+        <div class ="row">
+          <div class="dropdown show">
+            <br>
+            <a class="btn btn-dark dropdown-toggle text-white mr-4" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Font Styles
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item btn btn-dark" (click)="normalfont()">Normal</a>
+              <a class="dropdown-item btn btn-dark" (click)="boldfont()">Bold</a>
+              <a class="dropdown-item btn btn-dark" (click)="italicfont()">Italics</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class ="row">
+          <div class="dropdown show">
+            <br>
+            <a class="btn btn-dark dropdown-toggle text-white mr-4 " role="menu" id="fontfamilydropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Font Families
+            </a>
+            <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuLink">
+              <a class ="dropdown-item btn btn-dark def" (click)="changefont('Normal')">Normal</a>
+              <a class ="dropdown-item btn btn-dark abrilfatface" (click)="changefont('Abril Fatface')">Abril Fatface</a>
+              <a class ="dropdown-item btn btn-dark amaticsc" (click)="changefont('Amatic SC')">Amatic SC</a>
+              <a class ="dropdown-item btn btn-dark chelaone" (click)="changefont('Chela One')">Chela One</a>
+              <a class ="dropdown-item btn btn-dark dancingscript" (click)="changefont('Dancing Script')">Dancing Script</a>
+              <a class ="dropdown-item btn btn-dark gaegu" (click)="changefont('Gaegu')">Gaegu</a>
+              <a class ="dropdown-item btn btn-dark galada" (click)="changefont('Galada')">Galada</a>
+              <a class ="dropdown-item btn btn-dark gloriahallelujah" (click)="changefont('Gloria Hallelujah')">Gloria Hallelujah</a>
+              <a class ="dropdown-item btn btn-dark indieflower" (click)="changefont('Indie Flower')">Indie Flower</a>
+              <a class ="dropdown-item btn btn-dark lato" (click)="changefont('Lato')">Lato</a>
+              <a class ="dropdown-item btn btn-dark lobster" (click)="changefont('Lobster')">Lobster</a>
+              <a class ="dropdown-item btn btn-dark markazitext" (click)="changefont('Markazi Text')">Markazi Text</a>
+              <a class ="dropdown-item btn btn-dark montserrat" (click)="changefont('Montserrat')">Montserrat</a>
+              <a class ="dropdown-item btn btn-dark opensans" (click)="changefont('Open Sans')">Open Sans</a>
+              <a class ="dropdown-item btn btn-dark oswald" (click)="changefont('Oswald')">Oswald</a>
+              <a class ="dropdown-item btn btn-dark pacifico" (click)="changefont('Pacifico')">Pacifico</a>
+              <a class ="dropdown-item btn btn-dark roboto" (click)="changefont('Roboto')">Roboto</a>
+              <a class ="dropdown-item btn btn-dark sourcesanspro" (click)="changefont('Source Sans Pro')">Source Sans Pro</a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    <!--insert second col here-->
+    <!--</div>-->
   </div>
 
   <br>
@@ -183,7 +182,7 @@
   <div class="row">
     <div class="col-sm">
 
-      <!--<button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-primary float-none">Reload</button>-->
+      <!--<button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-none">Reload</button>-->
 
       <!--&lt;!&ndash;Draggable DIV:&ndash;&gt;-->
       <!--<div id="mydiv">-->
