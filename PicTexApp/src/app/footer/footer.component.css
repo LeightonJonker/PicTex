@@ -1,9 +1,20 @@
+.bground{
+  background-color: #e3e3e3;
+
+}
+
+.divv{
+  border-top: 1px solid #ceb5b5;
+}
+
 p {
+  border-top: 1px black;
   text-align: center;
   font-family: Roboto;
   font-style: italic;
   min-height: 100px;
   font-size: 12px;
+  background-color: #e3e3e3;
 }
 b {
 

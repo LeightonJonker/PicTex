@@ -10,3 +10,11 @@ p{
 input{
   text-align: center
 }
+
+.bground {
+  background-color: #e3e3e3;
+}
+h1{
+  color: crimson;
+  font-family: "Galada";
+}

@@ -22,7 +22,7 @@ export class ResultComponent implements OnInit {
   searchterm: string = "red,+panda";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
-  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance";
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
 
@@ -30,20 +30,21 @@ export class ResultComponent implements OnInit {
   public loadimages(){
     var image1;
     var image2;
-     for (var i = 0; i <= 4; i++) {
+     for (var i = 0; i <= 7; i++) {
        var Sid: string = sessionStorage.getItem("id" + i);
        var Sowner: string = sessionStorage.getItem("owner" + i);
        var Ssecret: string = sessionStorage.getItem("secret" + i);
        var Sserver: string = sessionStorage.getItem("server" + i);
        var Sfarm: string = sessionStorage.getItem("farm" + i);
        var Stitle: string = sessionStorage.getItem("title" + i);
+       console.log(Stitle)
        var Sispublic: string = sessionStorage.getItem("ispublic" + i);
        var Sisfriend: string = sessionStorage.getItem("isfriend" + i);
        var Sisfamily: string = sessionStorage.getItem("isfamily" + i);
 
        // gets url img for src (t for thumbnail and n for "small")
        var thumbfinal: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_t.jpg";
-       var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_n.jpg";
+       var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + ".jpg";
 
       image1 = document.getElementById("choice"+i) as HTMLImageElement;
       image2 = document.getElementById("thumb"+i) as HTMLImageElement;
@@ -68,10 +69,10 @@ export class ResultComponent implements OnInit {
 
     console.log(this.elements);
     for(var j = 1; j < 10 ; j++ ) {
-      document.getElementById("badge"+j).innerText="";
+      document.getElementById("badge"+j).innerHTML="";
     }
     for(var i = 0; i <this.elements.length; i++ ){
-      document.getElementById("badge"+(i+1)).innerText=this.elements[i];
+      document.getElementById("badge"+(i+1)).innerHTML=this.elements[i] + '  <i (click)= "test()" class="fa fa-times" ></i>';
     }
   }
 
@@ -84,48 +85,8 @@ export class ResultComponent implements OnInit {
   }
 
 
-  private Remove1(){
-    this.elements.splice(0,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove2(){
-    this.elements.splice(1,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove3(){
-    this.elements.splice(2,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove4(){
-    this.elements.splice(3,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove5(){
-    this.elements.splice(4,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove6(){
-    this.elements.splice(5,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove7(){
-    this.elements.splice(6,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove8(){
-    this.elements.splice(7,1)
-    console.log(this.elements)
-    this.loadtags();
-  }
-  private Remove9(){
-    this.elements.splice(8,1)
+  private Remove(int){
+    this.elements.splice(int,1)
     console.log(this.elements)
     this.loadtags();
   }
@@ -166,6 +127,11 @@ export class ResultComponent implements OnInit {
     var box = document.getElementById("option0");
     box.style.fontStyle = "italic";
 
+  }
+
+  private changefont(string){
+    var box = document.getElementById("option0");
+    box.style.fontFamily = string;
   }
 
 
@@ -233,7 +199,7 @@ export class ResultComponent implements OnInit {
         var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
 
-        for (var i = 0; i <= 4 ; i++) {
+        for (var i = 0; i <= 7 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");

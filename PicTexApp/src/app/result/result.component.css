@@ -12,6 +12,88 @@
   /*color: crimson;*/
 /*}*/
 
+ /*FONTS*/
+
+.def{
+  font-family: normal;
+}
+
+.abrilfatface{
+  font-family: "Abril Fatface";
+}
+
+.amaticsc{
+  font-family: "Amatic SC";
+}
+
+.chelaone{
+  font-family: "Chela One";
+}
+
+
+.dancingscript{
+  font-family: "Dancing Script";
+}
+
+.gaegu{
+  font-family: "Gaegu";
+}
+
+.galada{
+  font-family: "Galada";
+}
+
+.gloriahallelujah{
+  font-family: "Gloria Hallelujah";
+}
+
+.indieflower{
+  font-family: "Indie Flower";
+}
+
+.lato{
+  font-family: "Lato";
+}
+
+.lobster{
+  font-family: "Lobster";
+}
+
+.markazitext{
+  font-family: "Markazi Text";
+}
+
+.montserrat{
+  font-family: "Montserrat";
+}
+
+.opensans{
+  font-family: "Open Sans";
+}
+
+.oswald{
+  font-family: "Oswald";
+}
+
+.pacifico{
+  font-family: "Pacifico";
+}
+
+.roboto{
+  font-family: "Roboto";
+}
+
+.sourcesanspro{
+  font-family: "Source Sans Pro";
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
+}
+
+
 #mydiv {
 
   position: absolute;
@@ -216,6 +298,10 @@
 /*}*/
 
 
+
+.bground {
+  background-color: #e3e3e3;
+}
 
 .slider{
   /*display: block;*/

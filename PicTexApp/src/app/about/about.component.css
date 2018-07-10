@@ -1,31 +1,12 @@
-h1{
-  font-style: italic;
-  color: crimson;
-  font-size: 40px;
-}
+/*h1{*/
+  /*font-style: italic;*/
+  /*color: crimson;*/
+  /*font-size: 40px;*/
+/*}*/
  p{
-   /*background: rgba(76, 175, 80, 0.1);*/
    color: firebrick;
  }
+.bground{
+  background-color: #e3e3e3;
 
-/*#mydiv {*/
-
-  /*position: absolute;*/
-  /*resize: both;*/
-  /*overflow: auto;*/
-  /*z-index: 9;*/
-  /*background: rgba(76, 175, 80, 0.1);*/
-  /*!*background-color: #f1f1f1;*!*/
-  /*border: 1px solid #d3d3d3;*/
-  /*text-align: center;*/
-/*}*/
-
-/*#mydivheader {*/
-  /*!*background: rgba(76, 175, 80, 0.1);*!*/
-
-  /*padding: 5px;*/
-  /*cursor: move;*/
-  /*z-index: 10;*/
-  /*!*background-color: #2196F3;*!*/
-  /*color: #fff;*/
-/*}*/
+}

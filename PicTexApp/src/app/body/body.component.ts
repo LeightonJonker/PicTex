@@ -43,7 +43,7 @@ export class BodyComponent implements OnInit {
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
         console.log("bbbbbbbbbbb")
 
-        for (var i = 0; i <= 4 ; i++) {
+        for (var i = 0; i <= 7 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");
@@ -92,54 +92,6 @@ export class BodyComponent implements OnInit {
     document.getElementById("submitbutton").innerHTML = "Loading..."
     this.processText();
     this.flickrsearch(); // use search term to search for images
-    // setTimeout(() => { // use flickr size finding api to find photos sizes and store them
-    //
-    //   var finalsizeurl = this.imagesizeurl
-    //   var results;
-    //   var xhr = new Array();
-    //
-    //   for (var i=0; i<= 4; i++) {
-    //     (function(i){
-    //
-    //
-    //       var id = sessionStorage.getItem("id"+i);
-    //       var finalsizeurl2 = finalsizeurl + "&photo_id="+ id;
-    //       console.log(finalsizeurl2)
-    //
-    //       xhr[i] = new XMLHttpRequest();
-    //       xhr[i].open('GET', finalsizeurl2, true);
-    //
-    //
-    //       xhr[i].onreadystatechange = function processRequest() {
-    //         if (this.readyState == 4 && this.status == 200) {
-    //           document.getElementById("demo").innerHTML = this.responseText;
-    //           results = this.responseText;
-    //
-    //           var parser = new DOMParser();
-    //           var xmlDoc= parser.parseFromString(results,  "text/xml");
-    //           var x = xmlDoc.documentElement.getElementsByTagName("size");
-    //
-    //           for (var j=0; j<=2; j++ ) {
-    //             var label = x[j+3].getAttribute("label");
-    //             var width = x[j+3].getAttribute("width");
-    //             var height = x[j+3].getAttribute("height");
-    //             var source = x[j+3].getAttribute("source");
-    //
-    //             sessionStorage.setItem(i+ " label "+j, label);
-    //             sessionStorage.setItem(i+ " width "+j, width);
-    //             sessionStorage.setItem(i+ " height "+j, height);
-    //             sessionStorage.setItem(i+ " source "+j, source);
-    //
-    //           }
-    //
-    //           console.log("got here at least. "+i)
-    //
-    //         }
-    //       };
-    //       xhr[i].send();
-    //     })(i);
-    //   }
-    // },1000);
     setTimeout(() => {window.location.replace("/result")},1500);
   }
 
@@ -152,54 +104,6 @@ export class BodyComponent implements OnInit {
     var string = elements.join(',');
     console.log(string)
 
-  }
-  private flickrsizes(){ // get photo ID; get sizes, save small and small 320 in sessionstorage.
-    var finalsizeurl = this.imagesizeurl
-    var results;
-    var xhr = new Array();
-
-    for (var i=0; i<= 4; i++) {
-      (function(i){
-
-
-      var id = sessionStorage.getItem("id"+i);
-      var finalsizeurl2 = finalsizeurl + "&photo_id="+ id;
-      console.log(finalsizeurl2)
-
-        xhr[i] = new XMLHttpRequest();
-        xhr[i].open('GET', finalsizeurl2, true);
-
-
-        xhr[i].onreadystatechange = function processRequest() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("demo").innerHTML = this.responseText;
-            results = this.responseText;
-
-            var parser = new DOMParser();
-            var xmlDoc= parser.parseFromString(results,  "text/xml");
-            var x = xmlDoc.documentElement.getElementsByTagName("size");
-
-            for (var j=0; j<=2; j++ ) {
-              var label = x[j+3].getAttribute("label");
-              var width = x[j+3].getAttribute("width");
-              var height = x[j+3].getAttribute("height");
-              var source = x[j+3].getAttribute("source");
-
-              sessionStorage.setItem(i+ " label "+j, label);
-              sessionStorage.setItem(i+ " width "+j, width);
-              sessionStorage.setItem(i+ " height "+j, height);
-              sessionStorage.setItem(i+ " source "+j, source);
-
-            }
-
-            console.log("got here at least. "+i)
-           // window.location.replace("/result")
-          }
-        };
-
-      xhr[i].send();
-      })(i);
-    }
   }
 
   private async afunction() {
