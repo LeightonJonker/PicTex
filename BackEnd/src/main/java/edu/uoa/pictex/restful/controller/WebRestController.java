@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -26,4 +30,46 @@ public class WebRestController {
         return tags;
     }
 
-}
+    @RequestMapping("api/getText")
+    public String getText(@RequestParam(value="fp",defaultValue="") String fp) {
+        String basedir = System.getProperty("user.dir").replace('\\','/');
+        basedir += fp;
+        System.out.println(basedir);
+        try {
+            FileReader fr = new FileReader(basedir);
+            BufferedReader br = new BufferedReader(fr);
+            String output = "";
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                output += line + "<br>";
+            }
+            return output;
+        } catch (FileNotFoundException ex) {
+            System.out.println("File not found");
+            return null;
+        } catch (IOException ex) {
+            System.out.println("Error reading file");
+            return null;
+        }
+    }
+
+    @RequestMapping("api/getImg")
+    public byte[] getImg(@RequestParam(value="fp",defaultValue="") String fp) {
+        try {
+            Path path = Paths.get(fp);
+            byte[] fileContents = Files.readAllBytes(path);
+            return fileContents;
+        } catch (IOException ex) {
+            System.out.println("Error reading file");
+            return null;
+        }
+    }
+
+    @RequestMapping("/test")
+    public String test() {
+        String filePath = System.getProperty("user.dir").replace('\\','/');
+        filePath += "/colorpicker/dist/js/bootstrap-colorpicker.min.js";
+        return filePath;
+    }
+
+    }
