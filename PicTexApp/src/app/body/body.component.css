@@ -1,29 +1,33 @@
 h1 {
-  font-family: "Bookman Old Style";
-  font-style: italic;
+  font-family: "Pacifico";
   text-align: center;
-  font-size: 30px;
-  /*line-height: 1px;*/
   color: crimson;
+
 }
 
-p {
-  color: black;
+/*p {*/
+  /*color: black;*/
+
+/*}*/
+
+.bground {
+  background-color: #e3e3e3;
 }
 
-div{
-  display: inline;
-  font-family: Roboto;
-  font-size: 20px;
-  /*line-height: 1px;*/
-  color: black;
-}
+/*div{*/
+  /*display: inline;*/
+  /*font-family: Roboto;*/
+  /*font-size: 20px;*/
+  /*!*line-height: 1px;*!*/
+  /*color: black;*/
+/*}*/
 
 #container.main{
-  display: block;
+  display: inline;
   width: 100%;
   margin: 35px 0;
   padding: 0 10px;
+
 }
 
 .wrapper{
@@ -34,8 +38,8 @@ div{
 .button{
   cursor: pointer;
   /*margin-left: 800px;*/
-  margin-left: 59%;
-  margin-top: 50px;
+  /*margin-left: 60%;*/
+  margin-top: 80px;
   background-color: firebrick;
   border: none;
   color: white;
@@ -57,11 +61,11 @@ div{
 }
 
 input {
-  margin-left: 30%;
+  /*margin-left: 30%;*/
   margin-top: 80px;
   display: inline;
   box-sizing: border-box;
-  background-color: white;
+  /*background-color: white;*/
   /*width was 500, height 200 */
   width: 500px;
   height: 200px;
@@ -70,13 +74,14 @@ input {
 }
 
 textarea{
+  background-color: #e3e3e0;
+
   resize: none;
-  margin-left: 30%;
+  /*margin-left:;*/
   margin-top:  80px;
   display: inline;
   box-sizing: border-box;
-  background-color: white;
-  /*background-image: url("https://i.imgur.com/wKjdA9G.png");*/
+  /*background-color: white;*/
   /*width was 500, height 200 */
   width: 500px;
   height: 200px;

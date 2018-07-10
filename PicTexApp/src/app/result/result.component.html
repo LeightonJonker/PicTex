@@ -1,3 +1,5 @@
+<div class = "bground">
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -17,24 +19,16 @@
       <button routerLink="/result" id="Save" class="btn btn-dark float-right mx-2">Save</button>
       <button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-right mx-2">Reload Page</button>
       <!--Draggable DIV:-->
-      <br>
       <div id="mydiv">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
         <div id="mydivheader" ></div>
-
         <p id="option0" contenteditable="true">see through background</p>
-
       </div>
-
-      <!--<input type="text" class="col-xs-1" placeholder="Add Tags" id="tag">-->
-      <!--<button (click)="addtag()" placeholer="Add Tags" class="btn btn-dark mx-1 btn-sm"  > Add Tag </button>-->
-
-
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-9">
       <div class="carocontainer">
         <div id="carouselExampleIndicators" class="carousel slide"  data-interval="false" data-ride="carousel">
           <div class="carousel-inner">
@@ -96,20 +90,21 @@
     </div>
 
     <!--<div class="col-sm">-->
-      <div class="col-1">
+
+      <div class="col-3">
         <br>
         <br>
         <br>
 
-        <input type = "range" min="0" max = "255" value = "0" class ="slider mx-1" id="sliderRed">
-        <input type = "range" min="0" max = "255" value = "0" class ="slider slider1 mx-1" id="sliderGreen">
-        <input type = "range" min="0" max = "255" value = "0" class ="slider slider2 mx-1" id="sliderBlue">
+        <input type = "range" min="0" max = "255" value = "0" class ="slider ml-4" id="sliderRed">
+        <input type = "range" min="0" max = "255" value = "0" class ="slider slider1 ml-1" id="sliderGreen">
+        <input type = "range" min="0" max = "255" value = "0" class ="slider slider2 ml-1" id="sliderBlue">
 
         <div class="row">
           <div class = "gridder">
             <br>
-            <button (click)="increasefont()"  class="btn btn-dark ml-2"><i class="fa fa-plus"></i></button>
-            <button (click)="decreasefont()"  class="btn btn-dark ml-1" > <i class="fa fa-minus"></i></button>
+            <button (click)="decreasefont()"  class="btn btn-dark ml-5"><i class="fa fa-minus"></i></button>
+            <button (click)="increasefont()"  class="btn btn-dark ml-1" > <i class="fa fa-plus"></i></button>
           </div>
         </div>
 
@@ -117,7 +112,7 @@
         <div class ="row">
           <div class="dropdown show">
             <br>
-            <a class="btn btn-dark dropdown-toggle text-white mr-4" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-dark dropdown-toggle text-white ml-5" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Font Styles
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -133,7 +128,7 @@
         <div class ="row">
           <div class="dropdown show">
             <br>
-            <a class="btn btn-dark dropdown-toggle text-white mr-4 " role="menu" id="fontfamilydropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-dark dropdown-toggle text-white ml-5 " role="menu" id="fontfamilydropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Font Families
             </a>
             <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuLink">
@@ -155,60 +150,19 @@
               <a class ="dropdown-item btn btn-dark pacifico" (click)="changefont('Pacifico')">Pacifico</a>
               <a class ="dropdown-item btn btn-dark roboto" (click)="changefont('Roboto')">Roboto</a>
               <a class ="dropdown-item btn btn-dark sourcesanspro" (click)="changefont('Source Sans Pro')">Source Sans Pro</a>
-
             </div>
           </div>
         </div>
 
       </div>
 
-    <!--insert second col here-->
-    <!--</div>-->
   </div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-sm">
-
-      <!--<button (click)="change()"  class="button"> change </button>-->
-
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-sm">
-
-      <!--<button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-none">Reload</button>-->
-
-      <!--&lt;!&ndash;Draggable DIV:&ndash;&gt;-->
-      <!--<div id="mydiv">-->
-        <!--&lt;!&ndash;Include a header DIV with the same name as the draggable DIV, followed by "header":&ndash;&gt;-->
-        <!--<div id="mydivheader" ></div>-->
-        <!--<p id="option0" contenteditable="true">see through background</p>-->
-
-      <!--</div>-->
-
-
-
-    </div>
-  </div>
+<br>
+<br>
+<br>
+<br>
 </div>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<form>
-  <p id="demo"></p>
-  <!--<button type="button" (click)="myFunction()">Try it</button>-->
-</form>
-
 <!--<body>-->
 
 <!--<section class = "main">-->

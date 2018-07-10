@@ -299,6 +299,10 @@
 
 
 
+.bground {
+  background-color: #e3e3e3;
+}
+
 .slider{
   /*display: block;*/
   -webkit-appearance: none;
