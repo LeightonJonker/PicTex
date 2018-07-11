@@ -302,6 +302,10 @@
 .bground {
   background-color: #e3e3e3;
 }
+.uploaded{
+  width: 100px;
+  /*height: 100px;*/
+}
 
 .slider{
   /*display: block;*/

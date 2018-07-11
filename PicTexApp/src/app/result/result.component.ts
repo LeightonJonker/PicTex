@@ -51,6 +51,20 @@ export class ResultComponent implements OnInit {
       image1.src = final;
       image2.src = thumbfinal;
    }
+
+     if (sessionStorage['uploadedphoto']){
+       console.log("uploaded file detected");
+       var upsrc = sessionStorage.getItem("uploadedphoto");
+       var imageup1 = document.getElementById("choice8") as HTMLImageElement;
+       var imageup2 = document.getElementById("thumb8") as HTMLImageElement;
+       imageup1.src = upsrc;
+       imageup2.src = upsrc;
+
+     }
+     else{
+       console.log("no uploaded file detected here");
+     }
+
   }
 
   private getTags() {

@@ -99,12 +99,34 @@ export class BodyComponent implements OnInit {
     console.log("hi after 5")
   }
 
-  public test(){
-    var elements = ['Fire', 'Wind', 'Rain'];
-    var string = elements.join(',');
-    console.log(string)
 
+  public previewFile() {
+    // var preview = document.querySelector('img');
+    // var file    = (<HTMLInputElement>document.querySelector('input[type=file]')).files[0];
+    var file = (<HTMLInputElement>document.getElementById("uploadedfile")).files[0];
+    var reader  = new FileReader();
+    // console.log("Start")
+
+    reader.onloadend = function () {
+      // console.log("reader works")
+      var bool = "yes"
+      sessionStorage.setItem("uploadedphoto", reader.result);
+      sessionStorage.setItem("isphotouploaded",bool)
+      // preview.src = reader.result;
+      // console.log(preview.src)
+    }
+
+    if (file) {
+      // console.log("file exists")
+      reader.readAsDataURL(file);
+    }
+    else{
+      alert("Cannot read your file / no file was selected!")
+      // console.log("file does not exist")
+    }
+    // console.log("end")
   }
+
 
   private async afunction() {
     this.flickrsearch();
@@ -115,6 +137,7 @@ export class BodyComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+   // this.previewFile();
   }
 
 }
