@@ -13,7 +13,6 @@ export class ResultComponent implements OnInit {
   imgfarmid: string = ".staticflickr.com/";
   tagsURL: string = "http://localhost:4200/api/getTags";
   elements: [string];
-  //private elements = ['Fire', 'Wind', 'Rain', 'Earth', 'Lightning', 'Lava', 'Blood'];
 
   flag = 1;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
@@ -25,8 +24,6 @@ export class ResultComponent implements OnInit {
   private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance";
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
-
-  //
   public loadimages(){
     var image1;
     var image2;

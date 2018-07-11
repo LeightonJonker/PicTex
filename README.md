@@ -38,6 +38,7 @@
     npm install -g @angular/cli
     npm install @angular-devkit/build-angular
     ```
+    + Install PicTex dependencies by opening the terminal at `"/PicTexApp/"` then run the command `npm install`.
 
 ## Running the application
 
