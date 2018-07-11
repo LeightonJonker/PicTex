@@ -30,18 +30,15 @@ export class BodyComponent implements OnInit {
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value; //inputt  ed text from textarea
     sessionStorage.setItem('inputtext',this.role );
     var results;
-
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function processRequest(){
       if (this.readyState == 4 && this.status == 200){
-        document.getElementById("demo").innerHTML = this.responseText;
+        // document.getElementById("demo").innerHTML = this.responseText;
         results = this.responseText;
-        console.log("aaaaaaaaaaaaaaaaa")
 
           var parser = new DOMParser();
           var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
-        console.log("bbbbbbbbbbb")
 
         for (var i = 0; i <= 7 ; i++) {
           var id = x[i].getAttribute("id");
@@ -70,10 +67,7 @@ export class BodyComponent implements OnInit {
     this.flag++;
     xhr.open('GET', this.imagesearchurl, true);
     xhr.send();
-   // this.flickrsizes();
-   // this.buffer();
-
-  }
+   }
 
   private processText() {
     let uri: string = encodeURI((<HTMLInputElement>document.getElementById("thetextarea")).value);
@@ -89,6 +83,7 @@ export class BodyComponent implements OnInit {
   }
 
   private flickrandmove(){
+    console.log("does this")
     document.getElementById("submitbutton").innerHTML = "Loading..."
     this.processText();
     this.flickrsearch(); // use search term to search for images
@@ -101,30 +96,21 @@ export class BodyComponent implements OnInit {
 
 
   public previewFile() {
-    // var preview = document.querySelector('img');
-    // var file    = (<HTMLInputElement>document.querySelector('input[type=file]')).files[0];
     var file = (<HTMLInputElement>document.getElementById("uploadedfile")).files[0];
     var reader  = new FileReader();
-    // console.log("Start")
 
     reader.onloadend = function () {
-      // console.log("reader works")
       var bool = "yes"
       sessionStorage.setItem("uploadedphoto", reader.result);
       sessionStorage.setItem("isphotouploaded",bool)
-      // preview.src = reader.result;
-      // console.log(preview.src)
     }
 
     if (file) {
-      // console.log("file exists")
       reader.readAsDataURL(file);
     }
     else{
       alert("Cannot read your file / no file was selected!")
-      // console.log("file does not exist")
     }
-    // console.log("end")
   }
 
 
