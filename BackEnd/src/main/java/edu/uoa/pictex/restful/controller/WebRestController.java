@@ -41,7 +41,7 @@ public class WebRestController {
             String output = "";
             String line = "";
             while ((line = br.readLine()) != null) {
-                output += line + "<br>";
+                output += line;
             }
             return output;
         } catch (FileNotFoundException ex) {
@@ -53,23 +53,4 @@ public class WebRestController {
         }
     }
 
-    @RequestMapping("api/getImg")
-    public byte[] getImg(@RequestParam(value="fp",defaultValue="") String fp) {
-        try {
-            Path path = Paths.get(fp);
-            byte[] fileContents = Files.readAllBytes(path);
-            return fileContents;
-        } catch (IOException ex) {
-            System.out.println("Error reading file");
-            return null;
-        }
-    }
-
-    @RequestMapping("/test")
-    public String test() {
-        String filePath = System.getProperty("user.dir").replace('\\','/');
-        filePath += "/colorpicker/dist/js/bootstrap-colorpicker.min.js";
-        return filePath;
-    }
-
-    }
+}

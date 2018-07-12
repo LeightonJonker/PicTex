@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import 'jquery-wheelcolorpicker';
 
 @Component({
-  //selector: 'app-result',
+  // selector: 'app-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.css'],
   providers: [],
@@ -242,26 +244,33 @@ export class ResultComponent implements OnInit {
 
     var div = document.getElementById("mydiv");
     this.dragElement(div);
-
+    let wcp = (<HTMLInputElement>document.getElementById("color-input"));
     var red = (<HTMLInputElement>document.getElementById("sliderRed"));
     var green = (<HTMLInputElement>document.getElementById("sliderGreen"));
     var blue = (<HTMLInputElement>document.getElementById("sliderBlue"));
     red.addEventListener('input', function(){
       document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
+      $('color-input').wheelColorPicker('setRgb', red.value, green.value, blue.value);
     });
 
     green.addEventListener('input', function(){
       document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
+      $('color-input').wheelColorPicker('setRgb', red.value, green.value, blue.value);
     });
 
     blue.addEventListener('input', function(){
       document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
+      $('color-input').wheelColorPicker('setRgb', red.value, green.value, blue.value);
     });
+
+    wcp.addEventListener("onchange", function() {
+      console.log("HELLO");
+    })
 
     // this.update();
     this.getTags();
     this.loadtags();
-  this.loadimages();
+    this.loadimages();
   }
 
 }
