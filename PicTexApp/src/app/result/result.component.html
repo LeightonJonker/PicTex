@@ -4,21 +4,24 @@
   <div class="row">
     <div class="col">
       <br>
-      <a  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></a>
-      <a  (click)="Remove(1)" class="badge badge-dark mx-1 text-white" id="badge2"> </a>
-      <a  (click)="Remove(2)" class="badge badge-dark mx-1 text-white" id="badge3"> </a>
-      <a  (click)="Remove(3)" class="badge badge-dark mx-1 text-white" id="badge4"> </a>
-      <a  (click)="Remove(4)" class="badge badge-dark mx-1 text-white" id="badge5"> </a>
-      <a  (click)="Remove(5)" class="badge badge-dark mx-1 text-white" id="badge6"> </a>
-      <a  (click)="Remove(6)" class="badge badge-dark mx-1 text-white" id="badge7"> </a>
-      <a  (click)="Remove(7)" class="badge badge-dark mx-1 text-white" id="badge8"> </a>
-      <a  (click)="Remove(8)" class="badge badge-dark mx-1 text-white" id="badge9"> </a>
+      <!--btn btn-dark btn-sm-->
+      <!--<a  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></a>-->
+      <button  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></button>
+      <button  (click)="Remove(1)" class="badge badge-dark mx-1 text-white" id="badge2"> </button>
+      <button  (click)="Remove(2)" class="badge badge-dark mx-1 text-white" id="badge3"> </button>
+      <button  (click)="Remove(3)" class="badge badge-dark mx-1 text-white" id="badge4"> </button>
+      <button  (click)="Remove(4)" class="badge badge-dark mx-1 text-white" id="badge5"> </button>
+      <button  (click)="Remove(5)" class="badge badge-dark mx-1 text-white" id="badge6"> </button>
+      <button  (click)="Remove(6)" class="badge badge-dark mx-1 text-white" id="badge7"> </button>
+      <button  (click)="Remove(7)" class="badge badge-dark mx-1 text-white" id="badge8"> </button>
+      <button  (click)="Remove(8)" class="badge badge-dark mx-1 text-white" id="badge9"> </button>
       <input type="text" class="col-xs-1 float-none" placeholder="Add Tags" id="tag">
-      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-dark mx-1 btn-sm float-none"  > Add Tag </button>
+      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-dark mx-1 btn-sm float-none" id="addbutton"> Add Tag </button>
 
       <button routerLink="/result" id="Save" class="btn btn-dark float-right mx-2">Save</button>
-      <button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-right mx-2">Reload Page</button>
+      <button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-right mx-2">Refresh Page</button>
       <!--Draggable DIV:-->
+
       <div id="mydiv">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
         <div id="mydivheader" ></div>
@@ -163,53 +166,13 @@
 
   </div>
 
+
 <br>
 <br>
 <br>
 <br>
+
+
 </div>
-<!--<body>-->
 
-<!--<section class = "main">-->
-  <!--<h1 onload="changeoptionsizes()"> Customise your PicTex! </h1>-->
-
-
-  <!--<div class = "content">-->
-
-  <!--</div>-->
-
-
-<!--</section>-->
-<!--<div class="wrapper">-->
-  <!--<div class="left">-->
-    <!--<button id = "option1" (click)="option1to0()" routerLink="/result" class="button button3"></button>-->
-   <!--<button id = "option2"  (click)="option2to0()" routerLink="/result" class="button button4"></button>-->
-
-  <!--</div>-->
-  <!--<textarea  id = "option0" placeholder="Edit your text!"> {{localtext}} </textarea>-->
-  <!--<div class="right">-->
-   <!--<button id = "option3" (click)="option3to0()" routerLink="/result"  class="button button2"></button>-->
-    <!--<button id = "option4" (click)="option4to0()" routerLink="/result" class="button button5"></button>-->
-  <!--</div>-->
-    <!--<br>-->
-
-<!--</div>-->
-<!--<button routerLink="/result" (click)="bfunction()" class="button">Reload</button>-->
-
-
-<!--<div class = "gridder">-->
-<!--<input type = "range" min="0" max = "255" value = "0" class ="slider" id="sliderRed">-->
-<!--<input type = "range" min="0" max = "255" value = "0" class ="slider slider1" id="sliderGreen">-->
-<!--<input type = "range" min="0" max = "255" value = "0" class ="slider slider2" id="sliderBlue">-->
-<!--</div>-->
-
-<!--<div class = "gridder">-->
-  <!--<button (click)="increasefont()"  class="fontbut"> Bigger </button>-->
-  <!--<button (click)="decreasefont()"  class="fontbut" > Smaller </button>-->
-<!--</div>-->
-<!--<br>-->
-<!--<br>-->
-
-
-<!--</body>-->
 

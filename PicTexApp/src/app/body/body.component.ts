@@ -26,7 +26,7 @@ export class BodyComponent implements OnInit {
   }
 
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
-    sessionStorage.clear();
+    // sessionStorage.clear();
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value; //inputt  ed text from textarea
     sessionStorage.setItem('inputtext',this.role );
     var results;
@@ -109,7 +109,9 @@ export class BodyComponent implements OnInit {
       reader.readAsDataURL(file);
     }
     else{
-      alert("Cannot read your file / no file was selected!")
+      sessionStorage.clear();
+      console.log("no file found")
+      // alert("Cannot read your file / no file was selected!")
     }
   }
 

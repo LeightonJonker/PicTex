@@ -16,7 +16,9 @@ export class ResultComponent implements OnInit {
   //private elements = ['Fire', 'Wind', 'Rain', 'Earth', 'Lightning', 'Lava', 'Blood'];
 
   flag = 1;
+  flag = 1;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
+  private processurl: string = "http://localhost:4200/api/processText?text="
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
   searchterm: string = "red,+panda";
@@ -67,6 +69,93 @@ export class ResultComponent implements OnInit {
 
   }
 
+  private updateImgSearchURL(string) {
+    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+string+"&tag_mode=all";
+  }
+
+  private updateimages(){ // use tags, get correct tag string, create flickr url, create xhr request, open and update thumbnail + carousel images.
+    // this.elements = tag array
+    (<HTMLInputElement>document.getElementById("addbutton")).innerText = "Updating";
+    (<HTMLInputElement>document.getElementById("addbutton")).disabled = true;
+    for (var i=1; i<=this.elements.length; i++) {
+      (<HTMLInputElement>document.getElementById("badge"+i)).disabled = true;
+    }
+
+    var tagstring = this.elements.join(",+");
+    this.updateImgSearchURL(tagstring);
+
+    var results;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function processRequest(){
+      if (this.readyState == 4 && this.status == 200){
+        // document.getElementById("demo").innerHTML = this.responseText;
+        results = this.responseText;
+
+        var parser = new DOMParser();
+        var xmlDoc= parser.parseFromString(results,  "text/xml");
+        var x = xmlDoc.documentElement.getElementsByTagName("photo");
+
+        // console.log(x)
+
+        for (var i = 0; i <= 7 ; i++) {
+          var id = x[i].getAttribute("id");
+          var owner = x[i].getAttribute("owner");
+          var secret = x[i].getAttribute("secret");
+          var server = x[i].getAttribute("server");
+          var farm = x[i].getAttribute("farm");
+          var title = x[i].getAttribute("title");
+          var ispublic = x[i].getAttribute("ispublic");
+          var isfriend = x[i].getAttribute("isfriend");
+          var isfamily = x[i].getAttribute("isfamily");
+          // can successfully access saved xml file and get correct tags for image.
+          sessionStorage.setItem("id" + i, id);
+          sessionStorage.setItem("owner" + i, owner);
+          sessionStorage.setItem("secret" + i, secret);
+          sessionStorage.setItem("server" + i, server);
+          sessionStorage.setItem("farm" + i, farm);
+          sessionStorage.setItem("title" + i, title);
+          sessionStorage.setItem("ispublic" + i, ispublic);
+          sessionStorage.setItem("isfriend" + i, isfriend);
+          sessionStorage.setItem("isfamily" + i, isfamily);
+        }
+        //window.location.replace("/result")
+      }
+    };
+    this.flag++;
+    xhr.open('GET', this.imagesearchurl, true);
+    xhr.send();
+    // var y = xhr.responseXML;
+    // console.log("y= " +y[0].attributes[0].nodeValue)
+    // console.log("successfully changed images")
+    // images are now updated, use loadimages to update.
+
+    setTimeout(() => {this.loadimages();
+    (<HTMLInputElement>document.getElementById("addbutton")).disabled = false;
+      (<HTMLInputElement>document.getElementById("addbutton")).innerText = "Add Tag";
+
+      for (var i=1; i<=this.elements.length; i++) {
+        (<HTMLInputElement>document.getElementById("badge"+i)).disabled = false;
+      }
+    },3000);
+
+  }
+
+  private disablebuttons(){
+    (<HTMLInputElement>document.getElementById("badge1")).disabled = true;
+    // (<HTMLInputElement>document.getElementById("addbutton")).disabled = true;
+    // (<HTMLInputElement>document.getElementById("addbutton")).disabled = false;
+
+
+
+  }
+
+  private tagtest(){
+    // var tagstring = String.join(",",this.elements)
+      var tt = this.elements.join(",+");
+
+    console.log(tt)
+  }
+
   private getTags() {
 
     let xhr: XMLHttpRequest = new XMLHttpRequest();
@@ -91,11 +180,17 @@ export class ResultComponent implements OnInit {
   }
 
   private addtag(){
-    console.log("pushed")
+    var truee = "1"
+    sessionStorage.setItem("addedtag",truee);
+    // console.log("pushed")
     var newtag = (<HTMLInputElement>document.getElementById("tag")).value;
-    console.log(newtag)
-    this.elements.push(newtag);
-    this.loadtags();
+    if(newtag){
+      console.log(newtag)
+      this.elements.push(newtag);
+      this.loadtags();
+      (<HTMLInputElement>document.getElementById("tag")).value="";
+      this.updateimages();
+    }
   }
 
 
@@ -103,6 +198,7 @@ export class ResultComponent implements OnInit {
     this.elements.splice(int,1)
     console.log(this.elements)
     this.loadtags();
+    this.updateimages();
   }
 
   private increasefont(){
@@ -276,9 +372,13 @@ export class ResultComponent implements OnInit {
     });
 
     // this.update();
-    this.getTags();
-    this.loadtags();
-  this.loadimages();
+
+      this.getTags();
+      this.loadtags();
+      this.updateimages();
+      this.loadimages();
+
+
   }
 
 }

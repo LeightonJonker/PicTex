@@ -97,19 +97,22 @@
 #mydiv {
 
   position: absolute;
+  left: 30%;
+  top: 150px;
   resize: both;
   overflow: auto;
   float: right;
   z-index: 9;
   background: rgba(76, 175, 80, 0.01);
-  border: none;
+  /*border: 1px solid #d3d3d3;*/
   /*background-color: #f1f1f1;*/
-  border: 1px solid #d3d3d3;
+  border: 1px dashed transparent;
   text-align: center;
 }
 
 #mydivheader {
   /*background: rgba(76, 175, 80, 0.1);*/
+  border: none;
   padding: 5px;
   cursor: move;
   z-index: 10;
