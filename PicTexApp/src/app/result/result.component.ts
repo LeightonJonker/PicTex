@@ -16,7 +16,6 @@ export class ResultComponent implements OnInit {
   //private elements = ['Fire', 'Wind', 'Rain', 'Earth', 'Lightning', 'Lava', 'Blood'];
 
   flag = 1;
-  flag = 1;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
   private processurl: string = "http://localhost:4200/api/processText?text="
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
@@ -32,7 +31,7 @@ export class ResultComponent implements OnInit {
   public loadimages(){
     var image1;
     var image2;
-     for (var i = 0; i <= 7; i++) {
+     for (var i = 0; i <= 6; i++) {
        var Sid: string = sessionStorage.getItem("id" + i);
        var Sowner: string = sessionStorage.getItem("owner" + i);
        var Ssecret: string = sessionStorage.getItem("secret" + i);
