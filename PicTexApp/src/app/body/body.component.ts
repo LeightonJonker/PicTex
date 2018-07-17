@@ -15,14 +15,14 @@ export class BodyComponent implements OnInit {
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
 
-  private searchterm: string = "red,+panda";
+  private searchterm: string = "nothing";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
-  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance&text="+this.searchterm;
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
   private updateImgSearchURL() {
-    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
+    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance&text="+this.searchterm;
   }
 
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
@@ -40,7 +40,7 @@ export class BodyComponent implements OnInit {
           var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
 
-        for (var i = 0; i <= 7 ; i++) {
+        for (var i = 0; i <= 8 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");

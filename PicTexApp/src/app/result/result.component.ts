@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {style} from "@angular/animations";
 
 @Component({
   //selector: 'app-result',
@@ -20,10 +21,10 @@ export class ResultComponent implements OnInit {
   private processurl: string = "http://localhost:4200/api/processText?text="
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
-  searchterm: string = "red,+panda";
+  searchterm: string = "nothing";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
-  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance";
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance&text="+this.searchterm;
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
 
@@ -31,7 +32,7 @@ export class ResultComponent implements OnInit {
   public loadimages(){
     var image1;
     var image2;
-     for (var i = 0; i <= 6; i++) {
+     for (var i = 0; i <= 8; i++) {
        var Sid: string = sessionStorage.getItem("id" + i);
        var Sowner: string = sessionStorage.getItem("owner" + i);
        var Ssecret: string = sessionStorage.getItem("secret" + i);
@@ -56,8 +57,8 @@ export class ResultComponent implements OnInit {
      if (sessionStorage['uploadedphoto']){
        console.log("uploaded file detected");
        var upsrc = sessionStorage.getItem("uploadedphoto");
-       var imageup1 = document.getElementById("choice8") as HTMLImageElement;
-       var imageup2 = document.getElementById("thumb8") as HTMLImageElement;
+       var imageup1 = document.getElementById("choice9") as HTMLImageElement;
+       var imageup2 = document.getElementById("thumb9") as HTMLImageElement;
        imageup1.src = upsrc;
        imageup2.src = upsrc;
 
@@ -69,7 +70,7 @@ export class ResultComponent implements OnInit {
   }
 
   private updateImgSearchURL(string) {
-    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+string+"&tag_mode=all";
+    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+string+"&tag_mode=all&sort=relevance&text="+string;
   }
 
   private updateimages(){ // use tags, get correct tag string, create flickr url, create xhr request, open and update thumbnail + carousel images.
@@ -96,7 +97,7 @@ export class ResultComponent implements OnInit {
 
         // console.log(x)
 
-        for (var i = 0; i <= 7 ; i++) {
+        for (var i = 0; i <= 8 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");
@@ -204,8 +205,8 @@ export class ResultComponent implements OnInit {
     var box = document.getElementById("option0");
     var size = window.getComputedStyle(box, null).getPropertyValue('font-size');
     var fontsize = parseFloat(size);
-    if (fontsize < 36) {
-      box.style.fontSize = (fontsize + 1) + 'px';
+    if (fontsize < 32) {
+      box.style.fontSize = (fontsize + 2) + 'px';
       document.getElementById("option0").style.fontSize
     }
   }
@@ -214,8 +215,8 @@ export class ResultComponent implements OnInit {
     var box = document.getElementById("option0");
     var size = window.getComputedStyle(box, null).getPropertyValue('font-size');
     var fontsize = parseFloat(size);
-    if (fontsize > 9) {
-      box.style.fontSize = (fontsize - 1) + 'px';
+    if (fontsize > 10) {
+      box.style.fontSize = (fontsize - 2) + 'px';
       document.getElementById("option0").style.fontSize
     }
   }
@@ -229,17 +230,42 @@ export class ResultComponent implements OnInit {
   }
   private boldfont(){
     var box = document.getElementById("option0");
-    box.style.fontWeight = "bold";
-
+    console.log(box.style.fontWeight)
+    if (box.style.fontWeight == "bold"){
+      box.style.fontWeight = "normal";
+    }
+    else {
+      box.style.fontWeight = "bold";
+    }
   }
   private italicfont(){
     var box = document.getElementById("option0");
-    box.style.fontStyle = "italic";
+    console.log(box.style.fontStyle)
+    if (box.style.fontStyle == "italic"){
+      box.style.fontStyle = "normal";
+    }
+    else{
+      box.style.fontStyle = "italic";
+    }
+
+  }
+
+  private underlinefont(){
+    var box = document.getElementById("option0");
+    console.log(box.style.textDecoration)
+    if (box.style.textDecoration == "underline"){
+      box.style.textDecoration = "none";
+    }
+    else{
+      box.style.textDecoration = "underline";
+    }
 
   }
 
   private changefont(string){
     var box = document.getElementById("option0");
+    document.getElementById("fontfamilydropdown").style.fontFamily = string;
+    document.getElementById("fontfamilydropdown").innerText = string;
     box.style.fontFamily = string;
   }
 
@@ -308,7 +334,7 @@ export class ResultComponent implements OnInit {
         var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
 
-        for (var i = 0; i <= 7 ; i++) {
+        for (var i = 0; i <= 8 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");

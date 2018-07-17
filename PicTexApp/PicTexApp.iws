@@ -12,29 +12,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="about.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/about/about.component.html">
+      <file leaf-file-name="result.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/result/result.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-end-line="8" />
+            <state relative-caret-position="158">
+              <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/about/about.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="result.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/result/result.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+            <state relative-caret-position="31">
+              <caret line="117" column="108" lean-forward="true" selection-start-line="117" selection-start-column="108" selection-end-line="117" selection-end-column="108" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="body.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/body/body.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="20" column="142" selection-start-line="20" selection-start-column="108" selection-end-line="20" selection-end-column="142" />
             </state>
           </provider>
         </entry>
@@ -52,17 +55,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sess</find>
-      <find>sessions</find>
-      <find>html</find>
-      <find>add</find>
-      <find>disabled</find>
-      <find>disa</find>
-      <find>drag</find>
-      <find>addb</find>
-      <find>disable</find>
-      <find>processText</find>
-      <find>disabl</find>
       <find>addbutton</find>
       <find>this.ele</find>
       <find>getTags</find>
@@ -74,14 +66,25 @@
       <find>abso</find>
       <find>uplo</find>
       <find>carouselExampleIndicators</find>
-      <find>thumb</find>
       <find>getatt</find>
       <find>font</find>
       <find>caroc</find>
       <find>fonts</find>
       <find>col-</find>
-      <find>fontc</find>
       <find>bg-d</find>
+      <find>fontc</find>
+      <find>tag_</find>
+      <find>panda</find>
+      <find>uploaded</find>
+      <find>thumb</find>
+      <find>addt</find>
+      <find>text=</find>
+      <find>this.baseurl+this.searchextension+this.APIkey+&quot;&amp;tags=&quot;+string+&quot;&amp;tag_mode=all&amp;sort=relevance&amp;text=&quot;+this.searchterm;</find>
+      <find>&amp;text=&quot;+this.searchterm;</find>
+      <find>tag_mode=all&amp;sort=relevance&amp;text=&quot;</find>
+      <find>boldf</find>
+      <find>fa</find>
+      <find>size</find>
     </findStrings>
     <replaceStrings>
       <replace>dark</replace>
@@ -104,13 +107,13 @@
         <option value="$PROJECT_DIR$/src/app/signup/signup.component.html" />
         <option value="$PROJECT_DIR$/src/app/body/body.component.css" />
         <option value="$PROJECT_DIR$/src/app/body/body.component.html" />
-        <option value="$PROJECT_DIR$/src/app/body/body.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/result/result.component.ts" />
         <option value="$PROJECT_DIR$/src/app/nav/nav.component.html" />
         <option value="$PROJECT_DIR$/src/app/result/result.component.css" />
-        <option value="$PROJECT_DIR$/src/app/result/result.component.html" />
         <option value="$PROJECT_DIR$/src/app/about/about.component.css" />
         <option value="$PROJECT_DIR$/src/app/about/about.component.html" />
+        <option value="$PROJECT_DIR$/src/app/body/body.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/result/result.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/result/result.component.html" />
       </list>
     </option>
   </component>
@@ -167,27 +170,6 @@
               <item name="PicTexApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PicTexApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PicTexApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="about" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PicTexApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PicTexApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="body" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PicTexApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PicTexApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="nav" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PicTexApp" type="b2602c69:ProjectViewProjectNode" />
@@ -284,12 +266,12 @@
       <option name="presentableId" value="Default" />
       <updated>1530323570644</updated>
       <workItem from="1530323573931" duration="72500000" />
-      <workItem from="1531366868771" duration="31817000" />
+      <workItem from="1531366868771" duration="40310000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104317000" />
+    <option name="totallyTimeSpent" value="112810000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -300,7 +282,7 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3290938" />
       <window_info anchor="right" id="Maven Projects" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
@@ -599,31 +581,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/about/about.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/result/result.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="51" column="25" lean-forward="true" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/body/body.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/body/body.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/about/about.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="63" lean-forward="true" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/about/about.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/about/about.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -634,24 +616,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/body/body.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="20" column="142" selection-start-line="20" selection-start-column="108" selection-end-line="20" selection-end-column="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/result/result.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/result/result.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/about/about.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/about/about.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-end-line="8" />
+        <state relative-caret-position="31">
+          <caret line="117" column="108" lean-forward="true" selection-start-line="117" selection-start-column="108" selection-end-line="117" selection-end-column="108" />
         </state>
       </provider>
     </entry>
