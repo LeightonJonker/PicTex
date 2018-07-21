@@ -90,24 +90,21 @@
     </div>
 
     <!--<div class="col-sm">-->
-
       <div class="col-3">
-        <br>
-        <br>
-        <br>
-        <!-- <ColorWheel onChange={colour => console.log(colour)} /> -->
         Colour Wheel <br>
-        <input type="text" id="color-input" value="#FFFFFF" data-wheelcolorpicker="" data-wcp-layout="block" data-wcp-autoresize="false"> <br>
-          
-        <input type = "range" min="0" max = "255" value = "0" class ="slider ml-4" id="sliderRed">
-        <input type = "range" min="0" max = "255" value = "0" class ="slider slider1 ml-1" id="sliderGreen">
-        <input type = "range" min="0" max = "255" value = "0" class ="slider slider2 ml-1" id="sliderBlue">
+        <input type="text" id="color-input" value="#ffffff" data-wheelcolorpicker data-wcp-layout="block" data-wcp-autoresize="false"> <br>
+        RGB Values (0-255): <br>
+        R <input type="number" id="red" min="0" max="255" value="255" > <br>
+        G <input type="number" id="green" min="0" max="255" value="255"> <br>
+        B <input type="number" id="blue" min="0" max="255" value="255" >
 
         <div class="row">
           <div class = "gridder">
             <br>
-            <button (click)="decreasefont()"  class="btn btn-dark ml-5"><i class="fa fa-minus"></i></button>
+            Font Size
+            <input type="number" id="fontSizeInput" min="8" max="100" value="24" class="col-sm-4 text-dark">
             <button (click)="increasefont()"  class="btn btn-dark ml-1" > <i class="fa fa-plus"></i></button>
+            <button (click)="decreasefont()"  class="btn btn-dark ml-1"><i class="fa fa-minus"></i></button>
           </div>
         </div>
 

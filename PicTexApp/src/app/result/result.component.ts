@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
-import 'jquery-wheelcolorpicker';
+import Result = jasmine.Result;
 
 @Component({
   // selector: 'app-result',
@@ -110,22 +109,26 @@ export class ResultComponent implements OnInit {
     }
   }
 
+  private setFontSize(size : number) {
+    let box = document.getElementById("option0");
+    box.style.fontSize = size + 'px';
+  }
+
   private normalfont(){
     var box = document.getElementById("option0");
     box.style.fontStyle = "normal";
     box.style.fontWeight = "normal";
-
-
   }
+
   private boldfont(){
     var box = document.getElementById("option0");
     box.style.fontWeight = "bold";
 
   }
+
   private italicfont(){
     var box = document.getElementById("option0");
     box.style.fontStyle = "italic";
-
   }
 
   private changefont(string){
@@ -133,10 +136,7 @@ export class ResultComponent implements OnInit {
     box.style.fontFamily = string;
   }
 
-
-
-  constructor() {
-  }
+  constructor() {}
 
 ///////////////////////////////
   private dragElement(elmnt) {
@@ -239,33 +239,48 @@ export class ResultComponent implements OnInit {
 
   ngOnInit() {
 
-    var input = sessionStorage.getItem("inputtext");
+    let input = sessionStorage.getItem("inputtext");
     document.getElementById("option0").innerText = input;
 
-    var div = document.getElementById("mydiv");
+    let div = document.getElementById("mydiv");
     this.dragElement(div);
+
+    let red = (<HTMLInputElement>document.getElementById("red"));
+    let green = (<HTMLInputElement>document.getElementById("green"));
+    let blue = (<HTMLInputElement>document.getElementById("blue"));
     let wcp = (<HTMLInputElement>document.getElementById("color-input"));
-    var red = (<HTMLInputElement>document.getElementById("sliderRed"));
-    var green = (<HTMLInputElement>document.getElementById("sliderGreen"));
-    var blue = (<HTMLInputElement>document.getElementById("sliderBlue"));
-    red.addEventListener('input', function(){
-      document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
-      $('color-input').wheelColorPicker('setRgb', red.value, green.value, blue.value);
+    let fontInput = (<HTMLInputElement>document.getElementById("fontSizeInput");
+    let text = document.getElementById("option0");
+
+    // fontInput.addEventListener('input', this.setFontSize(fontInput.value));
+    fontInput.addEventListener('input',() => {
+      let size = Number(fontInput.value);
+      this.setFontSize(size);
+    });
+
+    $(wcp).on('slidermove', () => {
+      let colours : string = $(wcp).wheelColorPicker('getValue', 'rgb'); //rgb(255,255,255)
+      let splitted = colours.split(",");
+      red.value = splitted[0].split("(")[1]; // ["rgb(", "255"]
+      green.value = splitted[1]; // "255"
+      blue.value = splitted[2].split(")")[0]; // ["255", ")"]
+      text.style.color = colours;
+    });
+
+    red.addEventListener('input', () => {
+      $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+      text.style.color = $(wcp).wheelColorPicker('getValue', 'rgb');
     });
 
     green.addEventListener('input', function(){
-      document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
-      $('color-input').wheelColorPicker('setRgb', red.value, green.value, blue.value);
+      $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+      text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
     });
 
     blue.addEventListener('input', function(){
-      document.getElementById("option0").style.color = "rgb("+ red.value +"," + green.value + "," + blue.value + ")";
-      $('color-input').wheelColorPicker('setRgb', red.value, green.value, blue.value);
+      $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+      text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
     });
-
-    wcp.addEventListener("onchange", function() {
-      console.log("HELLO");
-    })
 
     // this.update();
     this.getTags();
