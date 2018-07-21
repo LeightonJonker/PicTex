@@ -15,35 +15,32 @@ export class BodyComponent implements OnInit {
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
 
-  private searchterm: string = "red,+panda";
+  private searchterm: string = "nothing";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
-  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance&text="+this.searchterm;
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
   private updateImgSearchURL() {
-    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all";
+    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance&text="+this.searchterm;
   }
 
   private flickrsearch(){ // use flickr apis to search for search term. includes xml creation and usage
-    sessionStorage.clear();
+    // sessionStorage.clear();
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value; //inputt  ed text from textarea
     sessionStorage.setItem('inputtext',this.role );
     var results;
-
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function processRequest(){
       if (this.readyState == 4 && this.status == 200){
-        document.getElementById("demo").innerHTML = this.responseText;
+        // document.getElementById("demo").innerHTML = this.responseText;
         results = this.responseText;
-        console.log("aaaaaaaaaaaaaaaaa")
 
           var parser = new DOMParser();
           var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
-        console.log("bbbbbbbbbbb")
 
-        for (var i = 0; i <= 7 ; i++) {
+        for (var i = 0; i <= 8 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");
@@ -70,10 +67,7 @@ export class BodyComponent implements OnInit {
     this.flag++;
     xhr.open('GET', this.imagesearchurl, true);
     xhr.send();
-   // this.flickrsizes();
-   // this.buffer();
-
-  }
+   }
 
   private processText() {
     let uri: string = encodeURI((<HTMLInputElement>document.getElementById("thetextarea")).value);
@@ -89,6 +83,7 @@ export class BodyComponent implements OnInit {
   }
 
   private flickrandmove(){
+    console.log("does this")
     document.getElementById("submitbutton").innerHTML = "Loading..."
     this.processText();
     this.flickrsearch(); // use search term to search for images
@@ -99,12 +94,27 @@ export class BodyComponent implements OnInit {
     console.log("hi after 5")
   }
 
-  public test(){
-    var elements = ['Fire', 'Wind', 'Rain'];
-    var string = elements.join(',');
-    console.log(string)
 
+  public previewFile() {
+    var file = (<HTMLInputElement>document.getElementById("uploadedfile")).files[0];
+    var reader  = new FileReader();
+
+    reader.onloadend = function () {
+      var bool = "yes"
+      sessionStorage.setItem("uploadedphoto", reader.result);
+      sessionStorage.setItem("isphotouploaded",bool)
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+    else{
+      sessionStorage.clear();
+      console.log("no file found")
+      // alert("Cannot read your file / no file was selected!")
+    }
   }
+
 
   private async afunction() {
     this.flickrsearch();
@@ -115,6 +125,7 @@ export class BodyComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+   // this.previewFile();
   }
 
 }

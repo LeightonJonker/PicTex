@@ -1,210 +1,160 @@
 <div class = "bground">
-
-<div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
       <br>
-      <a  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></a>
-      <a  (click)="Remove(1)" class="badge badge-dark mx-1 text-white" id="badge2"> </a>
-      <a  (click)="Remove(2)" class="badge badge-dark mx-1 text-white" id="badge3"> </a>
-      <a  (click)="Remove(3)" class="badge badge-dark mx-1 text-white" id="badge4"> </a>
-      <a  (click)="Remove(4)" class="badge badge-dark mx-1 text-white" id="badge5"> </a>
-      <a  (click)="Remove(5)" class="badge badge-dark mx-1 text-white" id="badge6"> </a>
-      <a  (click)="Remove(6)" class="badge badge-dark mx-1 text-white" id="badge7"> </a>
-      <a  (click)="Remove(7)" class="badge badge-dark mx-1 text-white" id="badge8"> </a>
-      <a  (click)="Remove(8)" class="badge badge-dark mx-1 text-white" id="badge9"> </a>
+      <!--btn btn-dark btn-sm-->
+      <!--<a  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></a>-->
+      <button  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></button>
+      <button  (click)="Remove(1)" class="badge badge-dark mx-1 text-white" id="badge2"> </button>
+      <button  (click)="Remove(2)" class="badge badge-dark mx-1 text-white" id="badge3"> </button>
+      <button  (click)="Remove(3)" class="badge badge-dark mx-1 text-white" id="badge4"> </button>
+      <button  (click)="Remove(4)" class="badge badge-dark mx-1 text-white" id="badge5"> </button>
+      <button  (click)="Remove(5)" class="badge badge-dark mx-1 text-white" id="badge6"> </button>
+      <button  (click)="Remove(6)" class="badge badge-dark mx-1 text-white" id="badge7"> </button>
+      <button  (click)="Remove(7)" class="badge badge-dark mx-1 text-white" id="badge8"> </button>
+      <button  (click)="Remove(8)" class="badge badge-dark mx-1 text-white" id="badge9"> </button>
       <input type="text" class="col-xs-1 float-none" placeholder="Add Tags" id="tag">
-      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-dark mx-1 btn-sm float-none"  > Add Tag </button>
+      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-dark mx-1 btn-sm float-none" id="addbutton"> Add Tag </button>
 
-      <button routerLink="/result" id="Save" class="btn btn-dark float-right mx-2">Save</button>
-      <button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-right mx-2">Reload Page</button>
-      <!--Draggable DIV:-->
       <div id="mydiv">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
         <div id="mydivheader" ></div>
         <p id="option0" contenteditable="true">see through background</p>
       </div>
+
+      <!--</div>-->
+    </div>
+    <div class = "col ">
+      <!--<br>-->
+      <!--<button routerLink="/result" id="Save" class="btn btn-dark float-right mx-2">Save</button>-->
+      <!--<button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-right mx-2">Refresh Page</button>-->
     </div>
   </div>
 
   <div class="row">
     <div class="col-9">
-      <div class="carocontainer">
-        <div id="carouselExampleIndicators" class="carousel slide"  data-interval="false" data-ride="carousel">
+      <div class="carocontainer ">
+        <div id="Carouselmain" class="carousel slide"  data-interval="false" data-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="http://placehold.it/100x80?text=Thumb+01" id="choice0" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="http://placehold.it/100x80?text=Thumb+02" id = "choice1" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="http://placehold.it/100x80?text=Thumb+03"  id = "choice2" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="http://placehold.it/100x80?text=Thumb+04"  id = "choice3" alt="Fourth slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="http://placehold.it/100x80?text=Thumb+05"  id = "choice4" alt="Fifth slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="http://placehold.it/100x80?text=Thumb+06"  id = "choice5" alt="Sixth slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="http://placehold.it/100x80?text=Thumb+07"  id = "choice6" alt="Seventh slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="http://placehold.it/100x80?text=Thumb+08"  id = "choice7" alt="Eighth slide">
-            </div>
+            <div class="carousel-item active"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+01" id="choice0" alt="First slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+02" id = "choice1" alt="Second slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+03"  id = "choice2" alt="Third slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+04"  id = "choice3" alt="Fourth slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+05"  id = "choice4" alt="Fifth slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+06"  id = "choice5" alt="Sixth slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+07"  id = "choice6" alt="Seventh slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+08"  id = "choice7" alt="Eighth slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+08"  id = "choice8" alt="Eighth slide"></div>
+            <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+09"  id = "choice9" alt="Ninth slide"></div>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#Carouselmain" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#Carouselmain" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
         </div>
       </div>
 
-      <br>
-      <br>
-      <br>
-      <br>
+      <br><br><br><br><br><br><br>
 
-      <div id="carousethumbs" class="carousel slide" data-ride="carousel">
+      <div id="carousethumbs" class="carousel slide ml-5" data-ride="carousel">
         <ol class="carousel-indicators">
-          <div data-target="#carouselExampleIndicators" data-slide-to="0" class="active mx-1"> <img id = "thumb0" src="http://placehold.it/100x80?text=Thumb+01"></div>
-          <div data-target="#carouselExampleIndicators" data-slide-to="1" class = "mx-1"> <img id = "thumb1" src="http://placehold.it/100x80?text=Thumb+02"></div>
-          <div data-target="#carouselExampleIndicators"  data-slide-to="2" class = "mx-1"> <img id = "thumb2" src="http://placehold.it/100x80?text=Thumb+03"></div>
-          <div data-target="#carouselExampleIndicators" data-slide-to="3" class = "mx-1"> <img id = "thumb3" src="http://placehold.it/100x80?text=Thumb+04"></div>
-          <div data-target="#carouselExampleIndicators" data-slide-to="4" class = "mx-1"> <img id = "thumb4" src="http://placehold.it/100x80?text=Thumb+05"></div>
-          <div data-target="#carouselExampleIndicators" data-slide-to="5" class = "mx-1"> <img id = "thumb5" src="http://placehold.it/100x80?text=Thumb+06"></div>
-          <div data-target="#carouselExampleIndicators" data-slide-to="6" class = "mx-1"> <img id = "thumb6" src="http://placehold.it/100x80?text=Thumb+07"></div>
-          <div data-target="#carouselExampleIndicators" data-slide-to="7" class = "mx-1"> <img id = "thumb7" src="http://placehold.it/100x80?text=Thumb+08"></div>
-       </ol>
+          <div data-target="#Carouselmain" data-slide-to="0" class="active mx-1"> <img id = "thumb0" src="http://placehold.it/100x80?text=Thumb+01"></div>
+          <div data-target="#Carouselmain" data-slide-to="1" class = "mx-1"> <img id = "thumb1" src="http://placehold.it/100x80?text=Thumb+02"></div>
+          <div data-target="#Carouselmain"  data-slide-to="2" class = "mx-1"> <img id = "thumb2" src="http://placehold.it/100x80?text=Thumb+03"></div>
+          <div data-target="#Carouselmain" data-slide-to="3" class = "mx-1"> <img id = "thumb3" src="http://placehold.it/100x80?text=Thumb+04"></div>
+          <div data-target="#Carouselmain" data-slide-to="4" class = "mx-1"> <img id = "thumb4" src="http://placehold.it/100x80?text=Thumb+05"></div>
+          <!--<div data-target="#Carouselmain" data-slide-to="5" class = "mx-1"> <img id = "thumb5" src="http://placehold.it/100x80?text=Thumb+06"></div>-->
+          <!--<div data-target="#Carouselmain" data-slide-to="6" class = "mx-1"> <img id = "thumb6" src="http://placehold.it/100x80?text=Thumb+07"></div>-->
+          <!--&lt;!&ndash;<div data-target="#Carouselmain" data-slide-to="7" class = "mx-1"> <img id = "thumb7" src="http://placehold.it/100x80?text=Thumb+08"></div>&ndash;&gt;-->
+          <!--<div data-target="#Carouselmain" data-slide-to="8" class = "mx-1 "> <img id = "thumb8" class = "uploaded" src="http://placehold.it/100x80?text=Thumb+08"></div>-->
+        </ol>
       </div>
-      <br>
-      <br>
+
+      <br><br><br><br><br><br>
+
+      <div id="carousethumbs2" class="carousel slide ml-5" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <!--<div data-target="#Carouselmain" data-slide-to="0" class="active mx-1"> <img id = "thumb0" src="http://placehold.it/100x80?text=Thumb+01"></div>-->
+          <!--<div data-target="#Carouselmain" data-slide-to="1" class = "mx-1"> <img id = "thumb1" src="http://placehold.it/100x80?text=Thumb+02"></div>-->
+          <!--<div data-target="#Carouselmain"  data-slide-to="2" class = "mx-1"> <img id = "thumb2" src="http://placehold.it/100x80?text=Thumb+03"></div>-->
+          <!--<div data-target="#Carouselmain" data-slide-to="3" class = "mx-1"> <img id = "thumb3" src="http://placehold.it/100x80?text=Thumb+04"></div>-->
+          <!--<div data-target="#Carouselmain" data-slide-to="4" class = "mx-1"> <img id = "thumb4" src="http://placehold.it/100x80?text=Thumb+05"></div>-->
+          <div data-target="#Carouselmain" data-slide-to="5" class = "mx-1"> <img id = "thumb5" src="http://placehold.it/100x80?text=Thumb+06"></div>
+          <div data-target="#Carouselmain" data-slide-to="6" class = "mx-1"> <img id = "thumb6" src="http://placehold.it/100x80?text=Thumb+07"></div>
+          <div data-target="#Carouselmain" data-slide-to="7" class = "mx-1"> <img id = "thumb7" src="http://placehold.it/100x80?text=Thumb+08"></div>
+          <div data-target="#Carouselmain" data-slide-to="8" class = "mx-1 "> <img id = "thumb8" class = "uploaded" src="http://placehold.it/100x80?text=Thumb+08"></div>
+          <div data-target="#Carouselmain" data-slide-to="9" class = "mx-1 "> <img id = "thumb9" class = "uploaded" src="http://placehold.it/100x80?text=Thumb+09"></div>
+
+        </ol>
+      </div>
+
+      <br><br>
+
     </div>
 
-    <!--<div class="col-sm">-->
-      <div class="col-3">
-        Colour Wheel <br>
-        <input type="text" id="color-input" value="#ffffff" data-wheelcolorpicker data-wcp-layout="block" data-wcp-autoresize="false"> <br>
-        RGB Values (0-255): <br>
-        R <input type="number" id="red" min="0" max="255" value="255" > <br>
-        G <input type="number" id="green" min="0" max="255" value="255"> <br>
-        B <input type="number" id="blue" min="0" max="255" value="255" >
-
-        <div class="row">
-          <div class = "gridder">
-            <br>
-            Font Size
-            <input type="number" id="fontSizeInput" min="8" max="100" value="24" class="col-sm-4 text-dark">
-            <button (click)="increasefont()"  class="btn btn-dark ml-1" > <i class="fa fa-plus"></i></button>
-            <button (click)="decreasefont()"  class="btn btn-dark ml-1"><i class="fa fa-minus"></i></button>
-          </div>
+    <div class="col-3 fontsize fontcontrol">
+      Colour Wheel <br>
+      <input type="text" id="color-input" value="#ffffff" data-wheelcolorpicker data-wcp-layout="block" data-wcp-autoresize="false"> <br>
+      RGB Values (0-255): <br>
+      R <input type="number" id="red" min="0" max="255" value="255" > <br>
+      G <input type="number" id="green" min="0" max="255" value="255"> <br>
+      B <input type="number" id="blue" min="0" max="255" value="255" >
+      <div class="row ">
+        <div class = "gridder">
+          <br>
+          Font Size
+          <input type="number" id="fontSizeInput" min="8" max="100" value="24" class="col-sm-4 text-dark">
+          <button (click)="increasefont()"  class="btn btn-dark ml-1" > <i class="fa fa-plus"></i></button>
+          <button (click)="decreasefont()"  class="btn btn-dark ml-1"><i class="fa fa-minus"></i></button>
         </div>
-
-
-        <div class ="row">
-          <div class="dropdown show">
-            <br>
-            <a class="btn btn-dark dropdown-toggle text-white ml-5" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Font Styles
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item btn btn-dark" (click)="normalfont()">Normal</a>
-              <a class="dropdown-item btn btn-dark" (click)="boldfont()">Bold</a>
-              <a class="dropdown-item btn btn-dark" (click)="italicfont()">Italics</a>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class ="row">
-          <div class="dropdown show">
-            <br>
-            <a class="btn btn-dark dropdown-toggle text-white ml-5 " role="menu" id="fontfamilydropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Font Families
-            </a>
-            <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuLink">
-              <a class ="dropdown-item btn btn-dark def" (click)="changefont('Normal')">Normal</a>
-              <a class ="dropdown-item btn btn-dark abrilfatface" (click)="changefont('Abril Fatface')">Abril Fatface</a>
-              <a class ="dropdown-item btn btn-dark amaticsc" (click)="changefont('Amatic SC')">Amatic SC</a>
-              <a class ="dropdown-item btn btn-dark chelaone" (click)="changefont('Chela One')">Chela One</a>
-              <a class ="dropdown-item btn btn-dark dancingscript" (click)="changefont('Dancing Script')">Dancing Script</a>
-              <a class ="dropdown-item btn btn-dark gaegu" (click)="changefont('Gaegu')">Gaegu</a>
-              <a class ="dropdown-item btn btn-dark galada" (click)="changefont('Galada')">Galada</a>
-              <a class ="dropdown-item btn btn-dark gloriahallelujah" (click)="changefont('Gloria Hallelujah')">Gloria Hallelujah</a>
-              <a class ="dropdown-item btn btn-dark indieflower" (click)="changefont('Indie Flower')">Indie Flower</a>
-              <a class ="dropdown-item btn btn-dark lato" (click)="changefont('Lato')">Lato</a>
-              <a class ="dropdown-item btn btn-dark lobster" (click)="changefont('Lobster')">Lobster</a>
-              <a class ="dropdown-item btn btn-dark markazitext" (click)="changefont('Markazi Text')">Markazi Text</a>
-              <a class ="dropdown-item btn btn-dark montserrat" (click)="changefont('Montserrat')">Montserrat</a>
-              <a class ="dropdown-item btn btn-dark opensans" (click)="changefont('Open Sans')">Open Sans</a>
-              <a class ="dropdown-item btn btn-dark oswald" (click)="changefont('Oswald')">Oswald</a>
-              <a class ="dropdown-item btn btn-dark pacifico" (click)="changefont('Pacifico')">Pacifico</a>
-              <a class ="dropdown-item btn btn-dark roboto" (click)="changefont('Roboto')">Roboto</a>
-              <a class ="dropdown-item btn btn-dark sourcesanspro" (click)="changefont('Source Sans Pro')">Source Sans Pro</a>
-            </div>
-          </div>
-        </div>
-
+      </div>
+      <br>
+      <div class ="row">
+        <button (click)="boldfont()"  class="btn btn-dark ml-5"><i class="fa fa-bold"></i></button>
+        <button (click)="italicfont()"  class="btn btn-dark ml-1"><i class="fa fa-italic"></i></button>
+        <button (click)="underlinefont()"  class="btn btn-dark ml-1"><i class="fa fa-underline"></i></button> 
       </div>
 
-  </div>
+      <div class ="row">
+        <div class="dropdown show">
+          <br>
+          <a class="btn btn-dark dropdown-toggle text-white ml-5 " role="menu" id="fontfamilydropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Font Families
+          </a>
+          <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuLink">
+            <a class ="dropdown-item btn btn-dark def" (click)="changefont('Normal')">Normal</a>
+            <a class ="dropdown-item btn btn-dark abrilfatface" (click)="changefont('Abril Fatface')">Abril Fatface</a>
+            <a class ="dropdown-item btn btn-dark amaticsc" (click)="changefont('Amatic SC')">Amatic SC</a>
+            <a class ="dropdown-item btn btn-dark chelaone" (click)="changefont('Chela One')">Chela One</a>
+            <a class ="dropdown-item btn btn-dark dancingscript" (click)="changefont('Dancing Script')">Dancing Script</a>
+            <a class ="dropdown-item btn btn-dark gaegu" (click)="changefont('Gaegu')">Gaegu</a>
+            <a class ="dropdown-item btn btn-dark galada" (click)="changefont('Galada')">Galada</a>
+            <a class ="dropdown-item btn btn-dark gloriahallelujah" (click)="changefont('Gloria Hallelujah')">Gloria Hallelujah</a>
+            <a class ="dropdown-item btn btn-dark indieflower" (click)="changefont('Indie Flower')">Indie Flower</a>
+            <a class ="dropdown-item btn btn-dark lato" (click)="changefont('Lato')">Lato</a>
+            <a class ="dropdown-item btn btn-dark lobster" (click)="changefont('Lobster')">Lobster</a>
+            <a class ="dropdown-item btn btn-dark markazitext" (click)="changefont('Markazi Text')">Markazi Text</a>
+            <a class ="dropdown-item btn btn-dark montserrat" (click)="changefont('Montserrat')">Montserrat</a>
+            <a class ="dropdown-item btn btn-dark opensans" (click)="changefont('Open Sans')">Open Sans</a>
+            <a class ="dropdown-item btn btn-dark oswald" (click)="changefont('Oswald')">Oswald</a>
+            <a class ="dropdown-item btn btn-dark pacifico" (click)="changefont('Pacifico')">Pacifico</a>
+            <a class ="dropdown-item btn btn-dark roboto" (click)="changefont('Roboto')">Roboto</a>
+            <a class ="dropdown-item btn btn-dark sourcesanspro" (click)="changefont('Source Sans Pro')">Source Sans Pro</a>
+          </div>
+        </div>
+      </div>
 
-<br>
-<br>
-<br>
-<br>
+      <div class="fontsize">
+          <button routerLink="/result" id="Saveb" class="btn btn-success btn-lg  ml-4">Save</button>
+      </div>
+
+    </div>
 </div>
-<!--<body>-->
-
-<!--<section class = "main">-->
-  <!--<h1 onload="changeoptionsizes()"> Customise your PicTex! </h1>-->
 
 
-  <!--<div class = "content">-->
-
-  <!--</div>-->
-
-
-<!--</section>-->
-<!--<div class="wrapper">-->
-  <!--<div class="left">-->
-    <!--<button id = "option1" (click)="option1to0()" routerLink="/result" class="button button3"></button>-->
-   <!--<button id = "option2"  (click)="option2to0()" routerLink="/result" class="button button4"></button>-->
-
-  <!--</div>-->
-  <!--<textarea  id = "option0" placeholder="Edit your text!"> {{localtext}} </textarea>-->
-  <!--<div class="right">-->
-   <!--<button id = "option3" (click)="option3to0()" routerLink="/result"  class="button button2"></button>-->
-    <!--<button id = "option4" (click)="option4to0()" routerLink="/result" class="button button5"></button>-->
-  <!--</div>-->
-    <!--<br>-->
-
-<!--</div>-->
-<!--<button routerLink="/result" (click)="bfunction()" class="button">Reload</button>-->
-
-
-<!--<div class = "gridder">-->
-<!--<input type = "range" min="0" max = "255" value = "0" class ="slider" id="sliderRed">-->
-<!--<input type = "range" min="0" max = "255" value = "0" class ="slider slider1" id="sliderGreen">-->
-<!--<input type = "range" min="0" max = "255" value = "0" class ="slider slider2" id="sliderBlue">-->
-<!--</div>-->
-
-<!--<div class = "gridder">-->
-  <!--<button (click)="increasefont()"  class="fontbut"> Bigger </button>-->
-  <!--<button (click)="decreasefont()"  class="fontbut" > Smaller </button>-->
-<!--</div>-->
-<!--<br>-->
-<!--<br>-->
-
-
-<!--</body>-->
 
