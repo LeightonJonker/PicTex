@@ -208,7 +208,7 @@ export class ResultComponent implements OnInit {
       fontInput.value = fontsize + 2;
   }
 
-  private decreasefont() {
+  private decreasefont(){
     var box = document.getElementById("option0");
     var size = window.getComputedStyle(box, null).getPropertyValue('font-size');
     var fontsize = parseFloat(size);
@@ -387,7 +387,7 @@ export class ResultComponent implements OnInit {
     let green = (<HTMLInputElement>document.getElementById("green"));
     let blue = (<HTMLInputElement>document.getElementById("blue"));
     let wcp = (<HTMLInputElement>document.getElementById("color-input"));
-    let fontInput = (<HTMLInputElement>document.getElementById("fontSizeInput");
+    let fontInput = (<HTMLInputElement>document.getElementById("fontSizeInput"));
     let text = document.getElementById("option0");
 
     this.setFontSize(24);

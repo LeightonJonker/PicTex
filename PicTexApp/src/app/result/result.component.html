@@ -1,22 +1,25 @@
 <div class = "bground">
   <div class="container">
     <div class="row">
-      <div class="col-10">
+      <div class="col-2"></div>
+      <div class="col-10 ">
       <br>
       <!--btn btn-dark btn-sm-->
       <!--<a  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></a>-->
-      <button  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></button>
-      <button  (click)="Remove(1)" class="badge badge-dark mx-1 text-white" id="badge2"> </button>
-      <button  (click)="Remove(2)" class="badge badge-dark mx-1 text-white" id="badge3"> </button>
-      <button  (click)="Remove(3)" class="badge badge-dark mx-1 text-white" id="badge4"> </button>
-      <button  (click)="Remove(4)" class="badge badge-dark mx-1 text-white" id="badge5"> </button>
-      <button  (click)="Remove(5)" class="badge badge-dark mx-1 text-white" id="badge6"> </button>
-      <button  (click)="Remove(6)" class="badge badge-dark mx-1 text-white" id="badge7"> </button>
-      <button  (click)="Remove(7)" class="badge badge-dark mx-1 text-white" id="badge8"> </button>
-      <button  (click)="Remove(8)" class="badge badge-dark mx-1 text-white" id="badge9"> </button>
-      <input type="text" class="col-xs-1 float-none" placeholder="Add Tags" id="tag">
-      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-dark mx-1 btn-sm float-none" id="addbutton"> Add Tag </button>
-
+        <!--<span  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge">test</span>-->
+        <h5>
+      <span  (click)="Remove(0)" class="badge badge-secondary mx-1 text-white " id="badge1"></span>
+      <span  (click)="Remove(1)" class="badge badge-secondary mx-1 text-white" id="badge2"> </span>
+      <span  (click)="Remove(2)" class="badge badge-secondary mx-1 text-white" id="badge3"> </span>
+      <span  (click)="Remove(3)" class="badge badge-secondary mx-1 text-white" id="badge4"> </span>
+      <span  (click)="Remove(4)" class="badge badge-secondary mx-1 text-white" id="badge5"> </span>
+      <span  (click)="Remove(5)" class="badge badge-secondary mx-1 text-white" id="badge6"> </span>
+      <span  (click)="Remove(6)" class="badge badge-secondary mx-1 text-white" id="badge7"> </span>
+      <span  (click)="Remove(7)" class="badge badge-secondary mx-1 text-white" id="badge8"> </span>
+      <span  (click)="Remove(8)" class="badge badge-secondary mx-1 text-white" id="badge9"> </span>
+      <input type="text" class="col-xs-1 mx-2 float-none" placeholder="Add Tags" id="tag">
+      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-secondary mb-2 btn-sm float-none" id="addbutton"> Add Tag </button>
+        </h5>
       <div id="mydiv">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
         <div id="mydivheader" ></div>
@@ -117,7 +120,7 @@
       <div class ="row">
         <button (click)="boldfont()"  class="btn btn-dark ml-5"><i class="fa fa-bold"></i></button>
         <button (click)="italicfont()"  class="btn btn-dark ml-1"><i class="fa fa-italic"></i></button>
-        <button (click)="underlinefont()"  class="btn btn-dark ml-1"><i class="fa fa-underline"></i></button> 
+        <button (click)="underlinefont()"  class="btn btn-dark ml-1"><i class="fa fa-underline"></i></button>
       </div>
 
       <div class ="row">
