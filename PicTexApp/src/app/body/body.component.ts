@@ -121,12 +121,12 @@ export class BodyComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    let form = (<HTMLInputElement>document.getElementById("form"));
-    let submitButton = (<HTMLInputElement>document.getElementById("submitbutton"));
-    form.addEventListener("submit", () => {
-      submitButton.value = "Loading";
-      this.flickrandmove();
-    });
+    // let form = (<HTMLInputElement>document.getElementById("form"));
+    // let submitButton = (<HTMLInputElement>document.getElementById("submitbutton"));
+    // form.addEventListener("submit", () => {
+    //   submitButton.value = "Loading";
+    //   this.flickrandmove();
+    // });
    // this.previewFile();
   }
 
