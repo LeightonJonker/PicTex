@@ -24,7 +24,9 @@
     "bootstrap": "^4.1.1",
     "bootstrap-colorpicker": "^2.5.2",
     "core-js": "^2.5.4",
+    "interactive": "^0.1.9",
     "jquery": "^3.3.1",
+    "nodemailer": "^4.6.7",
     "npm": "^6.1.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

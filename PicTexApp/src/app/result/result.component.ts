@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {style} from "@angular/animations";
-import * as $ from "jquery";
 
 @Component({
   // selector: 'app-result',
@@ -199,14 +198,14 @@ export class ResultComponent implements OnInit {
     this.updateimages();
   }
 
-  private increasefont(){
+  private increasefont() {
     var box = document.getElementById("option0");
     var size = window.getComputedStyle(box, null).getPropertyValue('font-size');
     var fontsize = parseFloat(size);
     if (fontsize < 32) {
       box.style.fontSize = (fontsize + 2) + 'px';
-      let fontInput = (<HTMLInputElement>document.getElementById("fontSizeInput")).value;
-      fontInput = String(fontsize + 2);
+      let fontInput = <HTMLInputElement>document.getElementById("fontSizeInput");
+      fontInput.value = fontsize + 2;
     }
   }
 
@@ -216,8 +215,8 @@ export class ResultComponent implements OnInit {
     var fontsize = parseFloat(size);
     if (fontsize > 10) {
       box.style.fontSize = (fontsize - 2) + 'px';
-      let fontInput = (<HTMLInputElement>document.getElementById("fontSizeInput")).value;
-      fontInput = String(fontsize - 2);
+      let fontInput = document.getElementById("fontSizeInput");
+      fontInput.value = fontsize - 2;
     }
 
 
@@ -319,6 +318,7 @@ export class ResultComponent implements OnInit {
       document.onmousemove = null;
     }
   }
+
 ///////////////////////////
 
 
@@ -374,6 +374,21 @@ export class ResultComponent implements OnInit {
     setTimeout(() => {location.reload()},1500);
   }
 
+
+////////////////////////////
+
+  public sendemail(){
+    var address = (<HTMLInputElement>document.getElementById("saveemail")).value;
+    console.log(address)
+
+    // var mailer = require("nodemailer");
+
+
+  }
+
+
+  ///////////////
+
   ngOnInit() {
 
     let input = sessionStorage.getItem("inputtext");
@@ -382,26 +397,54 @@ export class ResultComponent implements OnInit {
     let div = document.getElementById("mydiv");
     this.dragElement(div);
 
-    let wcp = $("#color-input");
+    let red = (<HTMLInputElement>document.getElementById("red"));
+    let green = (<HTMLInputElement>document.getElementById("green"));
+    let blue = (<HTMLInputElement>document.getElementById("blue"));
+    let wcp = (<HTMLInputElement>document.getElementById("color-input"));
     let fontInput = (<HTMLInputElement>document.getElementById("fontSizeInput"));
     let text = document.getElementById("option0");
 
     this.setFontSize(24);
-    text.style.color = wcp.wheelColorPicker('getValue','rgb');
+    text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
 
+    // fontInput.addEventListener('input', this.setFontSize(fontInput.value));
     fontInput.addEventListener('input',() => {
       let size = Number(fontInput.value);
       this.setFontSize(size);
     });
 
-    wcp.on('slidermove', () => {
-      text.style.color = wcp.wheelColorPicker('getValue', 'rgb');
+    $(wcp).on('slidermove', () => {
+      let colours : string = $(wcp).wheelColorPicker('getValue', 'rgb'); //rgb(255,255,255)
+      let splitted = colours.split(",");
+      // red.value = splitted[0].split("(")[1]; // ["rgb(", "255"]
+      // green.value = splitted[1]; // "255"
+      // blue.value = splitted[2].split(")")[0]; // ["255", ")"]
+      text.style.color = colours;
     });
 
-    this.getTags();
-    this.loadtags();
-    this.updateimages();
-    this.loadimages();
+    // red.addEventListener('input', () => {
+    //   $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+    //   text.style.color = $(wcp).wheelColorPicker('getValue', 'rgb');
+    // });
+    //
+    // green.addEventListener('input', function(){
+    //   $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+    //   text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
+    // });
+    //
+    // blue.addEventListener('input', function(){
+    //   $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+    //   text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
+    // });
+
+    // this.update();
+
+      this.getTags();
+      this.loadtags();
+      this.updateimages();
+      this.loadimages();
+
+
   }
 
 }
