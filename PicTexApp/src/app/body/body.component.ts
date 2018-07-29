@@ -84,6 +84,7 @@ export class BodyComponent implements OnInit {
 
   private flickrandmove(){
     console.log("does this")
+    document.getElementById("submitbutton").innerHTML = "Loading..."
     this.processText();
     this.flickrsearch(); // use search term to search for images
     setTimeout(() => {window.location.replace("/result")},1500);
@@ -109,6 +110,8 @@ export class BodyComponent implements OnInit {
     }
     else{
       sessionStorage.clear();
+      console.log("no file found")
+      // alert("Cannot read your file / no file was selected!")
     }
   }
 
@@ -122,12 +125,7 @@ export class BodyComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    let form = (<HTMLInputElement>document.getElementById("form"));
-    let submitButton = (<HTMLInputElement>document.getElementById("submitbutton"));
-    form.addEventListener("submit", () => {
-      submitButton.value = "Loading";
-      this.flickrandmove();
-    });
+   // this.previewFile();
   }
 
 }

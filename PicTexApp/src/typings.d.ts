@@ -5,5 +5,5 @@ interface NodeModule {
 }
 
 interface JQuery {
-  wheelColorPicker(options?: any, format?: any) : any;
+  wheelColorPicker(options?: any) : any;
 }
