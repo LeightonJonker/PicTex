@@ -206,6 +206,7 @@ export class ResultComponent implements OnInit {
       box.style.fontSize = (fontsize + 2) + 'px';
       let fontInput = document.getElementById("fontSizeInput");
       fontInput.value = fontsize + 2;
+    }
   }
 
   private decreasefont(){
