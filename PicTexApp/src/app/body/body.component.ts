@@ -90,10 +90,6 @@ export class BodyComponent implements OnInit {
     setTimeout(() => {window.location.replace("/result")},1500);
   }
 
-  public printsomething(){
-    console.log("hi after 5")
-  }
-
 
   public previewFile() {
     var file = (<HTMLInputElement>document.getElementById("uploadedfile")).files[0];
@@ -125,6 +121,12 @@ export class BodyComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    let form = (<HTMLInputElement>document.getElementById("form"));
+    let submitButton = (<HTMLInputElement>document.getElementById("submitbutton"));
+    form.addEventListener("submit", () => {
+      submitButton.value = "Loading";
+      this.flickrandmove();
+    });
    // this.previewFile();
   }
 
