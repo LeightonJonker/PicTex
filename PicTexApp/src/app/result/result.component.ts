@@ -198,14 +198,15 @@ export class ResultComponent implements OnInit {
     this.updateimages();
   }
 
-  private increasefont(){
+  private increasefont() {
     var box = document.getElementById("option0");
     var size = window.getComputedStyle(box, null).getPropertyValue('font-size');
     var fontsize = parseFloat(size);
     if (fontsize < 32) {
       box.style.fontSize = (fontsize + 2) + 'px';
-      let fontInput = document.getElementById("fontSizeInput");
+      let fontInput = <HTMLInputElement>document.getElementById("fontSizeInput");
       fontInput.value = fontsize + 2;
+    }
   }
 
   private decreasefont(){
@@ -317,6 +318,7 @@ export class ResultComponent implements OnInit {
       document.onmousemove = null;
     }
   }
+
 ///////////////////////////
 
 
@@ -375,6 +377,18 @@ export class ResultComponent implements OnInit {
 
 ////////////////////////////
 
+  public sendemail(){
+    var address = (<HTMLInputElement>document.getElementById("saveemail")).value;
+    console.log(address)
+
+    // var mailer = require("nodemailer");
+
+
+  }
+
+
+  ///////////////
+
   ngOnInit() {
 
     let input = sessionStorage.getItem("inputtext");
@@ -402,26 +416,26 @@ export class ResultComponent implements OnInit {
     $(wcp).on('slidermove', () => {
       let colours : string = $(wcp).wheelColorPicker('getValue', 'rgb'); //rgb(255,255,255)
       let splitted = colours.split(",");
-      red.value = splitted[0].split("(")[1]; // ["rgb(", "255"]
-      green.value = splitted[1]; // "255"
-      blue.value = splitted[2].split(")")[0]; // ["255", ")"]
+      // red.value = splitted[0].split("(")[1]; // ["rgb(", "255"]
+      // green.value = splitted[1]; // "255"
+      // blue.value = splitted[2].split(")")[0]; // ["255", ")"]
       text.style.color = colours;
     });
 
-    red.addEventListener('input', () => {
-      $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
-      text.style.color = $(wcp).wheelColorPicker('getValue', 'rgb');
-    });
-
-    green.addEventListener('input', function(){
-      $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
-      text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
-    });
-
-    blue.addEventListener('input', function(){
-      $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
-      text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
-    });
+    // red.addEventListener('input', () => {
+    //   $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+    //   text.style.color = $(wcp).wheelColorPicker('getValue', 'rgb');
+    // });
+    //
+    // green.addEventListener('input', function(){
+    //   $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+    //   text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
+    // });
+    //
+    // blue.addEventListener('input', function(){
+    //   $(wcp).wheelColorPicker('setRgb', red.value/255, green.value/255, blue.value/255);
+    //   text.style.color = $(wcp).wheelColorPicker('getValue','rgb');
+    // });
 
     // this.update();
 

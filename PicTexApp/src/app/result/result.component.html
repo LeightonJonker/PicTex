@@ -101,17 +101,15 @@
     </div>
 
     <div class="col-3 fontsize fontcontrol">
-      Colour Wheel <br>
+      <br>
       <input type="text" id="color-input" value="#ffffff" data-wheelcolorpicker data-wcp-layout="block" data-wcp-autoresize="false"> <br>
-      RGB Values (0-255): <br>
-      R <input type="number" id="red" min="0" max="255" value="255" > <br>
-      G <input type="number" id="green" min="0" max="255" value="255"> <br>
-      B <input type="number" id="blue" min="0" max="255" value="255" >
-      <div class="row ">
-        <div class = "gridder">
+      <!--R<input type="number" id="red" min="0" max="255" value="255" > <br>-->
+      <!--G<input type="number" id="green" min="0" max="255" value="255"> <br>-->
+      <!--B<input type="number" id="blue" min="0" max="255" value="255" >-->
+      <div class="row">
+        <div class = "gridder ml-5">
           <br>
-          Font Size
-          <input type="number" id="fontSizeInput" min="8" max="100" value="24" class="col-sm-4 text-dark">
+          <input type="number" id="fontSizeInput" value="24" class="col-sm-4 text-dark">
           <button (click)="increasefont()"  class="btn btn-dark ml-1" > <i class="fa fa-plus"></i></button>
           <button (click)="decreasefont()"  class="btn btn-dark ml-1"><i class="fa fa-minus"></i></button>
         </div>
@@ -153,11 +151,34 @@
       </div>
 
       <div class="fontsize">
-          <button routerLink="/result" id="Saveb" class="btn btn-success btn-lg  ml-4">Save</button>
+        <button type="button" class="btn btn-primary ml-5" data-toggle="modal" data-target="#savemodal">
+          Save
+        </button>
+          <!--<button routerLink="/result" id="Saveb" class="btn btn-success btn-lg  ml-4">Save</button>-->
       </div>
 
     </div>
 </div>
 
-
-
+    <!--Modal-->
+    <div class="modal fade" id="savemodal" tabindex="-1" role="dialog" aria-labelledby="savemodalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="savemodalLabel">Send Your PicTex To Yourself!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Enter your e-mail to have your PicTex sent to you!
+            <br><br>
+            <input type="text" class="col float-none" placeholder="Enter Email" id="saveemail">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="sendemail()">Send E-mail</button>
+          </div>
+        </div>
+      </div>
+    </div>
