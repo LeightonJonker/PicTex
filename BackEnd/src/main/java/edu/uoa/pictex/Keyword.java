@@ -51,10 +51,12 @@ public class Keyword {
         if (keywords.size() == 1) {
             formString = keywords.get(0);
             return formString;
+        } else if (keywords.size() == 0) {
+            formString = "";
+            return formString;
         }
 
         formString = keywords.get(0) + ",";
-
 
         for(int i = 1; i < keywords.size(); i++) {
             if (i == keywords.size()-1) {

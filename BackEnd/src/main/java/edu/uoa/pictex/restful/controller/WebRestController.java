@@ -2,6 +2,7 @@ package edu.uoa.pictex.restful.controller;
 
 import edu.uoa.pictex.Keyword;
 import edu.uoa.pictex.SentenceProcessor;
+import edu.uoa.pictex.Email;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +18,12 @@ public class WebRestController {
 
     private static final SentenceProcessor sp = new SentenceProcessor();
     private Keyword keywords = new Keyword();
+    
 
     @RequestMapping("/api/processText")
     public String getKeywords(@RequestParam(value="text", defaultValue="") String text) {
         keywords = sp.process(text);
+        
         return keywords.toString();
     }
 
@@ -50,6 +53,17 @@ public class WebRestController {
         } catch (IOException ex) {
             System.out.println("Error reading file");
             return null;
+        }
+    }
+
+    @RequestMapping("api/email")
+    public String sendEmail() {
+        Email email = new Email();
+        Boolean sentEmail = email.sendEmail();
+        if (sentEmail) {
+            return "E-mail sent successfully";
+        } else {
+            return "E-mail unsuccessful";
         }
     }
 
