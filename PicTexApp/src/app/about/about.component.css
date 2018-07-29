@@ -8,3 +8,15 @@
   background-color: #e3e3e3;
 
 }
+
+ .thumbcontainer{
+   margin-top: -20px;
+   /*margin-left: 10px;*/
+   /*margin-bottom: 200px;*/
+   /*height: 60%;*/
+   /*height: 80%;*/
+   display: flex;
+   /*background: blue;*/
+   /*justify-content: center;*/
+   align-items: center;
+ }

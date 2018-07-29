@@ -118,9 +118,22 @@
   margin: 0 auto;
 }
 
+ .thumbcontainer{
+   /*margin-top: -10px;*/
+   /*margin-left: 10px;*/
+   /*margin-bottom: 200px;*/
+   /*height: 60%;*/
+   /*height: 80%;*/
+   display: flex;
+   /*background: blue;*/
+   /*justify-content: center;*/
+   align-items: center;
+ }
+
 .carocontainer{
   margin-top: 30px;
-  margin-left: 60px;
+  /*margin-left: -60px;*/
+  margin-right: 60px;
   /*height: 60%;*/
   /*height: 80%;*/
   display: flex;
