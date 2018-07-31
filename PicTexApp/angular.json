@@ -31,7 +31,6 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/jquery-wheelcolorpicker/jquery.wheelcolorpicker.js",
-              "node_modules/nodemailer/lib/nodemailer.js",
               "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },

@@ -23,13 +23,13 @@ export class ResultComponent implements OnInit {
   searchterm: string = "nothing";
   searchextension: string = "?method=flickr.photos.search&api_key=";
   sizeextension: string = "?method=flickr.photos.getSizes&api_key=";
-  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance&text="+this.searchterm;
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm+"&tag_mode=all&sort=relevance&safe_search=1&content_type=1&text="+this.searchterm ;
   private imagesizeurl: string = this.baseurl+this.sizeextension+this.APIkey;
 
   public loadimages(){
     var image1;
     var image2;
-     for (var i = 0; i <= 8; i++) {
+     for (var i = 0; i <= 18; i++) {
        var Sid: string = sessionStorage.getItem("id" + i);
        var Sowner: string = sessionStorage.getItem("owner" + i);
        var Ssecret: string = sessionStorage.getItem("secret" + i);
@@ -54,8 +54,8 @@ export class ResultComponent implements OnInit {
      if (sessionStorage['uploadedphoto']){
        console.log("uploaded file detected");
        var upsrc = sessionStorage.getItem("uploadedphoto");
-       var imageup1 = document.getElementById("choice9") as HTMLImageElement;
-       var imageup2 = document.getElementById("thumb9") as HTMLImageElement;
+       var imageup1 = document.getElementById("choice19") as HTMLImageElement;
+       var imageup2 = document.getElementById("thumb19") as HTMLImageElement;
        imageup1.src = upsrc;
        imageup2.src = upsrc;
 
@@ -67,7 +67,7 @@ export class ResultComponent implements OnInit {
   }
 
   private updateImgSearchURL(string) {
-    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+string+"&tag_mode=all&sort=relevance&text="+string;
+    this.imagesearchurl = this.baseurl+this.searchextension+this.APIkey+"&tags="+string+"&tag_mode=all&sort=relevance&safe_search=1&content_type=1&text="+string;
   }
 
   private updateimages(){ // use tags, get correct tag string, create flickr url, create xhr request, open and update thumbnail + carousel images.
@@ -94,7 +94,7 @@ export class ResultComponent implements OnInit {
 
         // console.log(x)
 
-        for (var i = 0; i <= 8 ; i++) {
+        for (var i = 0; i <= 18 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");
@@ -338,7 +338,7 @@ export class ResultComponent implements OnInit {
         var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
 
-        for (var i = 0; i <= 8 ; i++) {
+        for (var i = 0; i <= 18 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");
