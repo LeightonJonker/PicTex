@@ -6,7 +6,7 @@
 
   <div class="d-flex justify-content-center">
     <div class="wrapper">
-      <textarea  (ngModel)="role" id = "thetextarea" placeholder="Input your text here..."></textarea>
+      <textarea  (ngModel)="role" id = "thetextarea" placeholder="Type Anything!"></textarea>
       <div class="d-flex justify-content-center">
          <button id="submitbutton" (click)="flickrandmove()" class="btn btn-dark">Submit</button>
         <!--<input type="submit" id="submitbutton" value="Submit"  class="btn btn-dark">-->
@@ -21,8 +21,8 @@
   <div class="d-flex justify-content-center ml-5">
     <form>
       <div class="form-group ml-5">
-        <label for="uploadedfile" class = "ml-5">Upload Your Own Image</label>
-        <input type="file" multiple = "false" accept="image/*" class="form-control-file ml-4" id="uploadedfile" (change)="previewFile()">
+        <label for="uploadedfile" class = "ml-3">Upload Your Own Image</label>
+        <input type="file" multiple = "false" accept="image/*" class="form-control-file ml-1" id="uploadedfile" (change)="previewFile()">
 
       </div>
     </form>

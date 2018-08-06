@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {style} from "@angular/animations";
+import * as html2canvas from 'html2canvas';
+
 
 @Component({
   // selector: 'app-result',
@@ -14,6 +16,20 @@ export class ResultComponent implements OnInit {
   imgfarmid: string = ".staticflickr.com/";
   tagsURL: string = "http://localhost:4200/api/getTags";
   elements: [string];
+
+  /////////////////////IMAGE EDIT VARIBLES
+
+  editurl: String;
+  editfamily: String;
+  editsize = 32;
+  editformat = 0;
+  editcol : String;
+  editstring : String;
+  editx = 100;
+  edity = 100;
+  editname : String = "edited";
+
+  ////////////////////IMAGE EDIT VARIABLES
 
   flag = 1;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
@@ -43,7 +59,7 @@ export class ResultComponent implements OnInit {
 
        // gets url img for src (t for thumbnail and n for "small")
        var thumbfinal: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_t.jpg";
-       var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + ".jpg";
+       var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_c.jpg";
 
       image1 = document.getElementById("choice"+i) as HTMLImageElement;
       image2 = document.getElementById("thumb"+i) as HTMLImageElement;
@@ -162,11 +178,9 @@ export class ResultComponent implements OnInit {
       console.log(xhr.responseText);
       this.elements = eval(xhr.responseText);
     }
-
   }
 
   private loadtags(){
-
     console.log(this.elements);
     for(var j = 1; j < 10 ; j++ ) {
       document.getElementById("badge"+j).innerHTML="";
@@ -175,6 +189,7 @@ export class ResultComponent implements OnInit {
       document.getElementById("badge"+(i+1)).innerHTML=this.elements[i] + '  <i (click)= "test()" class="fa fa-times" ></i>';
     }
   }
+
 
   private addtag(){
     var truee = "1"
@@ -206,6 +221,7 @@ export class ResultComponent implements OnInit {
       box.style.fontSize = (fontsize + 2) + 'px';
       let fontInput = document.getElementById("fontSizeInput");
       fontInput.value = fontsize + 2;
+      this.editsize = fontsize + 2;
     }
   }
 
@@ -217,6 +233,8 @@ export class ResultComponent implements OnInit {
       box.style.fontSize = (fontsize - 2) + 'px';
       let fontInput = document.getElementById("fontSizeInput");
       fontInput.value = fontsize - 2;
+      this.editsize = fontsize - 2;
+
     }
 
 
@@ -225,12 +243,15 @@ export class ResultComponent implements OnInit {
   private setFontSize(size : number) {
     let box = document.getElementById("option0");
     box.style.fontSize = size + 'px';
+    this.editsize = size;
+
   }
 
   private normalfont(){
     var box = document.getElementById("option0");
     box.style.fontStyle = "normal";
     box.style.fontWeight = "normal";
+    this.editformat = 0;
   }
 
   private boldfont(){
@@ -238,9 +259,11 @@ export class ResultComponent implements OnInit {
     console.log(box.style.fontWeight)
     if (box.style.fontWeight == "bold"){
       box.style.fontWeight = "normal";
+      this.editformat = 0;
     }
     else {
       box.style.fontWeight = "bold";
+      this.editformat = 1;
     }
   }
 
@@ -249,9 +272,13 @@ export class ResultComponent implements OnInit {
     console.log(box.style.fontStyle)
     if (box.style.fontStyle == "italic"){
       box.style.fontStyle = "normal";
+      this.editformat = 0;
+
     }
     else{
       box.style.fontStyle = "italic";
+      this.editformat = 2;
+
     }
 
   }
@@ -261,6 +288,7 @@ export class ResultComponent implements OnInit {
     console.log(box.style.textDecoration)
     if (box.style.textDecoration == "underline"){
       box.style.textDecoration = "none";
+
     }
     else{
       box.style.textDecoration = "underline";
@@ -273,6 +301,7 @@ export class ResultComponent implements OnInit {
     document.getElementById("fontfamilydropdown").style.fontFamily = string;
     document.getElementById("fontfamilydropdown").innerText = string;
     box.style.fontFamily = string;
+    this.editfamily = string;
   }
 
   constructor() {}
@@ -378,10 +407,9 @@ export class ResultComponent implements OnInit {
 ////////////////////////////
 
   public sendemail(){
-    var address = (<HTMLInputElement>document.getElementById("saveemail")).value;
-    console.log(address)
+    // var address = (<HTMLInputElement>document.getElementById("saveemail")).value;
+    // console.log(address)
 
-    // var mailer = require("nodemailer");
 
 
   }
@@ -390,7 +418,7 @@ export class ResultComponent implements OnInit {
   ///////////////
 
   ngOnInit() {
-
+    $("[data-toggle=popover]").popover();
     let input = sessionStorage.getItem("inputtext");
     document.getElementById("option0").innerText = input;
 
@@ -411,12 +439,14 @@ export class ResultComponent implements OnInit {
     fontInput.addEventListener('input',() => {
       let size = Number(fontInput.value);
       this.setFontSize(size);
+      this.editsize = size;
     });
 
     $(wcp).on('slidermove', () => {
       let colours : string = $(wcp).wheelColorPicker('getValue', 'rgb');
       let splitted = colours.split(",");
       text.style.color = colours;
+      this.editcol = colours;
     });
 
     this.getTags();

@@ -14,6 +14,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ResultComponent } from './result/result.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     HeaderComponent,

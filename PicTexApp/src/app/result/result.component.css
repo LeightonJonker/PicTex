@@ -91,8 +91,8 @@
 #mydiv {
 
   position: absolute;
-  left: 30%;
-  top: 150px;
+  left: 36%;
+  top: 120px;
   resize: both;
   overflow: auto;
   float: right;
@@ -130,10 +130,20 @@
    align-items: center;
  }
 
+ .hundred{
+   width: 100px;
+   height: 100px;
+ }
+
+.resize{
+  margin-left:10px;
+}
+
+
 .carocontainer{
   margin-top: 30px;
   /*margin-left: -60px;*/
-  margin-right: 60px;
+  margin-right: 100px;
   /*height: 60%;*/
   /*height: 80%;*/
   display: flex;

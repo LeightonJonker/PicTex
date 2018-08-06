@@ -1,24 +1,32 @@
-<div class = "bground">
+<div class = "bground" id="whole">
   <div class="container">
     <div class="row">
-      <div class="col-2"></div>
-      <div class="col-10 ">
+      <div class="col-4 ">
+        <br>
+
+        <a tabindex="0" class="btn btn-dark ml-5" role="button" data-toggle="popover" data-trigger="focus" title="Tip:" data-content="Select your favorite image and edit your text. When you're finished, press Send">
+          <i class="fa fa-info-circle"></i>
+        </a>
+
+
+      </div>
+      <div class="col-8  ">
       <br>
       <!--btn btn-dark btn-sm-->
       <!--<a  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge1"></a>-->
         <!--<span  (click)="Remove(0)" class="badge badge-dark mx-1 text-white " id="badge">test</span>-->
         <h5>
-      <span  (click)="Remove(0)" class="badge badge-secondary mx-1 text-white " id="badge1"></span>
-      <span  (click)="Remove(1)" class="badge badge-secondary mx-1 text-white" id="badge2"> </span>
-      <span  (click)="Remove(2)" class="badge badge-secondary mx-1 text-white" id="badge3"> </span>
-      <span  (click)="Remove(3)" class="badge badge-secondary mx-1 text-white" id="badge4"> </span>
-      <span  (click)="Remove(4)" class="badge badge-secondary mx-1 text-white" id="badge5"> </span>
-      <span  (click)="Remove(5)" class="badge badge-secondary mx-1 text-white" id="badge6"> </span>
-      <span  (click)="Remove(6)" class="badge badge-secondary mx-1 text-white" id="badge7"> </span>
-      <span  (click)="Remove(7)" class="badge badge-secondary mx-1 text-white" id="badge8"> </span>
-      <span  (click)="Remove(8)" class="badge badge-secondary mx-1 text-white" id="badge9"> </span>
-      <input type="text" class="col-xs-1 mx-2 float-none" placeholder="Add Tags" id="tag">
-      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-secondary mb-2 btn-sm float-none" id="addbutton"> Add Tag </button>
+      <!--<span  (click)="Remove(0)" class="badge badge-secondary mx-1 text-white " id="badge1"></span>-->
+      <!--<span  (click)="Remove(1)" class="badge badge-secondary mx-1 text-white" id="badge2"> </span>-->
+      <!--<span  (click)="Remove(2)" class="badge badge-secondary mx-1 text-white" id="badge3"> </span>-->
+      <!--<span  (click)="Remove(3)" class="badge badge-secondary mx-1 text-white" id="badge4"> </span>-->
+      <!--<span  (click)="Remove(4)" class="badge badge-secondary mx-1 text-white" id="badge5"> </span>-->
+      <!--<span  (click)="Remove(5)" class="badge badge-secondary mx-1 text-white" id="badge6"> </span>-->
+      <!--<span  (click)="Remove(6)" class="badge badge-secondary mx-1 text-white" id="badge7"> </span>-->
+      <!--<span  (click)="Remove(7)" class="badge badge-secondary mx-1 text-white" id="badge8"> </span>-->
+      <!--<span  (click)="Remove(8)" class="badge badge-secondary mx-1 text-white" id="badge9"> </span>-->
+      <input type="text" class="col-xs-1 ml-4 float-none resize" placeholder="Add Tags" id="tag">
+      <button (click)="addtag()" placeholer="Add Tags" class="btn btn-secondary mb-2 btn-sm float-none resize " id="addbutton"> Add Tag </button>
         </h5>
       <div id="mydiv">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
@@ -28,12 +36,25 @@
 
       <!--</div>-->
     </div>
-    <div class = "col-3">
+    <div class = "col-4">
 
-      <!--<br>-->
-      <!--<button routerLink="/result" id="Save" class="btn btn-dark float-right mx-2">Save</button>-->
-      <!--<button routerLink="/result" id="reloadB" (click)="ReloadSearch()" class="btn btn-dark float-right mx-2">Refresh Page</button>-->
+
     </div>
+      <div class = "col-7 ml-4">
+        <h5>
+        <span  (click)="Remove(0)" class="badge badge-secondary mx-1 text-white " id="badge1"></span>
+        <span  (click)="Remove(1)" class="badge badge-secondary mx-1 text-white" id="badge2"> </span>
+        <span  (click)="Remove(2)" class="badge badge-secondary mx-1 text-white" id="badge3"> </span>
+        <span  (click)="Remove(3)" class="badge badge-secondary mx-1 text-white" id="badge4"> </span>
+        <span  (click)="Remove(4)" class="badge badge-secondary mx-1 text-white" id="badge5"> </span>
+        <span  (click)="Remove(5)" class="badge badge-secondary mx-1 text-white" id="badge6"> </span>
+        <span  (click)="Remove(6)" class="badge badge-secondary mx-1 text-white" id="badge7"> </span>
+        <span  (click)="Remove(7)" class="badge badge-secondary mx-1 text-white" id="badge8"> </span>
+          <span  (click)="Remove(8)" class="badge badge-secondary mx-1 text-white" id="badge9"> </span>
+        </h5>
+
+      </div>
+
   </div>
 
   <div class="row">
@@ -109,7 +130,7 @@
 
                 <div class ="col">
                   <a data-target="#Carouselmain" data-slide-to="18" class = "thumbnail mx-3"> <img id = "thumb18" src="http://placehold.it/100x80?text=Thumb+18"></a>
-                  <a data-target="#Carouselmain" data-slide-to="19" class=" thumbnail mx-3"> <img id = "thumb19" src="http://placehold.it/100x80?text=Thumb+20"></a>
+                  <a data-target="#Carouselmain" data-slide-to="19" class=" thumbnail mx-3"> <img id = "thumb19" class = "hundred" src="http://placehold.it/100x80?text=Thumb+20"></a>
 
                 </div>
 
@@ -137,7 +158,7 @@
       <div class="carocontainer">
         <div id="Carouselmain" class="carousel slide"  data-interval="false" data-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+01" id="choice0" alt="First slide"></div>
+            <div class="carousel-item active" id="caro0"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+01" id="choice0" alt="First slide"></div>
             <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+02" id = "choice1" alt="Second slide"></div>
             <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+03"  id = "choice2" alt="Third slide"></div>
             <div class="carousel-item"><img class="d-block w-100 caroheight" src="http://placehold.it/100x80?text=Thumb+04"  id = "choice3" alt="Fourth slide"></div>
@@ -259,11 +280,10 @@
 
       <div class="fontsize">
         <button type="button" class="btn btn-primary ml-5" data-toggle="modal" data-target="#savemodal">
-          Save
+          Send
         </button>
           <!--<button routerLink="/result" id="Saveb" class="btn btn-success btn-lg  ml-4">Save</button>-->
       </div>
-
     </div>
 </div>
 
