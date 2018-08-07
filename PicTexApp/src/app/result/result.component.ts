@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {style} from "@angular/animations";
-import * as html2canvas from 'html2canvas';
-
 
 @Component({
   // selector: 'app-result',
@@ -10,16 +8,17 @@ import * as html2canvas from 'html2canvas';
   providers: [],
 })
 export class ResultComponent implements OnInit {
+
   private role: string;
   // private localtext: string =  this.role = sessionStorage.getItem('inputtext');
   imgsrc: string = "https://farm";
   imgfarmid: string = ".staticflickr.com/";
   tagsURL: string = "http://localhost:4200/api/getTags";
   elements: [string];
-
+  allText : [string];
   /////////////////////IMAGE EDIT VARIBLES
 
-  editurl: String;
+  editurl: String = "http://localhost:4200/api/editImage";
   editfamily: String;
   editsize = 32;
   editformat = 0;
@@ -52,7 +51,7 @@ export class ResultComponent implements OnInit {
        var Sserver: string = sessionStorage.getItem("server" + i);
        var Sfarm: string = sessionStorage.getItem("farm" + i);
        var Stitle: string = sessionStorage.getItem("title" + i);
-       console.log(Stitle)
+       // console.log(Stitle)
        var Sispublic: string = sessionStorage.getItem("ispublic" + i);
        var Sisfriend: string = sessionStorage.getItem("isfriend" + i);
        var Sisfamily: string = sessionStorage.getItem("isfamily" + i);
@@ -166,7 +165,7 @@ export class ResultComponent implements OnInit {
     // var tagstring = String.join(",",this.elements)
       var tt = this.elements.join(",+");
 
-    console.log(tt)
+    // console.log(tt)
   }
 
   private getTags() {
@@ -175,13 +174,13 @@ export class ResultComponent implements OnInit {
     xhr.open("GET",this.tagsURL, false);
     xhr.send();
     if(xhr.readyState == 4 && xhr.status == 200) {
-      console.log(xhr.responseText);
+      // console.log(xhr.responseText);
       this.elements = eval(xhr.responseText);
     }
   }
 
+
   private loadtags(){
-    console.log(this.elements);
     for(var j = 1; j < 10 ; j++ ) {
       document.getElementById("badge"+j).innerHTML="";
     }
@@ -197,7 +196,7 @@ export class ResultComponent implements OnInit {
     // console.log("pushed")
     var newtag = (<HTMLInputElement>document.getElementById("tag")).value;
     if(newtag){
-      console.log(newtag)
+      // console.log(newtag)
       this.elements.push(newtag);
       this.loadtags();
       (<HTMLInputElement>document.getElementById("tag")).value="";
@@ -208,7 +207,7 @@ export class ResultComponent implements OnInit {
 
   private Remove(int){
     this.elements.splice(int,1)
-    console.log(this.elements)
+    // console.log(this.elements)
     this.loadtags();
     this.updateimages();
   }
@@ -256,7 +255,7 @@ export class ResultComponent implements OnInit {
 
   private boldfont(){
     var box = document.getElementById("option0");
-    console.log(box.style.fontWeight)
+    // console.log(box.style.fontWeight)
     if (box.style.fontWeight == "bold"){
       box.style.fontWeight = "normal";
       this.editformat = 0;
@@ -269,7 +268,7 @@ export class ResultComponent implements OnInit {
 
   private italicfont(){
     var box = document.getElementById("option0");
-    console.log(box.style.fontStyle)
+    // console.log(box.style.fontStyle)
     if (box.style.fontStyle == "italic"){
       box.style.fontStyle = "normal";
       this.editformat = 0;
@@ -285,7 +284,7 @@ export class ResultComponent implements OnInit {
 
   private underlinefont(){
     var box = document.getElementById("option0");
-    console.log(box.style.textDecoration)
+    // console.log(box.style.textDecoration)
     if (box.style.textDecoration == "underline"){
       box.style.textDecoration = "none";
 
@@ -409,6 +408,10 @@ export class ResultComponent implements OnInit {
   public sendemail(){
     // var address = (<HTMLInputElement>document.getElementById("saveemail")).value;
     // console.log(address)
+    // use global variables and make api call for image editor.
+    // get x and y co-ordinates and string.
+    this.editstring =  document.getElementById("option0").innerText;
+
 
 
 
@@ -421,6 +424,7 @@ export class ResultComponent implements OnInit {
     $("[data-toggle=popover]").popover();
     let input = sessionStorage.getItem("inputtext");
     document.getElementById("option0").innerText = input;
+    this.editstring = input;
 
     let div = document.getElementById("mydiv");
     this.dragElement(div);
