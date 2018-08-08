@@ -189,7 +189,9 @@ export class ResultComponent implements OnInit {
     for(var i = 0; i < this.elements.length; i++ ){
       for (var j = 0; j <= this.badarray.length; j++){
         if (this.elements[i] === this.badarray[j]){
-          i++;
+          this.elements.splice(i,1);
+          i--;
+          break;
         }
       }
       document.getElementById("badge"+(i+1)).innerHTML=this.elements[i] + '  <i (click)= "test()" class="fa fa-times" ></i>';
