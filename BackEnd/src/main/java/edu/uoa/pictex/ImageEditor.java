@@ -78,6 +78,8 @@ public class ImageEditor {
 
     private Font getFont() {
         String filePath = fontFamily + "-Regular.ttf";
+        //remove spaces on file path if any
+        filePath = filePath.replaceAll("\\s+", "");
         try {
             InputStream is = this.getClass().getResourceAsStream(filePath);
             Font font = Font.createFont(Font.TRUETYPE_FONT, is);
