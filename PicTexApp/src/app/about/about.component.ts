@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as html2canvas from 'html2canvas';
 
 @Component({
   // selector: 'app-about',
@@ -21,22 +20,7 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
-public ss(){
-    console.log("poopybutthol")
-  html2canvas(document.querySelector("#cap")).then(canvas => {
-    document.body.appendChild(canvas)
-  });
-
-}
-
   ngOnInit() {
-    // let colorInput = (<HTMLInputElement>document.getElementById("color-input"));
-    // let eventColour = (<HTMLInputElement>document.getElementById("event-color"));
-    //
-    // colorInput.addEventListener("slidermove", function() {
-    //   eventColour.value = this.wheelColorPicker('getValue', 'rgb');
-    // });
-
 
   }
 
