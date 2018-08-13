@@ -6,6 +6,7 @@
 
         <a tabindex="0" class="btn btn-dark ml-5" role="button" data-toggle="popover" data-trigger="focus" title="Tip:" data-content="Select your favorite image and edit your text. When you're finished, press Send">
           <i class="fa fa-info-circle"></i>
+          <!--add "what's your best pic?"-->
         </a>
 
 
@@ -37,7 +38,7 @@
       <!--</div>-->
     </div>
     <div class = "col-4">
-
+    <!-- add save button or something here?-->
 
     </div>
       <div class = "col-7 ml-4">
@@ -69,33 +70,33 @@
             <div class="carousel-item active">
               <div class = "row-3">
                 <div class ="col">
-                  <a data-target="#Carouselmain" data-slide-to="0" class=" thumbnail mx-3"> <img id = "thumb0" src="http://placehold.it/100x80?text=Thumb+01"></a>
-                  <a data-target="#Carouselmain" data-slide-to="1" class=" thumbnail mx-3"> <img id = "thumb1" src="http://placehold.it/100x80?text=Thumb+02"></a>
+                  <a data-target="#Carouselmain" data-slide-to="0" class=" thumbnail mx-3" (click)="updateediturl(0)" > <img id = "thumb0" src="http://placehold.it/100x80?text=Thumb+01"></a>
+                  <a data-target="#Carouselmain" data-slide-to="1" class=" thumbnail mx-3" (click)="updateediturl(1)"> <img id = "thumb1" src="http://placehold.it/100x80?text=Thumb+02"></a>
 
                 </div>
                 <br>
                 <div class ="col">
-                  <a data-target="#Carouselmain" data-slide-to="2" class = "thumbnail mx-3"> <img id = "thumb2" src="http://placehold.it/100x80?text=Thumb+02"></a>
-                  <a data-target="#Carouselmain" data-slide-to="3" class=" thumbnail mx-3"> <img id = "thumb3" src="http://placehold.it/100x80?text=Thumb+03"></a>
+                  <a data-target="#Carouselmain" data-slide-to="2" class = "thumbnail mx-3" (click)="updateediturl(2)"> <img id = "thumb2" src="http://placehold.it/100x80?text=Thumb+02"></a>
+                  <a data-target="#Carouselmain" data-slide-to="3" class=" thumbnail mx-3" (click)="updateediturl(3)"> <img id = "thumb3" src="http://placehold.it/100x80?text=Thumb+03"></a>
 
                 </div>
                 <br>
                 <div class ="col ">
-                  <a data-target="#Carouselmain"  data-slide-to="4" class = "thumbnail mx-3"> <img id = "thumb4" src="http://placehold.it/100x80?text=Thumb+04"></a>
-                  <a data-target="#Carouselmain" data-slide-to="5" class=" thumbnail mx-3"> <img id = "thumb5" src="http://placehold.it/100x80?text=Thumb+05"></a>
+                  <a data-target="#Carouselmain"  data-slide-to="4" class = "thumbnail mx-3" (click)="updateediturl(4)"> <img id = "thumb4" src="http://placehold.it/100x80?text=Thumb+04"></a>
+                  <a data-target="#Carouselmain" data-slide-to="5" class=" thumbnail mx-3" (click)="updateediturl(5)"> <img id = "thumb5" src="http://placehold.it/100x80?text=Thumb+05"></a>
 
                 </div>
                 <br>
                 <div class ="col ">
-                  <a data-target="#Carouselmain" data-slide-to="6" class = "thumbnail mx-3"> <img id = "thumb6" src="http://placehold.it/100x80?text=Thumb+06"></a>
-                  <a data-target="#Carouselmain" data-slide-to="7" class=" thumbnail mx-3"> <img id = "thumb7" src="http://placehold.it/100x80?text=Thumb+07"></a>
+                  <a data-target="#Carouselmain" data-slide-to="6" class = "thumbnail mx-3" (click)="updateediturl(6)"> <img id = "thumb6" src="http://placehold.it/100x80?text=Thumb+06"></a>
+                  <a data-target="#Carouselmain" data-slide-to="7" class=" thumbnail mx-3" (click)="updateediturl(7)"> <img id = "thumb7" src="http://placehold.it/100x80?text=Thumb+07"></a>
                 </div>
 
                 <br>
 
                 <div class ="col">
-                  <a data-target="#Carouselmain" data-slide-to="8" class = "thumbnail mx-3"> <img id = "thumb8" src="http://placehold.it/100x80?text=Thumb+08"></a>
-                  <a data-target="#Carouselmain" data-slide-to="9" class=" thumbnail mx-3"> <img id = "thumb9" src="http://placehold.it/100x80?text=Thumb+09"></a>
+                  <a data-target="#Carouselmain" data-slide-to="8" class = "thumbnail mx-3" (click)="updateediturl(8)"> <img id = "thumb8" src="http://placehold.it/100x80?text=Thumb+08"></a>
+                  <a data-target="#Carouselmain" data-slide-to="9" class=" thumbnail mx-3" (click)="updateediturl(9)"> <img id = "thumb9" src="http://placehold.it/100x80?text=Thumb+09"></a>
 
                 </div>
                 <!--/row--></div>
@@ -104,33 +105,33 @@
             <div class="carousel-item">
               <div class="row-3">
                 <div class ="col xy-2">
-                  <a data-target="#Carouselmain" data-slide-to="10" class=" thumbnail mx-3"> <img id = "thumb10" src="http://placehold.it/100x80?text=Thumb+10"></a>
-                  <a data-target="#Carouselmain" data-slide-to="11" class=" thumbnail mx-3"> <img id = "thumb11" src="http://placehold.it/100x80?text=Thumb+11"></a>
+                  <a data-target="#Carouselmain" data-slide-to="10" class=" thumbnail mx-3" (click)="updateediturl(10)"> <img id = "thumb10" src="http://placehold.it/100x80?text=Thumb+10"></a>
+                  <a data-target="#Carouselmain" data-slide-to="11" class=" thumbnail mx-3" (click)="updateediturl(11)"> <img id = "thumb11" src="http://placehold.it/100x80?text=Thumb+11"></a>
 
                 </div>
                 <br>
                 <div class ="col xy-2">
-                  <a data-target="#Carouselmain" data-slide-to="12" class = "thumbnail mx-3"> <img id = "thumb12" src="http://placehold.it/100x80?text=Thumb+12"></a>
-                  <a data-target="#Carouselmain" data-slide-to="13" class=" thumbnail mx-3"> <img id = "thumb13" src="http://placehold.it/100x80?text=Thumb+13"></a>
+                  <a data-target="#Carouselmain" data-slide-to="12" class = "thumbnail mx-3" (click)="updateediturl(12)"> <img id = "thumb12" src="http://placehold.it/100x80?text=Thumb+12"></a>
+                  <a data-target="#Carouselmain" data-slide-to="13" class=" thumbnail mx-3" (click)="updateediturl(13)" > <img id = "thumb13" src="http://placehold.it/100x80?text=Thumb+13"></a>
 
                 </div>
                 <br>
                 <div class ="col xy-2">
-                  <a data-target="#Carouselmain"  data-slide-to="14" class = "thumbnail mx-3"> <img id = "thumb14" src="http://placehold.it/100x80?text=Thumb+14"></a>
-                  <a data-target="#Carouselmain" data-slide-to="15" class=" thumbnail mx-3"> <img id = "thumb15" src="http://placehold.it/100x80?text=Thumb+15"></a>
+                  <a data-target="#Carouselmain"  data-slide-to="14" class = "thumbnail mx-3" (click)="updateediturl(14)"> <img id = "thumb14" src="http://placehold.it/100x80?text=Thumb+14"></a>
+                  <a data-target="#Carouselmain" data-slide-to="15" class=" thumbnail mx-3" (click)="updateediturl(15)"> <img id = "thumb15" src="http://placehold.it/100x80?text=Thumb+15"></a>
 
                 </div>
                 <br>
                 <div class ="col xy-2">
-                  <a data-target="#Carouselmain" data-slide-to="16" class = "thumbnail mx-3"> <img id = "thumb16" src="http://placehold.it/100x80?text=Thumb+16"></a>
-                  <a data-target="#Carouselmain" data-slide-to="17" class=" thumbnail mx-3"> <img id = "thumb17" src="http://placehold.it/100x80?text=Thumb+17"></a>
+                  <a data-target="#Carouselmain" data-slide-to="16" class = "thumbnail mx-3" (click)="updateediturl(16)"> <img id = "thumb16" src="http://placehold.it/100x80?text=Thumb+16"></a>
+                  <a data-target="#Carouselmain" data-slide-to="17" class=" thumbnail mx-3" (click)="updateediturl(17)"> <img id = "thumb17" src="http://placehold.it/100x80?text=Thumb+17"></a>
 
                 </div>
                 <br>
 
                 <div class ="col">
-                  <a data-target="#Carouselmain" data-slide-to="18" class = "thumbnail mx-3"> <img id = "thumb18" src="http://placehold.it/100x80?text=Thumb+18"></a>
-                  <a data-target="#Carouselmain" data-slide-to="19" class=" thumbnail mx-3"> <img id = "thumb19" class = "hundred" src="http://placehold.it/100x80?text=Thumb+20"></a>
+                  <a data-target="#Carouselmain" data-slide-to="18" class = "thumbnail mx-3" (click)="updateediturl(18)"> <img id = "thumb18" src="http://placehold.it/100x80?text=Thumb+18"></a>
+                  <a data-target="#Carouselmain" data-slide-to="19" class=" thumbnail mx-3" (click)="updateediturl(0)"> <img id = "thumb19" class = "hundred" src="http://placehold.it/100x80?text=Thumb+20"></a>
 
                 </div>
 

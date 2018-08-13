@@ -3,7 +3,7 @@ import {style} from "@angular/animations";
 // import fs = require("fs");
 // import {readFileSync} from "fs";
 
-
+// Helper text in result page, save to top right or bigger?, smaller buttons? save url, bigger pictures?
 @Component({
   // selector: 'app-result',
   templateUrl: './result.component.html',
@@ -22,7 +22,12 @@ export class ResultComponent implements OnInit {
   allText : [string];
   /////////////////////IMAGE EDIT VARIBLES
 
+
   editurl: String = "http://localhost:4200/api/editImage";
+  public urls: string = "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19";
+  public urlarray = this.urls.split(",");
+
+  editurl: String;
   editfamily: String;
   editsize = 32;
   editformat = 0;
@@ -31,6 +36,7 @@ export class ResultComponent implements OnInit {
   editx = 100;
   edity = 100;
   editname : String = "edited";
+
 
   ////////////////////IMAGE EDIT VARIABLES
 
@@ -60,15 +66,18 @@ export class ResultComponent implements OnInit {
        var Sisfriend: string = sessionStorage.getItem("isfriend" + i);
        var Sisfamily: string = sessionStorage.getItem("isfamily" + i);
 
-       // gets url img for src (t for thumbnail and n for "small")
+       // gets url img for src (t for thumbnail)
        var thumbfinal: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_t.jpg";
        var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_c.jpg";
 
       image1 = document.getElementById("choice"+i) as HTMLImageElement;
       image2 = document.getElementById("thumb"+i) as HTMLImageElement;
+      this.urlarray[i] = final;
       image1.src = final;
       image2.src = thumbfinal;
    }
+  console.log(this.urlarray)
+    this.editurl = this.urlarray[0];
 
      if (sessionStorage['uploadedphoto']){
        console.log("uploaded file detected");
@@ -417,6 +426,12 @@ export class ResultComponent implements OnInit {
 
 
 ////////////////////////////
+
+  public updateediturl(int){
+    this.editurl = this.urlarray[int];
+    console.log(this.editurl);
+
+}
 
   public sendemail(){
     // var address = (<HTMLInputElement>document.getElementById("saveemail")).value;
