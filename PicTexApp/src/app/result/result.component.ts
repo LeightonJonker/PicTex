@@ -22,7 +22,9 @@ export class ResultComponent implements OnInit {
   allText : [string];
   /////////////////////IMAGE EDIT VARIBLES
 
-
+  prevcd: boolean = false;
+  nextcd : boolean = false;
+  nextprev = 0;
   editurl: String = "http://localhost:4200/api/editImage";
   public urls: string = "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19";
   public urlarray = this.urls.split(",");
@@ -432,6 +434,42 @@ export class ResultComponent implements OnInit {
     console.log(this.editurl);
 
 }
+  public carouselnext(){
+    // console.log("next pressed")
+    if (this.nextcd){
+      console.log("on cooldown")
+      return;
+    }
+
+    else{
+        this.nextprev ++;
+        this.editurl = this.urlarray[this.nextprev];
+      console.log(this.editurl)
+      this.nextcd = true;
+      setTimeout( () => {
+          this.nextcd = false;
+          console.log("cd now false")
+      },1000);
+    }
+  }
+
+  public carouselprev(){
+    if (this.nextcd){
+      console.log("on cooldown")
+      return;
+    }
+
+    else{
+      this.nextprev --;
+      this.editurl = this.urlarray[this.nextprev];
+      console.log(this.editurl)
+      this.nextcd = true;
+      setTimeout( () => {
+          this.nextcd = false;
+          console.log("cd now false")
+        },1000);
+    }
+  }
 
   public sendemail(){
     // var address = (<HTMLInputElement>document.getElementById("saveemail")).value;
