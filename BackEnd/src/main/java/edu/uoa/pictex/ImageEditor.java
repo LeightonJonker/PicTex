@@ -58,10 +58,10 @@ public class ImageEditor {
             graphics.drawString(text, x, y);
             graphics.dispose();
             try {
-                ImageIO.write(image, "jpg", new File(fileName+".jpg"));
+                ImageIO.write(image, "png", new File(fileName+".png"));
                 return "SUCCESS";
             } catch (IOException e) {
-                System.out.println("Invalid file name: " + fileName + ".jpg");
+                System.out.println("Invalid file name: " + fileName + ".png");
                 //e.printStackTrace();
                 return "ERROR";
             }
@@ -77,9 +77,14 @@ public class ImageEditor {
     }
 
     private Font getFont() {
-        String filePath = fontFamily + "-Regular.ttf";
-        //remove spaces on file path if any
-        filePath = filePath.replaceAll("\\s+", "");
+        String[] splitFontFam = fontFamily.split(" ");
+        StringBuilder sb = new StringBuilder();
+        sb.append("/static/fonts/");
+        for(String s : splitFontFam) {
+            sb.append(s);
+        }
+        sb.append("-Regular.ttf");
+        String filePath = sb.toString();
         try {
             InputStream is = this.getClass().getResourceAsStream(filePath);
             Font font = Font.createFont(Font.TRUETYPE_FONT, is);

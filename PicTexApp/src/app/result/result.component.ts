@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-// import {style} from "@angular/animations";
+import {style} from "@angular/animations";
+// import fs = require("fs");
+// import {readFileSync} from "fs";
 
+// Helper text in result page, save to top right or bigger?, smaller buttons? save url, bigger pictures?
 @Component({
   // selector: 'app-result',
   templateUrl: './result.component.html',
@@ -16,7 +19,27 @@ export class ResultComponent implements OnInit {
   imgfarmid: string = ".staticflickr.com/";
   tagsURL: string = "http://localhost:4200/api/getTags";
   elements: [string];
-  // allText : [string];
+  allText : [string];
+  /////////////////////IMAGE EDIT VARIBLES
+
+  prevcd: boolean = false;
+  nextcd : boolean = false;
+  nextprev = 0;
+  editurl: string = "http://localhost:4200/api/editImage";
+  public urls: string = "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19";
+  public urlarray = this.urls.split(",");
+
+  editfamily: String;
+  editsize = 32;
+  editformat = 0;
+  editcol : String;
+  editstring : String;
+  editx = 100;
+  edity = 100;
+  editname : String = "edited";
+
+
+  ////////////////////IMAGE EDIT VARIABLES
 
   flag = 1;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
@@ -49,9 +72,12 @@ export class ResultComponent implements OnInit {
 
       image1 = document.getElementById("choice"+i) as HTMLImageElement;
       image2 = document.getElementById("thumb"+i) as HTMLImageElement;
+      this.urlarray[i] = final;
       image1.src = final;
       image2.src = thumbfinal;
    }
+  console.log(this.urlarray)
+    this.editurl = this.urlarray[0];
 
      if (sessionStorage['uploadedphoto']){
        console.log("uploaded file detected");
@@ -400,18 +426,73 @@ export class ResultComponent implements OnInit {
 
 ////////////////////////////
 
-  public sendemail(){
-    // let address = (<HTMLInputElement>document.getElementById("saveemail")).value;
-    // console.log(address)
-    // use global variables and make api call for image editor.
-    // get x and y co-ordinates and string.
-    //this.editstring =  document.getElementById("option0").innerText;
+  public updateediturl(int){
+    this.editurl = this.urlarray[int];
+    console.log(this.editurl);
 
+}
+  public carouselnext(){
+    // console.log("next pressed")
+    if (this.nextcd){
+      console.log("on cooldown")
+      return;
+    }
+
+    else{
+        this.nextprev ++;
+        this.editurl = this.urlarray[this.nextprev];
+      console.log(this.editurl)
+      this.nextcd = true;
+      setTimeout( () => {
+          this.nextcd = false;
+          console.log("cd now false")
+      },1000);
+    }
+  }
+
+  public carouselprev(){
+    if (this.nextcd){
+      console.log("on cooldown")
+      return;
+    }
+
+    else{
+      this.nextprev --;
+      this.editurl = this.urlarray[this.nextprev];
+      console.log(this.editurl)
+      this.nextcd = true;
+      setTimeout( () => {
+          this.nextcd = false;
+          console.log("cd now false")
+        },1000);
+    }
+  }
+
+  public sendemail(){
+    let recipient = (<HTMLInputElement>document.getElementById("saveemail")).value;
+    this.saveImage(); //Save image first
+    let emailURL : string = "http://localhost:4200/api/email?recipient="+recipient;
+    let xhr : XMLHttpRequest = new XMLHttpRequest();
+    xhr.open("GET",emailURL, false);
+    xhr.send();
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      if(xhr.responseText == "E-mail sent successfully") {
+        //Modal pop up saved successfully at location...
+        console.log("SUCCESS!");
+      } else if (xhr.responseText == "E-mail unsuccessful") {
+        //Modal pop up error occurred...
+        console.log("ERROR!");
+      } else {
+        console.log("Nothing happened");
+        //Do nothing?
+      }
+    }
   }
 
   public saveImage() {
     //let imageURL = encodeURI((<HTMLCollectionOf<HTMLImageElement>>document.getElementsByClassName("carousel-item active"))[1].src);
-    let imageURL = encodeURI((<HTMLImageElement>document.getElementById("choice0")).src);
+    // let imageURL = encodeURI((<HTMLImageElement>document.getElementById("choice0")).src);
+    let imageURL = encodeURI(this.editurl);
     let textBox = (<HTMLInputElement>document.getElementById("option0"));
     let fontFamily : string = textBox.style.fontFamily;
     let temp = fontFamily.split("\"");
@@ -440,7 +521,7 @@ export class ResultComponent implements OnInit {
     let wcp = (<HTMLInputElement>document.getElementById("color-input"));
     let colours : string = "%23" + $(wcp).wheelColorPicker('getValue', 'hex'); //%23 = #
     let text : string = encodeURI(textBox.innerText);
-    let fileName : string = encodeURI("test"); //test.jpg
+    let fileName : string = encodeURI("PicTex"); //test.jpg
     let x: number = 100; //need to obtain, relative to image, somehow.
     let y : number = 100;
 

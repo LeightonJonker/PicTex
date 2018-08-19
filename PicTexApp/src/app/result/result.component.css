@@ -73,6 +73,12 @@
   font-family: "Source Sans Pro";
 }
 
+ .helpertext {
+   font-family: "Pacifico";
+   text-align: center;
+   color: crimson;
+ }
+
 .scrollable-menu {
   height: auto;
   max-height: 200px;

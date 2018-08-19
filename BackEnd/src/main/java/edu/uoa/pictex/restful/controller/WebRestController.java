@@ -55,9 +55,9 @@ public class WebRestController {
     */
 
     @RequestMapping("api/email")
-    public String sendEmail() {
+    public String sendEmail(@RequestParam(value = "recipient") String recipient) {
         Email email = new Email();
-        Boolean sentEmail = email.sendEmail();
+        Boolean sentEmail = email.sendEmail(recipient);
         if (sentEmail) {
             return "E-mail sent successfully";
         } else {
