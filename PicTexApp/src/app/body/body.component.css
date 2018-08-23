@@ -5,6 +5,18 @@ h1 {
 
 }
 
+.homelogo{
+  margin-top: 20px;
+  height: 200px;
+  width: 142px;
+
+}
+
+.moveup{
+  margin-top: 20px;
+
+}
+
 p {
   font-family: "Pacifico";
   text-align: center;

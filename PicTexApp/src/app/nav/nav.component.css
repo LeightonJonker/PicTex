@@ -9,6 +9,11 @@ a:hover{
   color: firebrick;
 }
 
+.iconsize{
+  height: 42px;
+  widows: 50px;
+}
+
 a,
 a:hover{
   -webkit-transition: all .4s ease-in-out;
