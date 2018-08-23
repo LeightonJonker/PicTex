@@ -1,5 +1,7 @@
 package edu.uoa.pictex;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -7,12 +9,9 @@ import javax.activation.*;
 
 public class Email {
 
-    public boolean sendEmail(String[] args) {
-        String to = "ljon139@aucklanduni.ac.nz";
-        String from = "wcha609@aucklanduni.ac.nz";
-        String host = "smtp.gmail.com";
-        final String username="wcha609@aucklanduni.ac.nz";
-        final String password="d8i2IB0eAXuy3VjkCLJE";
+    public boolean sendEmail(String recipient) {
+        final String username="uoa.pictex@gmail.com";
+        final String password="wcha609ljon139";
         Properties properties = new Properties(); //get system properties
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.host","smtp.gmail.com"); //smtp.gmail.com for gmail
@@ -27,13 +26,16 @@ public class Email {
 
         try {
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("wcha609@aucklanduni.ac.nz"));
+            message.setFrom(new InternetAddress("uoa.pictex@gmail.com"));
             message.setRecipients(
-                Message.RecipientType.TO, InternetAddress.parse("ljon139@aucklanduni.ac.nz")
+                Message.RecipientType.TO, InternetAddress.parse(recipient)
             );
-            message.setSubject("Mail Subject");
+            message.setSubject("UoA PicTex - Your PicTex!");
 
-            String msg = "This is my first email using JavaMailer";
+            StringBuilder msgB = new StringBuilder();
+            msgB.append("Thank you for using PicTex! We have attached your image in this e-mail :)\n");
+            msgB.append("Thanks from both of us at PicTex!\nLeighton Jonker & William Chao");
+            String msg = msgB.toString();
 
             MimeBodyPart mimeBodyPart = new MimeBodyPart();
             mimeBodyPart.setContent(msg, "text/html");
@@ -41,12 +43,14 @@ public class Email {
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(mimeBodyPart);
 
-            /*
-            To send an attachment:
+            //To send an attachment:
             MimeBodyPart attachmentBodyPart = new MimeBodyPart();
-            attachmentBodyPart.attachFile(new File("path/to/file"));
-            multipart.addBodyPart(attachmentBodyPart);
-            */
+            try {
+                attachmentBodyPart.attachFile(new File("./PicTex.png"));
+                multipart.addBodyPart(attachmentBodyPart);
+            } catch (IOException e) {
+                System.out.println("Unable to attach image");
+            }
 
             message.setContent(multipart);
 
@@ -59,11 +63,6 @@ public class Email {
         }
 
         return false;
-    }
-
-    public boolean sendEmail() {
-        String[] defaultOptions = {""};
-        return sendEmail(defaultOptions);
     }
 
 }

@@ -1,5 +1,6 @@
 package edu.uoa.pictex.restful.controller;
 
+import edu.uoa.pictex.ImageEditor;
 import edu.uoa.pictex.Keyword;
 import edu.uoa.pictex.SentenceProcessor;
 import edu.uoa.pictex.Email;
@@ -7,10 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -29,10 +26,10 @@ public class WebRestController {
 
     @RequestMapping("/api/getTags")
     public List<String> getTags() {
-        List<String> tags = keywords.getList();
-        return tags;
+        return keywords.getList();
     }
 
+    /*
     @RequestMapping("api/getText")
     public String getText(@RequestParam(value="fp",defaultValue="") String fp) {
         String basedir = System.getProperty("user.dir").replace('\\','/');
@@ -55,11 +52,12 @@ public class WebRestController {
             return null;
         }
     }
+    */
 
     @RequestMapping("api/email")
-    public String sendEmail() {
+    public String sendEmail(@RequestParam(value = "recipient") String recipient) {
         Email email = new Email();
-        Boolean sentEmail = email.sendEmail();
+        Boolean sentEmail = email.sendEmail(recipient);
         if (sentEmail) {
             return "E-mail sent successfully";
         } else {
@@ -67,4 +65,22 @@ public class WebRestController {
         }
     }
 
+    @RequestMapping("api/saveImg")
+    public String saveImg(
+          @RequestParam(value = "imgURL") String imgURL,
+          @RequestParam(value = "fontFamily") String fontFamily,
+          @RequestParam(value = "hex") String hex,
+          @RequestParam(value = "text") String text,
+          @RequestParam(value = "fileName") String fileName,
+          @RequestParam(value = "bold") Boolean isBold,
+          @RequestParam(value = "italics") Boolean isItalics,
+          @RequestParam(value = "underline") Boolean isUnderline,
+          @RequestParam(value = "x") int x,
+          @RequestParam(value = "y") int y,
+          @RequestParam(value = "fontSize") int fontSize
+    ) {
+        ImageEditor ie = new ImageEditor(imgURL, fontFamily, hex, text, fileName,
+                isBold, isItalics, isUnderline, x, y, fontSize);
+        return ie.writeImage();
+    }
 }

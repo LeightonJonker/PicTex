@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as fabric from 'fabric';
 
 declare var jquery:any;
 declare var $ :any;
