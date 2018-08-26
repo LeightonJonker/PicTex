@@ -154,7 +154,8 @@ export class ResultComponent implements OnInit {
     // console.log("successfully changed images")
     // images are now updated, use loadimages to update.
 
-    setTimeout(() => {this.loadimages();
+    setTimeout(() => {
+      this.loadimages();
     (<HTMLInputElement>document.getElementById("addbutton")).disabled = false;
       (<HTMLInputElement>document.getElementById("addbutton")).innerText = "Add Tag";
 
@@ -469,24 +470,56 @@ export class ResultComponent implements OnInit {
   }
 
   public sendemail(){
+    (<HTMLInputElement>document.getElementById("sendbutton")).innerText = "Sending...";
+
+    setTimeout(()=> {
+      this.sendemail2();
+    },1000);
+
+
+    // let recipient = (<HTMLInputElement>document.getElementById("saveemail")).value;
+    // this.saveImage(); //Save image first
+    // let emailURL : string = "http://localhost:4200/api/email?recipient="+recipient;
+    // let xhr : XMLHttpRequest = new XMLHttpRequest();
+    // xhr.open("GET",emailURL, false);
+    // xhr.send();
+    // if(xhr.readyState == 4 && xhr.status == 200) {
+    //   if(xhr.responseText == "E-mail sent successfully") {
+    //     //Modal pop up saved successfully at location...
+    //     console.log("SUCCESS!");
+    //   } else if (xhr.responseText == "E-mail unsuccessful") {
+    //     //Modal pop up error occurred...
+    //     console.log("ERROR!");
+    //   } else {
+    //     console.log("Nothing happened");
+    //     //Do nothing?
+    //   }
+    // }
+    // (<HTMLInputElement>document.getElementById("sendbutton")).innerText = "Sent!";
+    // (<HTMLInputElement>document.getElementById("sendbutton")).disabled = true;
+  }
+
+  public sendemail2(){
     let recipient = (<HTMLInputElement>document.getElementById("saveemail")).value;
     this.saveImage(); //Save image first
     let emailURL : string = "http://localhost:4200/api/email?recipient="+recipient;
     let xhr : XMLHttpRequest = new XMLHttpRequest();
-    xhr.open("GET",emailURL, false);
-    xhr.send();
-    if(xhr.readyState == 4 && xhr.status == 200) {
-      if(xhr.responseText == "E-mail sent successfully") {
-        //Modal pop up saved successfully at location...
-        console.log("SUCCESS!");
-      } else if (xhr.responseText == "E-mail unsuccessful") {
-        //Modal pop up error occurred...
-        console.log("ERROR!");
-      } else {
-        console.log("Nothing happened");
-        //Do nothing?
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        (<HTMLInputElement>document.getElementById("sendbutton")).innerText = "Sent!";
+        (<HTMLInputElement>document.getElementById("sendbutton")).disabled = true;
       }
     }
+    xhr.open("GET",emailURL, true);
+    xhr.send();
+
+  }
+
+  public closingmodal(){
+    (<HTMLInputElement>document.getElementById("sendbutton")).innerText = "Send E-mail";
+    (<HTMLInputElement>document.getElementById("sendbutton")).disabled = false;
+
+
   }
 
   public saveImage() {
