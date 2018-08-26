@@ -315,14 +315,14 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" id ="emailmodaltext">
             Enter an e-mail and send your PicTex!
             <br><br>
             <input type="text" class="col float-none" placeholder="Enter Email" id="saveemail">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="sendemail()">Send E-mail</button>
+            <button type="button" class="btn btn-secondary" (click)="closingmodal()" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="sendbutton" (click)="sendemail()">Send E-mail</button>
             <button type="button" class="btn btn-primary" (click)="saveImage()">Save</button>
           </div>
         </div>
