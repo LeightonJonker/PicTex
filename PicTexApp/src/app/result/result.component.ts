@@ -357,6 +357,17 @@ export class ResultComponent implements OnInit {
       pos2 = pos4 - e.clientY;
       pos3 = e.clientX;
       pos4 = e.clientY;
+      let a = pos3;
+      let b = a.toString();
+      let c = pos4;
+      let d = c.toString();
+
+      sessionStorage.setItem('posx',b );
+      sessionStorage.setItem('posy',d );
+
+
+      // console.log(pos3)
+      // console.log(pos4)
       // set the element's new position:
       elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
       elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
@@ -550,14 +561,26 @@ export class ResultComponent implements OnInit {
     let fontSize = textBox.style.fontSize;
     temp = fontSize.split("px");
     fontSize = temp[0];
+    // console.log(fontSize)
+    // let fontsize1 = parseInt(fontSize);
+    // fontsize1 = fontsize1 * 1.6;
+    // let fontsize2 = fontsize1.toString();
+    // fontSize = fontsize2;
+    // console.log(fontSize)
+    // fontSize = fontSize;
 
     let wcp = (<HTMLInputElement>document.getElementById("color-input"));
     let colours : string = "%23" + $(wcp).wheelColorPicker('getValue', 'hex'); //%23 = #
     let text : string = encodeURI(textBox.innerText);
     let fileName : string = encodeURI("PicTex"); //test.jpg
-    let x: number = 100; //need to obtain, relative to image, somehow.
-    let y : number = 100;
-
+    let x1 = sessionStorage.getItem("posx");
+    let x2 = parseInt(x1);
+    let y1 = sessionStorage.getItem("posy");
+    let y2 = parseInt(y1);
+    let x: number = x2 - 450;//100; //need to obtain, relative to image, somehow.
+    let y : number = y2 + 120;//100;
+    // let x: number = 100;//100;
+    // let y : number = 100;
     let saveImgURL : string = "http://localhost:4200/api/saveImg?"+
       "imgURL="+imageURL+
       "&fontFamily="+fontFamily+

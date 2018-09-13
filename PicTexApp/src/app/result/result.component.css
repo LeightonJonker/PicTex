@@ -97,11 +97,11 @@
 #mydiv {
 
   position: absolute;
-  left: 36%;
-  top: 120px;
+  left: 1px;
+  top: 1px;
   resize: both;
   overflow: auto;
-  float: right;
+  /*float: right;*/
   z-index: 9;
   background: rgba(76, 175, 80, 0.01);
   /*border: 1px solid #d3d3d3;*/
